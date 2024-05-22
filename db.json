@@ -1,0 +1,46 @@
+{
+  "burgers": [
+    {
+      "id": 1,
+      "name": "Classic Burger",
+      "description": "A classic burger with lettuce, tomato, and cheese.",
+      "price": 5.99
+    },
+    {
+      "id": 2,
+      "name": "Bacon Burger",
+      "description": "A juicy burger topped with crispy bacon and cheddar cheese.",
+      "price": 7.99
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "john_doe",
+      "password": "password123",
+      "email": "john@example.com"
+    },
+    {
+      "id": 2,
+      "username": "jane_doe",
+      "password": "password456",
+      "email": "jane@example.com"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "burgerId": 2,
+      "quantity": 2,
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "burgerId": 1,
+      "quantity": 1,
+      "status": "completed"
+    }
+  ]
+}

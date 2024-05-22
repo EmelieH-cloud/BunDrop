@@ -1,14 +1,19 @@
 
 import './App.css'
-import Navbar from './Components/Navbar';
-import Hero from './Components/Hero';
+import Homepage from './Pages/Homepage'
+import Menupage from './Pages/Menupage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
 
   return (
     <>
-   <Navbar/>
-   <Hero/>
+    <Router>
+        <Routes>
+            <Route path="/" element={<Homepage/>} />
+            <Route path="/Menu" element={<Menupage/>}/>
+        </Routes>
+    </Router>
     </>
   )
 }
