@@ -51,7 +51,6 @@ function Footer() {
                         <div className="socials-area">
                             <FaInstagram className='icon' />
                             <CiFacebook className='icon'/>
-
                         </div>
                     </div>
                 </div>

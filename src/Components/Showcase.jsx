@@ -1,62 +1,99 @@
-import React, { useRef } from 'react';
-import OriginalBurger from '../assets/1.png';
-import BaconBurger from '../assets/2.png';
+import React, { useState } from 'react';
+import originalBurger from '../assets/1.png';
+import baconBurger from '../assets/2.png';
+import veganBurger from '../assets/3.png';
+
+/* 
+SHOWCASE: Komponent som visar ett bildspel som användaren kan navigera igenom.
+ */
 
 function Showcase() {
-    // Arrayer med bilder och rubriker för varje kategori
-    const burgerItems = [
-        { image: OriginalBurger, title: 'Classic Burger', text: 'Description of the classic burger...' },
-        { image: BaconBurger, title: 'Bacon Burger', text: 'Description of the bacon burger...' },
-        // Lägg till fler burgare om du har
-    ];
+    
+    // state-variabler som håller reda på nuvarande slide och uppdaterar den. 
+    const [currentSlide, setCurrentSlide] = useState(1);
 
-    // Skapa en referens för att kunna använda karusellens metod för att navigera
-    const burgerCarousel = useRef(null);
-
-    // Funktion för att navigera till föregående slide
-    const prevSlide = () => {
-        burgerCarousel.current.prev();
-    };
-
-    // Funktion för att navigera till nästa slide
-    const nextSlide = () => {
-        burgerCarousel.current.next();
+    // Körs så fort en radiobutton väljs: 
+    const handleSlideChange = (event) => 
+    {
+        setCurrentSlide(parseInt(event.target.id.split('-')[1]));
+        // event.target.id är id:et på den valda radioknappen (tex 'slide-1') och
+        // split('-') delar upp strängen vid bindesstrecket, [1] anger att det är andra
+        // elementet som ska sparas och konverteras till en int. 
     };
 
     return (
-        <section id="showcase">
-            <div className='container'>
-                <div className='row'>
-                    {/* Burgare Karusell */}
-                    <div className='carousel-div'>
-                        <h2>Burgers</h2>
-                        <div className="carousel slide" data-bs-ride="carousel" ref={burgerCarousel}>
-                            <div className="carousel-inner">
-                                {burgerItems.map((item, index) => (
-                                    <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
-                                        <div className="card" style={{ width: '18rem' }}>
-                                            <img className="card-img-top fixed-size-img" src={item.image} alt="Card image cap" />
-                                            <div className="card-body">
-                                                <h5 className="card-title">{item.title}</h5>
-                                                <p className="card-text">{item.text}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
+        <div id="showcase">
+            <input
+                type="radio"
+                name="slider"
+                id="slide-1"
+                checked={currentSlide === 1}
+                onChange={handleSlideChange}
+            />
+            <input
+                type="radio"
+                name="slider"
+                id="slide-2"
+                checked={currentSlide === 2}
+                onChange={handleSlideChange}
+            />
+            <input
+                type="radio"
+                name="slider"
+                id="slide-3"
+                checked={currentSlide === 3}
+                onChange={handleSlideChange}
+            />
+            <input
+                type="radio"
+                name="slider"
+                id="slide-4"
+                checked={currentSlide === 4}
+                onChange={handleSlideChange}
+            />
+            <div id="slides">
+                <h1 className='mt-3'>Top choices</h1>
+                <div id="overflow">
+                    <div className="inner">
+                        <div className="slide slide_1">
+                            <div className="slide-content">
+                                   <p>Original Burger</p>
+                                <img src={originalBurger} alt="ogburger"/>
                             </div>
-                            <button className="carousel-control-prev" type="button" onClick={prevSlide}>
-                                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span className="visually-hidden">Previous</span>
-                            </button>
-                            <button className="carousel-control-next" type="button" onClick={nextSlide}>
-                                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span className="visually-hidden">Next</span>
-                            </button>
+                        </div>
+                        <div className="slide slide_2">
+                            <div className="slide-content">
+                                  <p>Bacon burger</p>
+                                    <img src={baconBurger} alt="bcburger"/>
+                            </div>
+                        </div>
+                        <div className="slide slide_3">
+                            <div className="slide-content">
+                                <p>Vegan burger</p>
+                                   <img src={veganBurger} alt="bcburger"/>
+                            </div>
+                        </div>
+                        <div className="slide slide_4">
+                            <div className="slide-content">
+                                <h2>Slide 4</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            <div id="controls">
+                <label htmlFor="slide-1"></label>
+                <label htmlFor="slide-2"></label>
+                <label htmlFor="slide-3"></label>
+                <label htmlFor="slide-4"></label>
+            </div>
+            <div id="bullets">
+                <label htmlFor="slide-1"></label>
+                <label htmlFor="slide-2"></label>
+                <label htmlFor="slide-3"></label>
+                <label htmlFor="slide-4"></label>
+            </div>
+        </div>
     );
 }
 
