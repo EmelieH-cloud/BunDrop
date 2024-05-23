@@ -4,13 +4,15 @@
       "id": 1,
       "name": "Classic Burger",
       "description": "A classic burger with lettuce, tomato, and cheese.",
-      "price": 5.99
+      "price": 5.99,
+      "image": "./src/assets/1.png"
     },
     {
       "id": 2,
       "name": "Bacon Burger",
       "description": "A juicy burger topped with crispy bacon and cheddar cheese.",
-      "price": 7.99
+      "price": 7.99,
+      "image": "./src/assets/2.png"
     }
   ],
   "users": [

@@ -13,3 +13,5 @@ export const BurgerProvider = ({ children }) => {
     </BurgerContext.Provider>
   );
 };
+
+export default BurgerContext;

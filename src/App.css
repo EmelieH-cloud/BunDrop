@@ -25,7 +25,7 @@ a
 
 a:hover
 {
-  color: var(--color-dark);
+  color: var(--color-medium);
 }
 
 img
@@ -51,8 +51,7 @@ img
   margin: 0 auto;
   opacity: .7;
   padding: .7%; 
-  color: black;
-  background: var(--color-body);
+  background: var(--color-dark);
 }
 
 /* Navbar -----------------------------*/
@@ -78,7 +77,93 @@ img
 #menu
 {
   min-height: 100vh;
-  background: url(./assets/hero.jpg);
-   background-position: center;
-  background-size: cover;
+  background-color: var(--color-dark);
 }
+
+.burger-image
+{
+  border-radius: 5%; 
+}
+
+/* Footer ----------------------------------------- */
+
+footer
+{
+  background-color: var(--color-dark);
+  padding: 85px 0;
+}
+
+.single-box p
+{
+  color: var(--color-body);
+}
+
+.single-box h3
+{
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-body);
+}
+
+.single-box .card-area
+{
+  color: var(--color-body);
+}
+
+.single-box ul
+{
+  list-style: none;
+  padding: 0;
+}
+
+.single-box ul li 
+ {
+   text-decoration: none;
+   line-height: 2.5;
+}
+
+.icon
+{
+  font-size: 2rem;
+  margin: 1%; 
+}
+
+.swish
+{
+  font-weight: bolder;
+}
+
+/* Showcase ---------------------*/
+
+.carousel-div
+{
+  margin: 0 auto;
+  width: min-content;
+}
+
+.carousel-div h2
+{
+  color: var(--color-body);
+  margin-top: 4%; 
+  text-align: center;
+}
+
+
+#showcase
+{
+  background-color: var(--color-dark);
+}
+
+.fixed-size-img 
+{
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card
+{
+  background-color: black;
+  color: var(--color-body);
+}
+
