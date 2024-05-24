@@ -23,9 +23,9 @@ function Menu()
     return ( 
     <>
      <div id="menu" className='d-flex text-center'>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
+        <div className="container">
+            <div className="row">
+                <div className="col-12">
                     <h1 className='display-2  mt-5'>Our burgers:</h1>
                       {burgers.map(burger => (
                      <BurgerCard key={burger.id} burger={burger} />
