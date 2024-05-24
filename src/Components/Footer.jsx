@@ -7,7 +7,6 @@ import { FaCcMastercard } from "react-icons/fa";
 function Footer() {
     return( <>
 
- 
      <footer>
         <div className="container">
             <div className="row">

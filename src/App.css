@@ -45,6 +45,11 @@ img
   height: auto;
 }
 
+.logo
+{
+  padding: 5%; 
+}
+
 /* 2. Hero -----------------------------------------*/
 
 #hero
@@ -67,23 +72,7 @@ img
 }
 
 /* 3. Navbar ----------------------------------------------*/
-.navbar
-{
-  background-color: #f4e5c2;
-  
-  
-}
 
-.nav-link
-{
-  color: black;
-  font-size: 2rem;
-}
-
-.nav-link:hover
-{
-  color: var(--color-dark);
-}
 
 /* 4. Menu ----------------------------------------------*/
 
