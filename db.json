@@ -35,6 +35,12 @@
       "userId": 2,
       "burgerIds": [2],
       "orderDate": "2024-05-27T12:30:00.000Z"
+    },
+      {
+      "id": 3,
+      "userId": 3,
+      "burgerIds": [2],
+      "orderDate": "2024-05-27T12:30:00.000Z"
     }
   ],
   "users": 
