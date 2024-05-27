@@ -23,40 +23,42 @@
       "image": "./src/assets/3.png"
     }
   ],
-  "users": [
+   "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "burgerIds": [1, 2],
+      "orderDate": "2024-05-26T14:48:00.000Z"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "burgerIds": [2],
+      "orderDate": "2024-05-27T12:30:00.000Z"
+    }
+  ],
+  "users": 
+  [
     {
       "id": 1,
       "username": "john_doe",
       "password": "password123",
-      "email": "john@example.com",
-      "orders": [
-        {
-          "orderid": 1,
-          "burgerId": 2,
-          "quantity": 2,
-          "status": "pending"
-        },
-        {
-          "orderid": 2,
-          "burgerId": 1,
-          "quantity": 1,
-          "status": "completed"
-        }
-      ]
+      "email": "john@example.com"
+    
     },
     {
       "id": 2,
       "username": "jane_doe",
       "password": "password456",
-      "email": "jane@example.com",
-      "orders": []
+      "email": "jane@example.com"
+    
     },
     {
       "id": 3,
       "username": "user",
       "password": "password",
-      "email": "user@gmail.com",
-      "orders": [  ]
+      "email": "user@gmail.com"
+   
     }
   ]
 }

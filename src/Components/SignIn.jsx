@@ -6,10 +6,10 @@ import { UserContext } from '../Context/UserContext';
 
 function SignIn() {
 
-  /* Hooks --------------------------------------*/
+  /* Variabler --------------------------------------*/
   const [username, setUser] = useState('');
   const [password, setPassword] = useState('');
-  const { users, loading, error } = useContext(UserContext);
+  const { users, loading, error, login } = useContext(UserContext);
   const navigate = useNavigate(); 
 
     /* Eventhandlers--------------------------- */
@@ -33,6 +33,7 @@ function SignIn() {
 
     if (user) 
     {
+        login(user.id); 
         navigate(`/Profile/${user.id}`);
     } 
     else 

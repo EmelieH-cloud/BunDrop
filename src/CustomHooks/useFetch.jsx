@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+// En custom hook som hanterar hämtningen av data från db.json, kräver endast en endpoint-url som parameter. 
 
 const useFetch = (url) => {
   const [data, setData] = useState(null);

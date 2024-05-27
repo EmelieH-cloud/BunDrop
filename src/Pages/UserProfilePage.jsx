@@ -11,8 +11,6 @@ function UserProfilePage() {
          <Link className="nav-link" to="/">
           <img src={Logo} alt="logo" className='logo'/>
           </Link>
-
-          
         </div>
             <UserProfile/>
             <Footer />

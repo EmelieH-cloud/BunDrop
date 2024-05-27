@@ -1,77 +1,55 @@
 import React from 'react'
-import {useParams} from "react-router-dom"; 
 import {UserContext } from '../Context/UserContext';
 import {useState, useContext, useEffect} from "react"; 
 
 
 function UserProfile() 
 {
-     const [user, setUser] = useState({}); 
      const [orders, setOrders] = useState([]); 
-    const {id} = useParams();
-    /* Skicka in UserContext som kontext-objekt. */
-   const { users, loading, error } = useContext(UserContext); 
+    const { loggedInUser, loading, error } = useContext(UserContext); 
+    const { data: ordersData, loading: ordersLoading, error: ordersError } = useFetch('http://localhost:3000/orders');
 
-    useEffect(() => 
-    {
-    // kod som ska köras direkt när komponenten laddas
-     if (loading)
+    useEffect(() =>  {
+     if (!ordersLoading && !ordersError && loggedInUser) 
      {
-      console.log('Loading user data, please wait...');
-      return;
-    }
-    if (error) 
-    {
-     console.log('An error occurred while fetching users from the database. Please try again later.');
-      return;
-    }
-    // om det gick att hämta users, leta efter usern med detta id 
-       const potentialUser = users.find(user => user.id === id);
-        
-    if (potentialUser)  
-    {
-        // usern hittades, uppdatera state-variablen. 
-       setUser(potentialUser);
+    const userOrders = ordersData?.filter(order => order.userId === loggedInUser.id);
+    setOrders(userOrders);
+  }
+}, [ordersLoading, ordersError, ordersData, loggedInUser]);
 
-       // kolla om usern har några ordrar 
-       const userOrders = potentialUser.orders;
+if (loading || ordersLoading) {
+    return <h1>Loading...</h1>;
+  }
 
-       if (userOrders!=null)
-       {
-            setOrders(userOrders); // Sätt userns ordrar
-       }
-     
-    } 
-    else 
-    {
-      setUser(null); // Ingen user hittades, sätt user till null
-    }
+  if (error || ordersError) {
+    return <h1>An error occurred: {error || ordersError}</h1>;
+  }
 
-  }, []); // tom array som argument för att säkerställa att koden körs en enda gång (i samband med att komponenten monteras.)
+  if (!loggedInUser) {
+    return <h1>No user found</h1>;
+  }
 
  return (
-  <> 
-    {loading ? (<h1>Loading...</h1>) 
-    : user === null ? ( <h1>No user found</h1>) 
-    : (
-      <div>
-        <h1>Welcome, {user.username}</h1>
-        {orders.length > 0 && (
-          <>
-            <h2>Order History:</h2>
-            <ul>
-              {orders.map(order => (
-                <li key={order.orderid}>
-                  Order ID: {order.orderid}, Burger ID: {order.burgerId}, Quantity: {order.quantity}, Status: {order.status}
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-      </div>
-    )}
-  </>
-)};
+   <div>
+      <h1>Welcome, {loggedInUser.username}</h1>
+      {orders.length > 0 ? (
+        <>
+          <h2>Order History:</h2>
+          <ul>
+            {orders.map(order => (
+              <li key={order.id}>
+                Order ID: {order.id}, Burger IDs: {order.burgerIds.join(', ')}, Date: {new Date(order.orderDate).toLocaleString()}
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <p>You have no orders yet.</p>
+      )}
+    </div>
+  );
+}
+
 
 
 export default UserProfile;
