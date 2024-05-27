@@ -1,6 +1,6 @@
 
 /* ---------Innehåll ---------
-1. Custom variables
+1. Variabler
 2. Hero
 3. Navbar
 4. Menu
@@ -8,8 +8,7 @@
 6. Showcase 
 */
 
-
-/* 1. custom variables --------------------*/
+/* variabler --------------------*/
 :root
 {
   --color-dark: #295f4e;
@@ -50,7 +49,7 @@ img
   padding: 5%; 
 }
 
-/* 2. Hero -----------------------------------------*/
+/* 2. Hero -------------------------------------*/
 
 #hero
 {
@@ -88,6 +87,8 @@ img
 
 footer
 {
+  margin-top: 5%;
+  border-top: 1px solid white; 
   background-color: var(--color-dark);
   padding: 85px 0;
 }
@@ -135,4 +136,10 @@ footer
 {
   height: 250px;
   border-radius: 10%;
+}
+
+/* UserProfilePage */
+.user-profile-navbar
+{
+   background-color: #F8F9FA;
 }

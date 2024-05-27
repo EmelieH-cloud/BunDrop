@@ -1,5 +1,6 @@
 {
-  "burgers": [
+  "burgers": 
+  [
     {
       "id": 1,
       "name": "Classic Burger",
@@ -14,7 +15,7 @@
       "price": 7.99,
       "image": "./src/assets/2.png"
     },
-     {
+    {
       "id": 3,
       "name": "Vegan Burger",
       "description": "Whether you're a dedicated vegan or simply craving a healthier option, our vegan burger promises to satisfy your cravings while nourishing your body and soul.",
@@ -27,29 +28,35 @@
       "id": 1,
       "username": "john_doe",
       "password": "password123",
-      "email": "john@example.com"
+      "email": "john@example.com",
+      "orders": [
+        {
+          "orderid": 1,
+          "burgerId": 2,
+          "quantity": 2,
+          "status": "pending"
+        },
+        {
+          "orderid": 2,
+          "burgerId": 1,
+          "quantity": 1,
+          "status": "completed"
+        }
+      ]
     },
     {
       "id": 2,
       "username": "jane_doe",
       "password": "password456",
-      "email": "jane@example.com"
-    }
-  ],
-  "orders": [
-    {
-      "id": 1,
-      "userId": 1,
-      "burgerId": 2,
-      "quantity": 2,
-      "status": "pending"
+      "email": "jane@example.com",
+      "orders": []
     },
     {
-      "id": 2,
-      "userId": 2,
-      "burgerId": 1,
-      "quantity": 1,
-      "status": "completed"
+      "id": 3,
+      "username": "user",
+      "password": "password",
+      "email": "user@gmail.com",
+      "orders": [  ]
     }
   ]
 }
