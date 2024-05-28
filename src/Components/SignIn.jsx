@@ -6,13 +6,15 @@ import { UserContext } from '../Context/UserContext';
 
 function SignIn() {
 
-  /* Variabler --------------------------------------*/
+  /* Variabler -------------------------------*/
   const [username, setUser] = useState('');
   const [password, setPassword] = useState('');
-  const { users, loading, error, login } = useContext(UserContext);
   const navigate = useNavigate(); 
 
-    /* Eventhandlers--------------------------- */
+  /* Contextobjekt --------------------------------------*/
+  const { users, loading, error, login } = useContext(UserContext);
+
+ /* Eventhandlers--------------------------- */
   const handleUserNameChange = (e) => setUser(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
 
@@ -28,13 +30,12 @@ function SignIn() {
       console.log('An error occurred while fetching the user database. Please try again later.');
       return;
     }
-
     const user = users.find(user => user.username === username && user.password === password);
 
     if (user) 
     {
-        login(user.id); 
-        navigate(`/Profile/${user.id}`);
+        login(user.id); // sätt usern som loggedInUser 
+        navigate(`/Profile/${user.id}`); // skicka vidare usern till profilsidan 
     } 
     else 
     {
@@ -43,9 +44,12 @@ function SignIn() {
   };
 
   return (
-    <div className="container d-flex">
-      <Form className="w-100">
-        <Form.Group className="mb-3 mt-5" controlId="formGroupUserName">
+    <>
+    <div className="container mt-3 ">
+      <Form>
+        <div className='row p-3'>
+          <div className='col-lg-4 '>
+        <Form.Group className="mb-3" controlId="formGroupUserName">
           <Form.Label>Username</Form.Label>
           <Form.Control 
             type="username" 
@@ -54,6 +58,10 @@ function SignIn() {
             onChange={handleUserNameChange} 
           />
         </Form.Group>
+        </div>
+        </div>
+           <div className='row p-3'>
+             <div className='col-lg-4'>
         <Form.Group className="mb-3" controlId="formGroupPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control 
@@ -63,11 +71,22 @@ function SignIn() {
             onChange={handlePasswordChange} 
           />
         </Form.Group>
-        <Button variant="primary" onClick={handleSignIn}>
+        </div>
+        </div>
+        <div className='row p-3'>
+          <div className='col-lg-4'>
+        <Button variant="light" className='m-1' onClick={handleSignIn}>
           Sign In
         </Button>
+           <Button variant="light" className='m-1' onClick={handleSignIn}>
+          Register
+        </Button>
+        </div>
+        </div>
       </Form>
     </div>
+  
+    </>
   );
 }
 

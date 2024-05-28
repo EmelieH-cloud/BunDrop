@@ -32,7 +32,7 @@
     },
     {
       "id": 2,
-      "userId": 2,
+      "userId": 3,
       "burgerIds": [2],
       "orderDate": "2024-05-27T12:30:00.000Z"
     },
@@ -50,6 +50,7 @@
       "username": "john_doe",
       "password": "password123",
       "email": "john@example.com"
+     
     
     },
     {
@@ -58,12 +59,14 @@
       "password": "password456",
       "email": "jane@example.com"
     
+    
     },
     {
       "id": 3,
       "username": "user",
       "password": "password",
       "email": "user@gmail.com"
+  
    
     }
   ]
