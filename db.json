@@ -28,14 +28,14 @@
       "name": "Coke",
       "description": "Refreshing Coca-Cola",
       "price": 1.99,
-      "image": "./src/assets/drink1.png"
+      "image": "./src/assets/drinks1.png"
     },
     {
       "id": 2,
       "name": "Lemonade",
       "description": "Tangy Lemonade",
       "price": 2.49,
-      "image": "./src/assets/drink2.png"
+      "image": "./src/assets/drinks2.png"
     }
   ],
   "desserts": [

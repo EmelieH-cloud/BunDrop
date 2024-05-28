@@ -2,9 +2,9 @@ import React from 'react'
 
 function DrinkCard( {drink}) {
     return ( <>
-    <div className='my-burgercard-container'>
+    <div className='my-card-container'>
       {drink.image ? // om bild finns... visa den
-       (<img src={drink.image} alt={drink.name} className="burger-image" /> )
+       (<img src={drink.image} alt={drink.name} className="card-image" /> )
         : 
         // ...annars "image not available"
          (<div className="no-image">Image not available</div> )}

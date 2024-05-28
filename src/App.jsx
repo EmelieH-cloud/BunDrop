@@ -5,17 +5,13 @@ import SignInPage from './Pages/SignInPage';
 import Menupage from './Pages/Menupage';
 import UserProfilePage from './Pages/UserProfilePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { BurgerProvider } from './Context/BurgerContext';
-import { DrinksProvider } from './Context/DrinksContext';
-import { UserProvider } from './Context/UserContext';
+import ContextProvider from './Context/ContextProvider';
 
 function App() {
 
   return (
     <>
-    <BurgerProvider>
-      <DrinksProvider>
-    <UserProvider>
+    <ContextProvider>
     <Router>
         <Routes>
             <Route path="/" element={<Homepage/>} />
@@ -24,9 +20,7 @@ function App() {
             <Route path="/Profile/:id" element={<UserProfilePage/>} />
         </Routes>
     </Router>
-    </UserProvider>
-    </DrinksProvider>
-</BurgerProvider>
+ </ContextProvider>
     </>
   )
 }

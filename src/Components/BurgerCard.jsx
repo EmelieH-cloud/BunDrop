@@ -2,9 +2,9 @@ import React from 'react'
 
 function BurgerCard( {burger}) {
     return ( <>
-    <div className='my-burgercard-container'>
+    <div className='my-card-container'>
       {burger.image ? // om bild finns... visa den
-       (<img src={burger.image} alt={burger.name} className="burger-image" /> )
+       (<img src={burger.image} alt={burger.name} className="card-image" /> )
         : 
         // ...annars "image not available"
          (<div className="no-image">Image not available</div> )}

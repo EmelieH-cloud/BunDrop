@@ -70,9 +70,6 @@ img
   background: var(--color-dark);
 }
 
-/* 3. Navbar ----------------------------------------------*/
-
-
 /* 4. Menu ----------------------------------------------*/
 
 .my-filter-container
@@ -103,23 +100,14 @@ img
 
 }
 
-.my-menu-container
-{
-  background-color: var(--color-dark);
-  width: 95%; 
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
 
-.burger-image 
+.card-image 
 { 
   width: auto;
   border-radius: 5%; 
-
 }
 
-.my-burgercard-container
+.my-card-container
 {
   display: flex;
   justify-content: center;
@@ -129,7 +117,7 @@ img
 @media (min-width: 1200px) 
 {
   /* Stora skärmar */
-  .burger-image {
+  .card-image {
     height: 250px;
   }
 }
@@ -137,7 +125,7 @@ img
 @media (max-width: 767.98px) {
 
   /* Små skärmar */
-  .burger-image 
+  .card-image 
   {
     height: max-content;
   }
