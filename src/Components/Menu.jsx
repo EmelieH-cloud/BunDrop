@@ -1,14 +1,17 @@
 
 import BurgerCard from './BurgerCard';
+import DrinkCard from './DrinkCard';
 import BurgerContext from '../Context/BurgerContext';
+import DrinksContext from '../Context/DrinksContext';
 import { useContext } from 'react';
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
 function Menu() 
 {
-    // Hämta burgarna med BurgerContext 
+    // Hämta meny från db.json med context 
      const { burgers, loading, error } = useContext(BurgerContext);
+     const { drinks, loadingDrinks, errorDrinks } = useContext(DrinksContext);
      // state-variabel för att hålla koll på valda filter. 
      const [chosenCategories, setCategories] = useState(['none']);
      
@@ -29,13 +32,11 @@ function Menu()
   }
 }
 
-
-      // om det inte returnerades någon burgers-lista, utvärdera nedan if-satser. 
-    if (loading) 
+    if (loading || loadingDrinks ) 
      {
      return <div>Loading...</div>;
      }
-     if (error) 
+     if (error || errorDrinks) 
     {
     return <div>Error: {error}</div>;
     }
@@ -66,6 +67,17 @@ function Menu()
           {burgers.map(burger => (
             <div className='col-lg-3' key={burger.id}>
               <BurgerCard burger={burger} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      
+    <div className='container mt-4'>
+        <div className='row'>
+          {drinks.map(drink=> (
+            <div className='col-lg-3' key={drink.id}>
+              <DrinkCard drink={drink} />
             </div>
           ))}
         </div>

@@ -2,7 +2,6 @@ import React from 'react'
 
 function BurgerCard( {burger}) {
     return ( <>
-
     <div className='my-burgercard-container'>
       {burger.image ? // om bild finns... visa den
        (<img src={burger.image} alt={burger.name} className="burger-image" /> )
@@ -14,7 +13,6 @@ function BurgerCard( {burger}) {
         <h2>{burger.name}</h2>
         <p>Description: {burger.description}</p>
         <p>Price: {burger.price}</p>
-   
     </div>
  
     </> );

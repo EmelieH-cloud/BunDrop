@@ -1,6 +1,5 @@
 {
-  "burgers": 
-  [
+  "burgers": [
     {
       "id": 1,
       "name": "Classic Burger",
@@ -23,7 +22,55 @@
       "image": "./src/assets/3.png"
     }
   ],
-   "orders": [
+  "drinks": [
+    {
+      "id": 1,
+      "name": "Coke",
+      "description": "Refreshing Coca-Cola",
+      "price": 1.99,
+      "image": "./src/assets/drink1.png"
+    },
+    {
+      "id": 2,
+      "name": "Lemonade",
+      "description": "Tangy Lemonade",
+      "price": 2.49,
+      "image": "./src/assets/drink2.png"
+    }
+  ],
+  "desserts": [
+    {
+      "id": 1,
+      "name": "Chocolate Brownie",
+      "description": "Decadent Chocolate Brownie",
+      "price": 3.99,
+      "image": "./src/assets/ds-1.png"
+    },
+    {
+      "id": 2,
+      "name": "Vanilla Ice Cream",
+      "description": "Creamy Vanilla Ice Cream",
+      "price": 2.99,
+      "image": "./src/assets/ds-2.png"
+    }
+  ],
+  "sides": [
+    {
+      "id": 1,
+      "name": "French Fries",
+      "description": "Classic French Fries",
+      "price": 2.99,
+      "image": "./src/assets/side1.png"
+    },
+    {
+      "id": 2,
+      "name": "Onion Rings",
+      "description": "Crispy Onion Rings",
+      "price": 3.49,
+      "image": "./src/assets/side2.png"
+    }
+  ],
+  "orders": [
     {
       "id": 1,
       "userId": 1,
@@ -36,38 +83,31 @@
       "burgerIds": [2],
       "orderDate": "2024-05-27T12:30:00.000Z"
     },
-      {
+    {
       "id": 3,
       "userId": 3,
       "burgerIds": [2],
       "orderDate": "2024-05-27T12:30:00.000Z"
     }
   ],
-  "users": 
-  [
+  "users": [
     {
       "id": 1,
       "username": "john_doe",
       "password": "password123",
       "email": "john@example.com"
-     
-    
     },
     {
       "id": 2,
       "username": "jane_doe",
       "password": "password456",
       "email": "jane@example.com"
-    
-    
     },
     {
       "id": 3,
       "username": "user",
       "password": "password",
       "email": "user@gmail.com"
-  
-   
     }
   ]
 }

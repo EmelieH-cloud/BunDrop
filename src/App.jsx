@@ -6,6 +6,7 @@ import Menupage from './Pages/Menupage';
 import UserProfilePage from './Pages/UserProfilePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { BurgerProvider } from './Context/BurgerContext';
+import { DrinksProvider } from './Context/DrinksContext';
 import { UserProvider } from './Context/UserContext';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
     <BurgerProvider>
+      <DrinksProvider>
     <UserProvider>
     <Router>
         <Routes>
@@ -23,6 +25,7 @@ function App() {
         </Routes>
     </Router>
     </UserProvider>
+    </DrinksProvider>
 </BurgerProvider>
     </>
   )

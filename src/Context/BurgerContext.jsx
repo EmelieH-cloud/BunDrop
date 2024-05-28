@@ -3,7 +3,6 @@ import useFetch from '../CustomHooks/useFetch';
 
 
 export const BurgerContext = createContext();
-
 export const BurgerProvider = ({ children }) => {
   const { data: burgers, loading, error } = useFetch('http://localhost:3000/burgers');
 
