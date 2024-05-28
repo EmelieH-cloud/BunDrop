@@ -1,16 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import { UserContext } from '../Context/UserContext';
 import Accordion from 'react-bootstrap/Accordion';
 
 
 function UserOrders() 
 {
+  // Hämta den inloggade usern och dess ordrar 
   const { orders, loggedInUser } = useContext(UserContext);
+
 
   if (!loggedInUser) 
   {
     return <p>Please log in to see your orders.</p>;
   }
+  
+
 
   return (
     <>
@@ -20,10 +24,9 @@ function UserOrders()
         <Accordion defaultActiveKey="0" >
           {orders.map((order, index) => (
             <Accordion.Item eventKey={index.toString()} key={order.id}>
-              <Accordion.Header>Order ID: {order.id} </Accordion.Header>
+              <Accordion.Header> <h4>Order ID: {order.id}</h4> </Accordion.Header>
               <Accordion.Body>
                 <p>Order Date: {new Date(order.orderDate).toLocaleDateString()}</p>
-                <p>Burgers: {order.burgerIds.join(', ')}</p>
               </Accordion.Body>
             </Accordion.Item>
           ))}

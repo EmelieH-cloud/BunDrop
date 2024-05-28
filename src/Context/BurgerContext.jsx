@@ -7,8 +7,9 @@ export const BurgerContext = createContext();
 export const BurgerProvider = ({ children }) => {
   const { data: burgers, loading, error } = useFetch('http://localhost:3000/burgers');
 
+
   return (
-    <BurgerContext.Provider value={{ burgers, loading, error }}>
+    <BurgerContext.Provider value={{ burgers, loading, error}}>
       {children}
     </BurgerContext.Provider>
   );

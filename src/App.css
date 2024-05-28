@@ -13,7 +13,6 @@
 {
   --color-dark: #295f4e;
   --color-light: #cdcf9de4;
-  --color-medium: #baaf10;
   --color-body: #f4e5c2;
   --transition: all 0.5s ease; 
 }
@@ -76,14 +75,73 @@ img
 
 /* 4. Menu ----------------------------------------------*/
 
-#menu
+.my-filter-container
 {
-  min-height: 100vh;
-  background-color: var(--color-dark);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.burger-image { border-radius: 5%; }
+@media (max-width: 767.98px) {
+  /* små skärmar - lägg alla checkboxar ovanpå varandra */
+  .my-checkbox-container
+  {
+    border-bottom: 2px solid var(--color-medium);
+    background-color: var(--color-light);
+  }
+}
 
+@media (min-width: 1200px) {
+  /* Stora skärmar - lägg alla checkboxar bredvid varandra */
+.my-checkbox-container 
+{
+    display: flex; 
+    padding-left: 4%; 
+    border-bottom: 2px solid var(--color-medium);
+    background-color: var(--color-light);
+  }
+
+}
+
+.my-menu-container
+{
+  background-color: var(--color-dark);
+  width: 95%; 
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.burger-image 
+{ 
+  width: auto;
+  border-radius: 5%; 
+
+}
+
+.my-burgercard-container
+{
+  display: flex;
+  justify-content: center;
+}
+
+/* Sätt olika höjd på burger-image beroende på skärmstorlek. Bredden är auto.*/
+@media (min-width: 1200px) 
+{
+  /* Stora skärmar */
+  .burger-image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 767.98px) {
+
+  /* Små skärmar */
+  .burger-image 
+  {
+    height: max-content;
+  }
+}
 /* 5. Footer ----------------------------------------- */
 
 footer

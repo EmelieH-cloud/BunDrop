@@ -22,7 +22,6 @@ function ProfileNavbar()
             <Container>
                 <Navbar.Brand>
                         <img src={MemberLogo} alt="logo" className='logo'/>
-                  
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

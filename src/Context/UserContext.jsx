@@ -23,7 +23,7 @@ export function UserProvider({ children })
       // Hämta alla ordrar med detta userId 
       const response = await fetch(`http://localhost:3000/orders?userId=${userId}`);
       const data = await response.json();
-      setOrders(data); // uppdatera state-variabeln för orders 
+      setOrders(data); // sätt dessa orders till state 
     } catch (error) 
     {
       console.error('Failed to fetch orders:', error);
