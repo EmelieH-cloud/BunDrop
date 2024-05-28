@@ -14,4 +14,4 @@ export const DessertProvider = ({ children }) => {
   );
 };
 
-export default BurgerContext;
+export default DessertsContext;
