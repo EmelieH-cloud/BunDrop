@@ -6,8 +6,8 @@
 4. Menu
 5. Footer
 6. Showcase 
+7. Lexicon
 */
-
 /* variabler --------------------*/
 :root
 {
@@ -133,6 +133,29 @@ img
   justify-content: center;
 }
 
+.dynamic-search-container
+{
+  background-color: var(--color-extra-dark);
+  width: max-content;
+  padding: 3%; 
+  margin: 0 auto;
+  margin-bottom: 4%; 
+}
+
+ .my-lexicon-container 
+ {
+   position: absolute;
+   right: 1%; 
+   top: 30%; 
+
+ }
+
+    .my-lexicon-container img
+    {
+     height: 180px;
+     border: 5px solid var(--color-extra-dark);
+    }
+
 /* Sätt olika höjd på burger-image beroende på skärmstorlek. Bredden är auto.*/
 @media (min-width: 1200px) 
 {
@@ -140,6 +163,7 @@ img
   .card-image {
     height: 250px;
   }
+
 }
 
 @media (max-width: 767.98px) {
@@ -149,7 +173,15 @@ img
   {
     height: max-content;
   }
+   .my-lexicon-container 
+   {
+   display: none;
+
 }
+ 
+}
+
+
 
 /* 5. Footer ----------------------------------------- */
 
@@ -211,3 +243,4 @@ footer
 {
    background-color: #F8F9FA;
 }
+

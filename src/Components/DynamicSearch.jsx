@@ -73,14 +73,17 @@ function DynamicSearch()
 
  return (
   <>
-    <div>
+    <div className='container text-center'>
+        <div className='dynamic-search-container'>
+        <p>Unleash the Dynamic Search - Find what you're looking for faster than ever.</p>
       <input
         type="text"
         placeholder="Search entire menu"
         value={searchInput}
         onChange={handleChange}
+        className='mb-4'
       />
-  
+      </div>
       {sidesFilter.length > 0 && (
         <div className='container'>
           <div className='row'>
@@ -92,7 +95,6 @@ function DynamicSearch()
           </div>
         </div>
       )}
-
 {burgerFilter.length > 0 && (
         <div className='container'>
           <div className='row'>

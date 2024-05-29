@@ -4,7 +4,7 @@ import BurgerCard from './BurgerCard';
 import DrinkCard from './DrinkCard';
 import DessertCard from './DessertCard';
 import SideCard from './SideCard';
-import DynamicSearch from './DynamicSearch';
+import LexiconLogo from '../assets/lexicon-logo.png';
 import { BurgerContext } from '../Context/BurgerContext';
 import { DrinksContext } from '../Context/DrinksContext';
 import { SideContext } from '../Context/SideContext';
@@ -105,8 +105,6 @@ function Menu()
       {
          setAllIsChecked(false);
       }
-
-
     }
   }
   if (burgerLoading || drinkLoading || loadingDesserts) 
@@ -178,8 +176,13 @@ function Menu()
         />
    
       </div>
-        <p>Feeling old-fashioned?</p>
-        <Nav.Link as={Link} to="/Lexicon" className='fs-2' >Search our lexicon!</Nav.Link> 
+
+      <div className='my-lexicon-container'>
+        <Nav.Link as={Link} to="/Lexicon" >
+          <img src={LexiconLogo} alt="lexicon"/>
+          </Nav.Link> 
+        </div>
+
     </div>
   </Form>
 </div>
