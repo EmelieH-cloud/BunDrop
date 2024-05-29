@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import BurgerCard from './BurgerCard';
 import DrinkCard from './DrinkCard';
@@ -11,20 +11,14 @@ import {DessertsContext} from '../Context/DessertsContext';
 
 function Menu() 
 {
-  // state-variabler för att hålla koll på filtret och synligheten för olika cards:
+  // state-variabler för att hålla koll på filtret och kontrollera synligheten för olika cards:
   const [chosenCategories, setCategories] = useState(['none']);
   const [showDrinks, setShowDrinks] = useState(false);
   const [showBurgers, setShowBurgers] = useState(false);
   const [showDesserts, setShowDesserts] = useState(false);
-   const [showSides, setShowSides] = useState(false);
-
-    useEffect(() => {
-    // Visa alla kategorier direkt från början.
-        setShowBurgers(true);
-        setShowDrinks(true);
-        setShowDesserts(true);
-        setShowSides(true);
-  }, []); 
+  const [showSides, setShowSides] = useState(false);
+   const [showAllisChecked, setAllIsChecked] = useState(false);
+   const [anyCategoryIsChecked, setAnyCategoryIsChecked] = useState(false);
 
   // Hämta data från db.json med hjälp av kontextobjekten: 
   const { burgers, loading: burgerLoading, error: burgerError } = useContext(BurgerContext);
@@ -34,8 +28,9 @@ function Menu()
 
   function handleCheckboxChange(event) 
   {
+
     const { name, checked } = event.target; 
-    // destrukturera egenskaperna 'name' och 'checked' från checkboxen som triggat eventet 
+    // destrukturera egenskaperna 'name' och 'checked' från checkboxen (target) som triggat eventet 
 
     if (checked && !chosenCategories.includes(name)) 
     {
@@ -43,21 +38,26 @@ function Menu()
       if (name === 'Drinks') 
       {
         setShowDrinks(true);
+        setAnyCategoryIsChecked(true);
       } 
       else if (name === 'Burgers') 
       {
         setShowBurgers(true);
+         setAnyCategoryIsChecked(true);
       }
        else if (name === 'Desserts') 
       {
         setShowDesserts(true);
+         setAnyCategoryIsChecked(true);
       }
        else if (name === 'Sides') 
       {
         setShowSides(true);
+        setAnyCategoryIsChecked(true);
       }
        else if (name === 'Show all') 
       {
+        setAllIsChecked(true);
         setShowBurgers(true);
         setShowDrinks(true);
         setShowDesserts(true);
@@ -68,31 +68,42 @@ function Menu()
      {
       // uppdatera listan 
       setCategories(chosenCategories.filter(category => category !== name));
-   
-      // uppdatera UI 
+
+      if (!chosenCategories.includes('Burgers') && ('Drinks') && ('Desserts') && ('Sides'))
+      {
+         setAnyCategoryIsChecked(false);
+      }
       if (name === 'Drinks') 
       {
         setShowDrinks(false);
       }
-       else if (name === 'Burgers') 
+       if (name === 'Burgers') 
       {
         setShowBurgers(false);
       }
-       else if (name === 'Desserts') 
+      if (name === 'Desserts') 
       {
         setShowDesserts(false);
       }
-         else if (name === 'Sides') 
+      if (name === 'Sides') 
       {
         setShowSides(false);
       }
-       else if (name === 'Show all')
+      if (name === 'Show all')
        {
+        setAllIsChecked(false);
         setShowBurgers(false);
         setShowDrinks(false);
         setShowDesserts(false);
         setShowSides(false);
       }
+
+      if (chosenCategories.includes('Burgers' || 'Sides' || 'Desserts' || 'Drinks'))
+      {
+         setAllIsChecked(false);
+      }
+
+
     }
   }
   if (burgerLoading || drinkLoading || loadingDesserts) 
@@ -119,6 +130,7 @@ function Menu()
           id={`default-Burgers`}
           name="Burgers"
           label="Burgers"
+          disabled={showAllisChecked}
           onChange={handleCheckboxChange}
         />
       </div>
@@ -128,6 +140,7 @@ function Menu()
           id={`default-Drinks`}
           name="Drinks"
           label="Drinks"
+          disabled={showAllisChecked}
           onChange={handleCheckboxChange}
         />
       </div>
@@ -137,6 +150,7 @@ function Menu()
           id={`default-Sides`}
           name="Sides"
           label="Sides"
+          disabled={showAllisChecked}
           onChange={handleCheckboxChange}
         />
       </div>
@@ -146,6 +160,7 @@ function Menu()
           id={`default-Desserts`}
           name="Desserts"
           label="Desserts"
+          disabled={showAllisChecked}
           onChange={handleCheckboxChange}
         />
       </div>
@@ -155,6 +170,7 @@ function Menu()
           id={`default-ShowAll`}
           name="Show all"
           label="Show all"
+          disabled={anyCategoryIsChecked}
           onChange={handleCheckboxChange}
         />
       </div>
