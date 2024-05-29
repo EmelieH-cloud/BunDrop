@@ -20,6 +20,13 @@
       "description": "Whether you're a dedicated vegan or simply craving a healthier option, our vegan burger promises to satisfy your cravings while nourishing your body and soul.",
       "price": 7.99,
       "image": "./src/assets/3.png"
+    },
+    {
+      "id": 4,
+      "name": "Spicy Jalapeno Burger",
+      "description": "A fiery burger with jalapenos, pepper jack cheese, and a spicy sauce.",
+      "price": 6.99,
+      "image": "./src/assets/4.png"
     }
   ],
   "drinks": [
@@ -36,6 +43,20 @@
       "description": "Tangy Lemonade",
       "price": 2.49,
       "image": "./src/assets/drinks2.png"
+    },
+      {
+      "id": 3,
+      "name": "Iced Tea",
+      "description": "Chilled Iced Tea with a hint of lemon",
+      "price": 2.29,
+      "image": "./src/assets/drinks3.png"
+    },
+    {
+      "id": 4,
+      "name": "Root Beer",
+      "description": "Classic Root Beer",
+      "price": 2.49,
+      "image": "./src/assets/drinks4.png"
     }
   ],
   "desserts": [
@@ -52,6 +73,20 @@
       "description": "Creamy Vanilla Ice Cream",
       "price": 2.99,
       "image": "./src/assets/ds-2.png"
+    },
+      {
+      "id": 3,
+      "name": "Donuts",
+      "description": "Freshly baked donuts with a sprinkle of sugar",
+      "price": 1.99,
+      "image": "./src/assets/ds-3.png"
+    },
+      {
+      "id": 4,
+      "name": "Cheesecake",
+      "description": "Creamy cheesecake with a graham cracker crust",
+      "price": 4.99,
+      "image": "./src/assets/ds-4.png"
     }
   ],
   "sides": [
@@ -68,6 +103,20 @@
       "description": "Crispy Onion Rings",
       "price": 3.49,
       "image": "./src/assets/side2.png"
+    },
+     {
+      "id": 3,
+      "name": "Mashed Potatoes",
+      "description": "Creamy mashed potatoes with gravy",
+      "price": 2.79,
+      "image": "./src/assets/side3.png"
+    },
+    {
+      "id": 4,
+      "name": "Sweet Potato Fries",
+      "description": "Crispy sweet potato fries",
+      "price": 3.29,
+      "image": "./src/assets/side4.png"
     }
   ],
   "orders": [

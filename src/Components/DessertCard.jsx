@@ -1,9 +1,10 @@
 import React from 'react'
 
-function DessertCard( {dessert}) {
+function DessertCard( {dessert}) 
+{
     return ( <>
     <div className='my-card-container'>
-      {burger.image ? // om bild finns... visa den
+      {dessert.image ? // om bild finns... visa den
        (<img src={dessert.image} alt={dessert.name} className="card-image" /> )
         : 
         // ...annars "image not available"
@@ -11,8 +12,8 @@ function DessertCard( {dessert}) {
           </div>
       <div className="burger-details text-center">
         <h2>{dessert.name}</h2>
-        <p>Description: {dessert.description}</p>
-        <p>Price: {dessert.price}</p>
+        <p>{dessert.description}</p>
+        <p>Price: {dessert.price} $</p>
     </div>
  
     </> );

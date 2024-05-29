@@ -11,8 +11,8 @@ function BurgerCard( {burger}) {
           </div>
       <div className="burger-details text-center">
         <h2>{burger.name}</h2>
-        <p>Description: {burger.description}</p>
-        <p>Price: {burger.price}</p>
+        <p>{burger.description}</p>
+        <p>Price: {burger.price} $</p>
     </div>
  
     </> );

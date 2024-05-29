@@ -1,21 +1,22 @@
 import React from 'react'
 
-function DrinkCard( {drink}) {
+function SideCard( {side}) 
+{
     return ( <>
     <div className='my-card-container'>
-      {drink.image ? // om bild finns... visa den
-       (<img src={drink.image} alt={drink.name} className="card-image" /> )
+      {side.image ? // om bild finns... visa den
+       (<img src={side.image} alt={side.name} className="card-image" /> )
         : 
         // ...annars "image not available"
          (<div className="no-image">Image not available</div> )}
           </div>
       <div className="burger-details text-center">
-        <h2>{drink.name}</h2>
-        <p>{drink.description}</p>
-        <p>Price: {drink.price} $</p>
+        <h2>{side.name}</h2>
+        <p>{side.description}</p>
+        <p>Price: {side.price} $</p>
     </div>
  
     </> );
 }
 
-export default DrinkCard;
+export default SideCard;

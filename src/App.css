@@ -12,7 +12,8 @@
 :root
 {
   --color-dark: #295f4e;
-  --color-light: #cdcf9de4;
+  --color-extra-dark: #17382e;
+  --color-light: #c5c55fe4;
   --color-body: #f4e5c2;
   --transition: all 0.5s ease; 
 }
@@ -77,30 +78,49 @@ img
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 5%; 
 }
 
-@media (max-width: 767.98px) {
+
+@media (max-width: 767.98px)
+ {
   /* små skärmar - lägg alla checkboxar ovanpå varandra */
   .my-checkbox-container
   {
     border-bottom: 2px solid var(--color-medium);
-    background-color: var(--color-light);
+    background-color: var(--color-extra-dark);
   }
 }
 
-@media (min-width: 1200px) {
-  /* Stora skärmar - lägg alla checkboxar bredvid varandra */
-.my-checkbox-container 
+.my-menu-description-container 
+{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--color-extra-dark);
+  color: white; 
+}
+
+.my-menu-description-container p
+{
+  width: 85%; 
+ align-self: center; 
+}
+
+@media (min-width: 1200px) { 
+  /* Stora skärmar*/
+
+.my-checkbox-container  
+/* - lägg alla checkboxar bredvid varandra */
 {
     display: flex; 
-    padding-left: 4%; 
+    justify-content: center;
     border-bottom: 2px solid var(--color-medium);
-    background-color: var(--color-light);
+    background-color: var(--color-extra-dark);
   }
 
+
 }
-
-
 .card-image 
 { 
   width: auto;
@@ -130,6 +150,7 @@ img
     height: max-content;
   }
 }
+
 /* 5. Footer ----------------------------------------- */
 
 footer
