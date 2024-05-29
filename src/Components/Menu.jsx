@@ -4,6 +4,7 @@ import BurgerCard from './BurgerCard';
 import DrinkCard from './DrinkCard';
 import DessertCard from './DessertCard';
 import SideCard from './SideCard';
+import DynamicSearch from './DynamicSearch';
 import { BurgerContext } from '../Context/BurgerContext';
 import { DrinksContext } from '../Context/DrinksContext';
 import { SideContext } from '../Context/SideContext';
@@ -71,7 +72,7 @@ function Menu()
 
       if (!chosenCategories.includes('Burgers') && ('Drinks') && ('Desserts') && ('Sides'))
       {
-         setAnyCategoryIsChecked(false);
+         setAnyCategoryIsChecked(false); // Gör 'Show All'-knappen tillgänglig 
       }
       if (name === 'Drinks') 
       {
@@ -164,7 +165,7 @@ function Menu()
           onChange={handleCheckboxChange}
         />
       </div>
-      <div className='p-2 fs-4'>
+      <div className='p-2 fs-4 border border-white'>
         <Form.Check
           type="checkbox"
           id={`default-ShowAll`}
@@ -177,6 +178,8 @@ function Menu()
     </div>
   </Form>
 </div>
+
+<DynamicSearch/>
 
       {showBurgers && (
         <div className='container'>
