@@ -9,6 +9,8 @@ import { BurgerContext } from '../Context/BurgerContext';
 import { DrinksContext } from '../Context/DrinksContext';
 import { SideContext } from '../Context/SideContext';
 import {DessertsContext} from '../Context/DessertsContext';
+import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom'; 
 
 function Menu() 
 {
@@ -165,7 +167,7 @@ function Menu()
           onChange={handleCheckboxChange}
         />
       </div>
-      <div className='p-2 fs-4 border border-white'>
+      <div className='p-2 fs-4'>
         <Form.Check
           type="checkbox"
           id={`default-ShowAll`}
@@ -174,12 +176,13 @@ function Menu()
           disabled={anyCategoryIsChecked}
           onChange={handleCheckboxChange}
         />
+   
       </div>
+        <p>Feeling old-fashioned?</p>
+        <Nav.Link as={Link} to="/Lexicon" className='fs-2' >Search our lexicon!</Nav.Link> 
     </div>
   </Form>
 </div>
-
-<DynamicSearch/>
 
       {showBurgers && (
         <div className='container'>

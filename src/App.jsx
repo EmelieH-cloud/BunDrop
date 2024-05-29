@@ -3,6 +3,7 @@ import './App.css'
 import Homepage from './Pages/Homepage'
 import SignInPage from './Pages/SignInPage';
 import Menupage from './Pages/Menupage';
+import LexiconPage from './Pages/LexiconPage';
 import UserProfilePage from './Pages/UserProfilePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ContextProvider from './Context/ContextProvider';
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Homepage/>} />
             <Route path="/Menu" element={<Menupage/>}/>
             <Route path="/SignIn" element={<SignInPage/>} />
+            <Route path="/Lexicon" element={<LexiconPage/>} />
             <Route path="/Profile/:id" element={<UserProfilePage/>} />
         </Routes>
     </Router>
