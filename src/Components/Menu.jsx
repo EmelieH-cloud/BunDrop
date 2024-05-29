@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import BurgerCard from './BurgerCard';
 import DrinkCard from './DrinkCard';
@@ -17,6 +17,14 @@ function Menu()
   const [showBurgers, setShowBurgers] = useState(false);
   const [showDesserts, setShowDesserts] = useState(false);
    const [showSides, setShowSides] = useState(false);
+
+    useEffect(() => {
+    // Visa alla kategorier direkt från början.
+        setShowBurgers(true);
+        setShowDrinks(true);
+        setShowDesserts(true);
+        setShowSides(true);
+  }, []); 
 
   // Hämta data från db.json med hjälp av kontextobjekten: 
   const { burgers, loading: burgerLoading, error: burgerError } = useContext(BurgerContext);
@@ -100,25 +108,59 @@ function Menu()
   return (
     <>
       <div className='my-filter-container text-white'>
-        <Form>
-          <div className='my-menu-description-container'>
-         <h2 className='mt-4'>Menu Selection:</h2>
-         </div>
-          <div className='my-checkbox-container'>
-            {['Burgers', 'Drinks', 'Sides', 'Desserts', 'Show all'].map((category) => (
-              <div key={category} className='p-2 fs-4'>
-                <Form.Check
-                  type="checkbox"
-                  id={`default-${category}`}
-                  name={category}
-                  label={category}
-                  onChange={handleCheckboxChange}
-                />
-              </div>
-            ))}
-          </div>
-        </Form>
+  <Form>
+    <div className='my-menu-description-container'>
+      <h2 className='mt-4'>Menu Selection:</h2>
+    </div>
+    <div className='my-checkbox-container'>
+      <div className='p-2 fs-4'>
+        <Form.Check
+          type="checkbox"
+          id={`default-Burgers`}
+          name="Burgers"
+          label="Burgers"
+          onChange={handleCheckboxChange}
+        />
       </div>
+      <div className='p-2 fs-4'>
+        <Form.Check
+          type="checkbox"
+          id={`default-Drinks`}
+          name="Drinks"
+          label="Drinks"
+          onChange={handleCheckboxChange}
+        />
+      </div>
+      <div className='p-2 fs-4'>
+        <Form.Check
+          type="checkbox"
+          id={`default-Sides`}
+          name="Sides"
+          label="Sides"
+          onChange={handleCheckboxChange}
+        />
+      </div>
+      <div className='p-2 fs-4'>
+        <Form.Check
+          type="checkbox"
+          id={`default-Desserts`}
+          name="Desserts"
+          label="Desserts"
+          onChange={handleCheckboxChange}
+        />
+      </div>
+      <div className='p-2 fs-4'>
+        <Form.Check
+          type="checkbox"
+          id={`default-ShowAll`}
+          name="Show all"
+          label="Show all"
+          onChange={handleCheckboxChange}
+        />
+      </div>
+    </div>
+  </Form>
+</div>
 
       {showBurgers && (
         <div className='container'>
