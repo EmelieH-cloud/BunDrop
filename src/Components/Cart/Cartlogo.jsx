@@ -32,6 +32,7 @@ function CartLogo()
    {
 
     width: '120px', 
+    border: '1px solid black'
     
   };
     
@@ -39,7 +40,7 @@ function CartLogo()
  <Button variant="primary" onClick={handleShow}>
             <img src={CartImg} alt="cart-image" style={cartStyle}/>
       </Button>
-      <Modal fullscreen={true} show={show} onHide={handleClose} restoreFocus={true} restoreFocusOptions={{ preventScroll: true }}>
+      <Modal show={show} size='lg'  onHide={handleClose} restoreFocus={true} restoreFocusOptions={{ preventScroll: true }}>
         <Modal.Header closeButton>
           <Modal.Title> <img src={CartImg} alt="img" style={smallCart}/></Modal.Title>
         </Modal.Header>
