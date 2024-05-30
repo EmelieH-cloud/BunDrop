@@ -1,5 +1,6 @@
 import React, { useContext, useState} from 'react';
 import Form from 'react-bootstrap/Form';
+import FullMenu from './FullMenu';
 import BurgerCard from './BurgerCard';
 import DrinkCard from './DrinkCard';
 import DessertCard from './DessertCard';
@@ -20,8 +21,6 @@ function Menu()
   const [showBurgers, setShowBurgers] = useState(false);
   const [showDesserts, setShowDesserts] = useState(false);
   const [showSides, setShowSides] = useState(false);
-   const [showAllisChecked, setAllIsChecked] = useState(false);
-   const [anyCategoryIsChecked, setAnyCategoryIsChecked] = useState(false);
 
   // Hämta data från db.json med hjälp av kontextobjekten: 
   const { burgers, loading: burgerLoading, error: burgerError } = useContext(BurgerContext);
@@ -31,94 +30,65 @@ function Menu()
 
   function handleCheckboxChange(event) 
   {
-
-    const { name, checked } = event.target; 
-    // destrukturera egenskaperna 'name' och 'checked' från checkboxen (target) som triggat eventet 
-
+    const { name, checked } = event.target;  // destrukturera egenskaperna 'name' och 'checked' från checkboxen (target) som triggat eventet 
+   
+    //--------------------------------------------------------------------------
     if (checked && !chosenCategories.includes(name)) 
-    {
-      setCategories(prevCategories => [...prevCategories, name]);
+    // om en checkbox blivit checkad och name inte redan finns i chosenCategories
+    {  
+      // uppdatera chosenCategories: 
+       setCategories(prevCategories => [...prevCategories, name]);
+      
+    // vald kategori visas 
       if (name === 'Drinks') 
       {
         setShowDrinks(true);
-        setAnyCategoryIsChecked(true);
+       
       } 
       else if (name === 'Burgers') 
       {
-        setShowBurgers(true);
-         setAnyCategoryIsChecked(true);
+         setShowBurgers(true);
+    
       }
        else if (name === 'Desserts') 
       {
         setShowDesserts(true);
-         setAnyCategoryIsChecked(true);
+       
+         
       }
        else if (name === 'Sides') 
       {
-        setShowSides(true);
-        setAnyCategoryIsChecked(true);
-      }
-       else if (name === 'Show all') 
-      {
-        setAllIsChecked(true);
-        setShowBurgers(true);
-        setShowDrinks(true);
-        setShowDesserts(true);
-        setShowSides(true);
+        setShowSides(true); 
+       
       }
     } 
-    else   // Om den valda kategorin är unchecked och namnet redan finns i chosenCategories 
-     {
-      // uppdatera listan 
+
+     //---------------------------------------------------------
+    if (!checked && chosenCategories.includes(name))  
+     // Om den valda kategorin är unchecked och namnet finns i chosenCategories 
+      {
+      // uppdatera listan och ta bort den uncheckade kategorin 
       setCategories(chosenCategories.filter(category => category !== name));
-
-      if (!chosenCategories.includes('Burgers') && ('Drinks') && ('Desserts') && ('Sides'))
-      {
-         setAnyCategoryIsChecked(false); // Gör 'Show All'-knappen tillgänglig 
-      }
-      if (name === 'Drinks') 
-      {
-        setShowDrinks(false);
-      }
-       if (name === 'Burgers') 
-      {
-        setShowBurgers(false);
-      }
-      if (name === 'Desserts') 
-      {
-        setShowDesserts(false);
-      }
-      if (name === 'Sides') 
-      {
-        setShowSides(false);
-      }
-      if (name === 'Show all')
-       {
-        setAllIsChecked(false);
-        setShowBurgers(false);
-        setShowDrinks(false);
-        setShowDesserts(false);
-        setShowSides(false);
-      }
-
-      if (chosenCategories.includes('Burgers' || 'Sides' || 'Desserts' || 'Drinks'))
-      {
-         setAllIsChecked(false);
-      }
+      if (name === 'Drinks')   { setShowDrinks(false); }
+      if (name === 'Burgers')  { setShowBurgers(false); }
+      if (name === 'Desserts') { setShowDesserts(false); }
+      if (name === 'Sides')    { setShowSides(false); }
     }
+
   }
-  if (burgerLoading || drinkLoading || loadingDesserts) 
+  if (burgerLoading || drinkLoading || loadingDesserts || loadingSides) 
   {
     return <div>Loading...</div>;
   }
 
   if (burgerError || drinkError || errorDesserts) 
   {
-    return <div>Error: {burgerError || drinkError || errorDesserts}</div>;
+    return <div>Error: {burgerError || drinkError || errorDesserts || errorSides}</div>;
   }
 
   return (
     <>
+     <FullMenu/>
       <div className='my-filter-container text-white'>
   <Form>
     <div className='my-menu-description-container'>
@@ -131,7 +101,6 @@ function Menu()
           id={`default-Burgers`}
           name="Burgers"
           label="Burgers"
-          disabled={showAllisChecked}
           onChange={handleCheckboxChange}
         />
       </div>
@@ -141,7 +110,6 @@ function Menu()
           id={`default-Drinks`}
           name="Drinks"
           label="Drinks"
-          disabled={showAllisChecked}
           onChange={handleCheckboxChange}
         />
       </div>
@@ -151,7 +119,6 @@ function Menu()
           id={`default-Sides`}
           name="Sides"
           label="Sides"
-          disabled={showAllisChecked}
           onChange={handleCheckboxChange}
         />
       </div>
@@ -161,22 +128,9 @@ function Menu()
           id={`default-Desserts`}
           name="Desserts"
           label="Desserts"
-          disabled={showAllisChecked}
           onChange={handleCheckboxChange}
         />
       </div>
-      <div className='p-2 fs-4'>
-        <Form.Check
-          type="checkbox"
-          id={`default-ShowAll`}
-          name="Show all"
-          label="Show all"
-          disabled={anyCategoryIsChecked}
-          onChange={handleCheckboxChange}
-        />
-   
-      </div>
-
       <div className='my-lexicon-container'>
         <Nav.Link as={Link} to="/Lexicon" >
           <img src={LexiconLogo} alt="lexicon"/>
@@ -186,7 +140,6 @@ function Menu()
     </div>
   </Form>
 </div>
-
       {showBurgers && (
         <div className='container'>
           <div className='row'>
@@ -198,7 +151,6 @@ function Menu()
           </div>
         </div>
       )}
-
        {showDesserts && (
         <div className='container'>
           <div className='row'>
@@ -210,7 +162,6 @@ function Menu()
           </div>
         </div>
       )}
-
        {showSides && (
         <div className='container'>
           <div className='row'>
@@ -222,7 +173,6 @@ function Menu()
           </div>
         </div>
       )}
-
       {showDrinks && (
         <div className='container'>
           <div className='row'>
@@ -233,6 +183,7 @@ function Menu()
             ))}
           </div>
         </div>
+       
       )}
     </>
   );

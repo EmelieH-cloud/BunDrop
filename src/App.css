@@ -146,13 +146,13 @@ img
  {
    position: absolute;
    right: 1%; 
-   top: 30%; 
+   top: 35%; 
 
  }
 
     .my-lexicon-container img
     {
-     height: 180px;
+     height: 115px;
      border: 5px solid var(--color-extra-dark);
     }
 
