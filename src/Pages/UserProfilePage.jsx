@@ -11,8 +11,6 @@ function UserProfilePage()
             <ProfileNavbar/>
             <UserProfile/>
             <Footer />
-         
- 
         </>
     );
 }

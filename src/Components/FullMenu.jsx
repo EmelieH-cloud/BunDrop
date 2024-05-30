@@ -30,13 +30,13 @@ function FullMenu()
       <tr key={`${category}-${index}`}>
         <td>{category}</td>
         <td>{item.name}</td>
-        <td>{item.price}$</td>
+        <td>{item.price} $</td>
       </tr>
     ));
   }
   
   return ( <>
-   <Button variant="primary" onClick={handleShow}>
+   <Button variant="light" onClick={handleShow}>
         Full menu
       </Button>
       <Modal show={show} onHide={handleClose}>

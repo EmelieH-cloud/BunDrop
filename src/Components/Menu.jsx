@@ -88,7 +88,7 @@ function Menu()
 
   return (
     <>
-     <FullMenu/>
+    
       <div className='my-filter-container text-white'>
   <Form>
     <div className='my-menu-description-container'>
@@ -131,6 +131,7 @@ function Menu()
           onChange={handleCheckboxChange}
         />
       </div>
+      <FullMenu/>
       <div className='my-lexicon-container'>
         <Nav.Link as={Link} to="/Lexicon" >
           <img src={LexiconLogo} alt="lexicon"/>

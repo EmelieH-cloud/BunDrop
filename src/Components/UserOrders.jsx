@@ -14,8 +14,6 @@ function UserOrders()
     return <p>Please log in to see your orders.</p>;
   }
   
-
-
   return (
     <>
     <div className='mt-4'>

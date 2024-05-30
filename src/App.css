@@ -1,14 +1,15 @@
 
-/* ---------Innehåll ---------
+/* ---------Innehållsförteckning ---------
 1. Variabler
 2. Hero
-3. Navbar
-4. Menu
-5. Footer
-6. Showcase 
-7. Lexicon
+3. Menu
+4. Footer
+5. Showcase 
+6. Lexicon
+7. Cart
 */
-/* variabler --------------------*/
+
+/* 1. variabler --------------------*/
 :root
 {
   --color-dark: #295f4e;
@@ -150,11 +151,11 @@ img
 
  }
 
-    .my-lexicon-container img
-    {
-     height: 115px;
-     border: 5px solid var(--color-extra-dark);
-    }
+  .my-lexicon-container img
+ {
+   height: 115px;
+   border: 5px solid var(--color-extra-dark);
+  }
 
 /* Sätt olika höjd på burger-image beroende på skärmstorlek. Bredden är auto.*/
 @media (min-width: 1200px) 
@@ -180,8 +181,6 @@ img
 }
  
 }
-
-
 
 /* 5. Footer ----------------------------------------- */
 
@@ -230,7 +229,7 @@ footer
 
 .swish { font-weight: bolder;}
 
-/* Showcase -------------------------------------*/
+/* 6. Showcase -------------------------------------*/
 
 .showcase-img
 {
@@ -238,9 +237,39 @@ footer
   border-radius: 10%;
 }
 
-/* UserProfilePage */
 .user-profile-navbar
 {
    background-color: #F8F9FA;
 }
 
+/* 7. Cart ------------------------------ */
+
+.show-cart
+{
+  display: flex; 
+}
+
+.hide-cart
+{
+  display: none; 
+}
+
+.hide-empty-cart-message
+{
+  display: none;
+}
+
+.show-empty-cart
+{
+  display: flex; 
+}
+
+.show-order-view
+{
+  display: flex; 
+}
+
+.hide-order-view
+{
+  display: none; 
+}

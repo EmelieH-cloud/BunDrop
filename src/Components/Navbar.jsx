@@ -17,7 +17,7 @@ function CustomNavbar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        <Nav.Link as={Link} to="/Menu" className='fs-2' >MENUS</Nav.Link> 
+                        <Nav.Link as={Link} to="/Menu" className='fs-2' >MENU</Nav.Link> 
                         <Nav.Link as={Link} to="/SignIn" className='fs-2'>SIGN IN</Nav.Link> 
                     </Nav>
                 </Navbar.Collapse>
