@@ -86,7 +86,6 @@ function CartContent()
 
  {/* När varukorgen inte är tom-------------------------------- */}
     <div className={showCart ? 'show-cart' : 'hide-cart'}>
-
     {/* Visa namnet på produkterna i varukorgen om man inte är inne på ordervyn*/}
          {!showOrderView && (
         <div className='d-flex flex-column'>
@@ -96,25 +95,24 @@ function CartContent()
        </div>
          )}
 
-          {/* Visa antalet produkter i varukorgen*/}
+          {/* Visa antalet produkter + detaljer i varukorgen inne på ordervyn*/}
            {showOrderView && (
         <div className='d-flex flex-column'>
             <h5>{cartItems.length} product(s) added</h5>
-            <button onClick={handleShowCartDetails}>Show all added products</button>
+            <button onClick={handleShowCartDetails} className='btn btn-primary mb-2'>Show all added products</button>
             {showCartDetails &&
              (
            <div className='d-flex flex-column'>
             {cartItems.map((cartItem) => (
             <h5 key={cartItem.id}> {cartItem.name} </h5>
              ))}
-               <button onClick={handleHideCartDetails}>Minimize</button>
+         <button onClick={handleHideCartDetails} className='btn btn-danger minimize-button'>Hide</button>
        </div>
        
          )}
 
        </div>
          )}
-          
           <div className='align-self-end'>
          {/* Clear cart visas endast om det finns något i varukorgen*/}
          {!showEmptyCartMessage && (

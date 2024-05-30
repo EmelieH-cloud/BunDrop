@@ -274,3 +274,30 @@ footer
 {
   display: none; 
 }
+
+.minimize-button
+{
+  position: absolute;
+}
+
+@media (min-width: 1200px) {
+
+  /* Stora skärmar */
+  .minimize-button
+  {
+      left: 25%;
+       top: 4%;
+  }
+
+}
+
+@media (max-width: 767.98px) {
+
+  /* Små skärmar */
+  .minimize-button 
+  {
+      left: 60%;
+      top: 3.4%;
+    }
+
+}
