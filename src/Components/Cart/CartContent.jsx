@@ -7,6 +7,7 @@ function CartContent()
 {
     const [showCart, setShowCart] = useState(false);
     const [showOrderView, setShowOrderView] = useState(false);
+    const [showCartDetails, setShowCartDetails] = useState(false);
     const [showEmptyCartMessage, setShowEmptyCartMessage] = useState(false);
 
     // Spara cartItems lokalt på datorn med hjälp av localStorage 
@@ -47,34 +48,91 @@ function CartContent()
      function addToCart(item) 
      {
         setCartItems(prevCartItems => [...prevCartItems, item]);
+
     }
 
     function clearCart()
     {
+        if (showOrderView) // om ordervyn är öppen så ska den stängas. 
+        {
+            setShowOrderView(false);
+        }
         localStorage.clear(); // rensa localstorage 
         setCartItems([]); // rensa listan 
     }
 
+    function handleShowCartDetails()
+    {
+       setShowCartDetails(true); // visa detaljerna om vad som är lagt i varukorgen 
+    }
+
+    function handleHideCartDetails()
+    {
+       setShowCartDetails(false); // visa detaljerna om vad som är lagt i varukorgen 
+    }
+
     return ( <>
- {/* Renderas när varukorgen innehåller varor */}
-    <div className={showCart ? 'show-cart' : 'hide-cart'}>
-          {cartItems.map((cartItem) => (
-            <p key={cartItem.id}>Item ID: {cartItem.id} </p>
-          ))}
-          <button onClick={clearCart} disabled={showEmptyCartMessage}>Clear cart</button>
-    </div>
 
-     {/* Renderas när varukorgen är tom */}
+  {/* När varukorgen är tom ---------------------------------------*/}
     <div className={showEmptyCartMessage? 'show-empty-cart' : 'hide-empty-cart-message'}>
-    <h3>Your cart is empty.</h3>
-    <button onClick={openOrderView}>Start my order</button>
+    <div className='d-flex w-100 justify-content-between' >
+    <h3>Your cart is empty <br></br></h3>
+    <div>
+    <button onClick={openOrderView} className='btn btn-primary'> Start my order </button>
+    </div>
+    </div>
     </div>
 
-     {/* Renderas när man klickat på "start my order" */}
+
+ {/* När varukorgen inte är tom-------------------------------- */}
+    <div className={showCart ? 'show-cart' : 'hide-cart'}>
+
+    {/* Visa namnet på produkterna i varukorgen om man inte är inne på ordervyn*/}
+         {!showOrderView && (
+        <div className='d-flex flex-column'>
+        {cartItems.map((cartItem) => (
+        <h5 key={cartItem.id}> {cartItem.name} </h5>
+        ))}
+       </div>
+         )}
+
+          {/* Visa antalet produkter i varukorgen*/}
+           {showOrderView && (
+        <div className='d-flex flex-column'>
+            <h5>{cartItems.length} product(s) added</h5>
+            <button onClick={handleShowCartDetails}>Show all added products</button>
+            {showCartDetails &&
+             (
+           <div className='d-flex flex-column'>
+            {cartItems.map((cartItem) => (
+            <h5 key={cartItem.id}> {cartItem.name} </h5>
+             ))}
+               <button onClick={handleHideCartDetails}>Minimize</button>
+       </div>
+       
+         )}
+
+       </div>
+         )}
+          
+          <div className='align-self-end'>
+         {/* Clear cart visas endast om det finns något i varukorgen*/}
+         {!showEmptyCartMessage && (
+            <button className='btn btn-danger m-1' onClick={clearCart} >Clear cart</button>
+        )}
+         {/* Keep shopping visas endast om man inte är inne på ordervyn och varukorgen innehåller något. */}
+        {!showOrderView && !showEmptyCartMessage && (
+          <button className='btn btn-success m-1' onClick={openOrderView} >Keep shopping</button>
+        )}
+          </div>
+    </div>
+{/*----------------------------------------------------------------------- */}
+
+     {/* När man vill vidare till ordervyn */}
     <div className={showOrderView? 'show-order-view' : 'hide-order-view'}>
     <OrderView addToCart={addToCart}/>
     </div>
-
+{/*----------------------------------------------------------------------- */}
    
     </> );
 }
