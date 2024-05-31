@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect} from 'react';
 import OrderView from './OrderView';
+import { useNavigate } from 'react-router-dom';
 
 
 function CartContent() 
@@ -9,6 +10,7 @@ function CartContent()
     const [showOrderView, setShowOrderView] = useState(false);
     const [showCartDetails, setShowCartDetails] = useState(false);
     const [showEmptyCartMessage, setShowEmptyCartMessage] = useState(false);
+    const navigate = useNavigate();
 
     // Spara cartItems lokalt på datorn med hjälp av localStorage 
      const [cartItems, setCartItems] = useState(function()
@@ -36,7 +38,7 @@ function CartContent()
         // Uppdatera localstorage vare sig varukorgen är tom eller ej. 
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-    }, [cartItems]); // beroendelista: ovan kod kommer köras varje gång cartItems ändras. 
+    }, [cartItems]); // beroendelista: koden i useEffect kommer köras varje gång cartItems ändras. 
 
     function openOrderView()
     { 
@@ -71,6 +73,11 @@ function CartContent()
        setShowCartDetails(false); // visa detaljerna om vad som är lagt i varukorgen 
     }
 
+    function navigateToPaymentPage()
+   {
+      navigate('/payment');
+   }
+
     return ( <>
 
   {/* När varukorgen är tom ---------------------------------------*/}
@@ -95,9 +102,10 @@ function CartContent()
        </div>
          )}
 
-          {/* Visa antalet produkter + detaljer i varukorgen inne på ordervyn*/}
+          {/* Visa antalet produkter + detaljer i ordervyn*/}
            {showOrderView && (
         <div className='d-flex flex-column'>
+           <button onClick={navigateToPaymentPage}>Checkout</button>
             <h5>{cartItems.length} product(s) added</h5>
             <button onClick={handleShowCartDetails} className='btn btn-primary mb-2'>Show all added products</button>
             {showCartDetails &&
@@ -107,6 +115,7 @@ function CartContent()
             <h5 key={cartItem.id}> {cartItem.name} </h5>
              ))}
          <button onClick={handleHideCartDetails} className='btn btn-danger minimize-button'>Hide</button>
+        
        </div>
        
          )}
