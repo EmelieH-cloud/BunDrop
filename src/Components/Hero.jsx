@@ -7,7 +7,7 @@ function Hero() {
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                    <h1 className='display-2  mt-5'>Welcome to Bun Drop</h1>
+                    <h1 className='display-2  mt-5 text-white'>Welcome to Bun Drop</h1>
                     <h2 className='slogan text-white'>Where every burger is a masterpiece.</h2>
                 </div>
             </div>

@@ -46,6 +46,7 @@ img
   height: auto;
 }
 
+
 .logo
 {
   padding: 5%; 
@@ -280,6 +281,7 @@ footer
   position: absolute;
 }
 
+
 @media (min-width: 1200px) {
 
   /* Stora skärmar */
@@ -288,6 +290,7 @@ footer
       left: 25%;
        top: 4%;
   }
+
 
 }
 

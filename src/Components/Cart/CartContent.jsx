@@ -17,12 +17,11 @@ function CartContent()
      {
         // Försök hämta data i localstorage som är sparad under nyckeln 'cartItems': 
         const savedCartItems = localStorage.getItem('cartItems'); 
-        return savedCartItems ?  // Resultatet kan antingen vara en sträng eller null.
-       
+        return savedCartItems ?  // Resultatet kan antingen vara en enda lång json-sträng eller null.
         JSON.parse(savedCartItems) : // om resultet är en json-sträng så ska det omvandlas til en lista av objekt
         [];  // om resultatet var null så initialiseras en tom lista.
 
-        // cartItems är nu antingen en lista av objekt eller en tom lista.  
+        // cartItems är nu antingen en objektlista eller en tom lista.  
     });
 
       useEffect(() => {
@@ -35,7 +34,7 @@ function CartContent()
             setShowEmptyCartMessage(false);
             setShowCart(true); // visa varukorgen 
         }
-        // Uppdatera localstorage vare sig varukorgen är tom eller ej. 
+        // Omvandla objekten till en json-sträng och uppdatera localstorage
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
     }, [cartItems]); // beroendelista: koden i useEffect kommer köras varje gång cartItems ändras. 
