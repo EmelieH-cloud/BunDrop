@@ -78,9 +78,19 @@ img
 
 .my-other-menus-container
 {
-  border-bottom: 2px solid white; 
   display: flex; 
-  justify-content: center;
+  justify-content:center;
+  margin: 0 auto;
+  padding: 2%; 
+  background-color: var(--color-dark);
+
+}
+
+.menu-img
+{
+  width: 50%; 
+  border-radius: 10%;
+  
 }
 
 .my-filter-container
@@ -89,6 +99,7 @@ img
   justify-content: center;
   flex-direction: column;
   margin-bottom: 5%; 
+  background-color: var(--color-extra-dark);
 }
 
 
@@ -109,7 +120,9 @@ img
   text-align: center;
   background-color: var(--color-extra-dark);
   color: white; 
+
 }
+
 
 .my-menu-description-container p
 {
@@ -125,6 +138,11 @@ img
 {
     display: flex; 
     justify-content: center;
+    background-color: var(--color-dark);
+    width: 38%; 
+    margin: 0 auto;
+    padding: 2%; 
+
   }
 
 }

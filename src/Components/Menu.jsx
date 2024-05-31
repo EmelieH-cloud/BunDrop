@@ -91,17 +91,27 @@ function Menu()
         
   <Form>
     <div className='my-menu-description-container'>
-      <h2 className='mt-4'>Menu Selection:</h2>
+      <h2 className='mt-4 display-3 mb-3'>The Perfect Menu</h2>
       
-      <p>Easily navigate through multiple menus with our simple design. Check multiple boxes to view menus simultaneously or click "Show All" to see everything at once. <br></br> <br></br>Need something specific? Our dynamic product lexicon helps you find exactly what you're looking for in no time.</p>
-        <div className='my-other-menus-container'>
+      <p className='fs-5 mb-4'>
+        We take our burgers very seriously, which is why we prioritize your online experience in finding your favorites.
+         Because just like our perfectly grilled patties, we prefer getting everything just right. Our simple interface
+          allows you to easily navigate through the world of Bun Drop, check multiple boxes to view menus simultaneously
+           or click "Show All" to see everything at once.
+
+        Are you looking for any specific flavors? Our dynamic product lexicon helps you find exactly what you're looking for in no time.
+         Whether you prefer to filter using multiple criteria simultaneously or want to see a comprehensive overview,
+          our platform is designed to meet your needs. Because just like our burgers, your search experience should
+          be nothing but perfect.
+      </p>
+        <div className='my-other-menus-container border border-light rounded'>
         <Nav.Link as={Link} to="/Lexicon" >
-          <img src={LexiconLogo} alt="lexicon" />
+          <img src={LexiconLogo} alt="lexicon" className='menu-img'/>
              </Nav.Link> 
           <FullMenu/>
         </div>
     </div>
-    <div className='my-checkbox-container pt-4'>
+    <div className='my-checkbox-container border border-light rounded mt-4 mb-4'>
       <div className='p-2 fs-4'>
         <Form.Check
           type="checkbox"

@@ -38,7 +38,7 @@ function FullMenu()
   
   return ( <>
    <a  onClick={handleShow}>
-        <img src={FullMenuLogo} alt='fullmenu-logo'/>
+        <img src={FullMenuLogo} alt='fullmenu-logo' className='menu-img'/>
       </a>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
