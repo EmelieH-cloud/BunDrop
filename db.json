@@ -44,7 +44,7 @@
       "price": 2.49,
       "image": "./src/assets/drinks2.png"
     },
-      {
+    {
       "id": 3,
       "name": "Iced Tea",
       "description": "Chilled Iced Tea with a hint of lemon",
@@ -58,6 +58,7 @@
       "price": 2.49,
       "image": "./src/assets/drinks4.png"
     }
+    
   ],
   "desserts": [
     {
@@ -74,14 +75,14 @@
       "price": 2.99,
       "image": "./src/assets/ds-2.png"
     },
-      {
+    {
       "id": 3,
       "name": "Donuts",
       "description": "Freshly baked donuts with a sprinkle of sugar",
       "price": 1.99,
       "image": "./src/assets/ds-3.png"
     },
-      {
+    {
       "id": 4,
       "name": "Cheesecake",
       "description": "Creamy cheesecake with a graham cracker crust",
@@ -104,7 +105,7 @@
       "price": 3.49,
       "image": "./src/assets/side2.png"
     },
-     {
+    {
       "id": 3,
       "name": "Mashed Potatoes",
       "description": "Creamy mashed potatoes with gravy",
@@ -123,20 +124,57 @@
     {
       "id": 1,
       "userId": 1,
-      "burgerIds": [1, 2],
-      "orderDate": "2024-05-26T14:48:00.000Z"
+      "burgerIds": [
+        1,
+        2
+      ],
+      "orderDate": "2024-05-26",
+      "customerInfo": {
+        "fname": "John",
+        "lname": "Doe",
+        "email": "john@example.com",
+        "city": "New York",
+        "pcode": "10001",
+        "account": "1234 5678 9012 3456",
+        "cvc": "123",
+        "phone": "123-456-7890"
+      }
     },
     {
       "id": 2,
       "userId": 3,
-      "burgerIds": [2],
-      "orderDate": "2024-05-27T12:30:00.000Z"
+      "burgerIds": [
+        2
+      ],
+      "orderDate": "2024-05-27",
+      "customerInfo": {
+        "fname": "Jane",
+        "lname": "Doe",
+        "email": "jane@example.com",
+        "city": "Los Angeles",
+        "pcode": "90001",
+        "account": "2345 6789 0123 4567",
+        "cvc": "456",
+        "phone": "456-789-0123"
+      }
     },
     {
       "id": 3,
       "userId": 3,
-      "burgerIds": [2],
-      "orderDate": "2024-05-27T12:30:00.000Z"
+      "burgerIds": [
+        2
+      ],
+      "orderDate": "2024-05-27",
+      "customerInfo": {
+        "fname": "User",
+        "lname": "Test",
+        "email": "user@gmail.com",
+        "city": "Chicago",
+        "pcode": "60601",
+        "account": "3456 7890 1234 5678",
+        "cvc": "789",
+        "phone": "789-012-3456"
+      }
     }
   ],
   "users": [
