@@ -38,6 +38,7 @@ a
 a:hover
 {
   color: var(--color-medium);
+  cursor: pointer; 
 }
 
 img
@@ -75,6 +76,13 @@ img
 
 /* 4. Menu ----------------------------------------------*/
 
+.my-other-menus-container
+{
+  border-bottom: 2px solid white; 
+  display: flex; 
+  justify-content: center;
+}
+
 .my-filter-container
 {
   display: flex;
@@ -105,7 +113,7 @@ img
 
 .my-menu-description-container p
 {
-  width: 85%; 
+  width: 60%; 
  align-self: center; 
 }
 
@@ -117,10 +125,7 @@ img
 {
     display: flex; 
     justify-content: center;
-    border-bottom: 2px solid var(--color-medium);
-    background-color: var(--color-extra-dark);
   }
-
 
 }
 .card-image 
@@ -135,28 +140,6 @@ img
   justify-content: center;
 }
 
-.dynamic-search-container
-{
-  background-color: var(--color-extra-dark);
-  width: max-content;
-  padding: 3%; 
-  margin: 0 auto;
-  margin-bottom: 4%; 
-}
-
- .my-lexicon-container 
- {
-   position: absolute;
-   right: 1%; 
-   top: 35%; 
-
- }
-
-  .my-lexicon-container img
- {
-   height: 115px;
-   border: 5px solid var(--color-extra-dark);
-  }
 
 /* Sätt olika höjd på burger-image beroende på skärmstorlek. Bredden är auto.*/
 @media (min-width: 1200px) 
@@ -175,7 +158,7 @@ img
   {
     height: max-content;
   }
-   .my-lexicon-container 
+   .my-other-menus-container 
    {
    display: none;
 

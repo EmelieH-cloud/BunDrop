@@ -58,7 +58,6 @@
       "price": 2.49,
       "image": "./src/assets/drinks4.png"
     }
-    
   ],
   "desserts": [
     {
@@ -175,6 +174,60 @@
         "cvc": "789",
         "phone": "789-012-3456"
       }
+    },
+    {
+      "id": "7731",
+      "fname": "Emelie",
+      "lname": "Hensfelt",
+      "email": "emelie046@gmail.com",
+      "city": "Lund",
+      "pcode": "22229",
+      "account": "",
+      "cvc": "",
+      "phone": "343434343",
+      "items": [
+        {
+          "id": 1,
+          "name": "Classic Burger",
+          "description": "A classic burger with lettuce, tomato, and cheese.",
+          "price": 5.99,
+          "image": "./src/assets/1.png"
+        },
+        {
+          "id": 1,
+          "name": "Classic Burger",
+          "description": "A classic burger with lettuce, tomato, and cheese.",
+          "price": 5.99,
+          "image": "./src/assets/1.png"
+        }
+      ]
+    },
+    {
+      "id": "4e96",
+      "fname": "Emelie",
+      "lname": "Hensfelt",
+      "email": "emelie046@gmail.com",
+      "city": "Lund",
+      "pcode": "22229",
+      "account": "",
+      "cvc": "",
+      "phone": "343434343",
+      "items": [
+        {
+          "id": 1,
+          "name": "Classic Burger",
+          "description": "A classic burger with lettuce, tomato, and cheese.",
+          "price": 5.99,
+          "image": "./src/assets/1.png"
+        },
+        {
+          "id": 1,
+          "name": "Classic Burger",
+          "description": "A classic burger with lettuce, tomato, and cheese.",
+          "price": 5.99,
+          "image": "./src/assets/1.png"
+        }
+      ]
     }
   ],
   "users": [

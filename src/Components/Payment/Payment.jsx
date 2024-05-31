@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
+import { useNavigate } from 'react-router-dom';
 
-
-function Payment() {
+function Payment()
+ {
+  const navigate = useNavigate();
   const [localStorageData, setLocalStorageData] = useState([]);
   const [paymentMethod, setPaymentMethod] = useState([]);
   const [formData, setFormData] = useState({
@@ -45,26 +47,44 @@ function Payment() {
    {
     event.preventDefault();
     const orderData = { ...formData, items: localStorageData };
+    // Skapar en kopia av formulärets data (formData) och lägger till attributet 'items' som är en lista med de beställda varorna. 
     try {
-      const response = await fetch('http://localhost:3000/orders', {
+      const response = await fetch('http://localhost:3000/orders', 
+      {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(orderData)
+        body: JSON.stringify(orderData) // skicka som en sträng till db.json 
       });
       
-      if (response.ok) {
+      if (response.ok) 
+      {
         console.log('Order submitted successfully!');
-      } else {
+        // Nollställ formulärdata:
+          setFormData({
+        fname: '',
+        lname: '',
+        email: '',
+        city: '',
+        pcode: '',
+        account: '',
+        cvc: '',
+        phone: ''
+      });
+
+      navigate('/confirmation');
+
+      } else 
+      {
         console.error('Failed to submit order');
       }
-    } catch (error) {
+    } catch (error) 
+    {
       console.error('Error submitting order:', error);
     }
   }
 
-  
   return (
     <>
       <div className='d-flex flex-column justify-content-center align-items-center'>
@@ -83,11 +103,11 @@ function Payment() {
                         </tr>
                       </thead>
                       <tbody>
-                        {localStorageData.map(item => (
-                          <tr key={item.id}>
-                            <td>{item.name}</td>
-                            <td>{item.price}</td>
-                          </tr>
+                        {localStorageData.map((item, index) => (
+                      <tr key={`item_${index}`}>
+                      <td>{item.name}</td>
+                       <td>{item.price}</td>
+                        </tr>
                         ))}
                       </tbody>
                     </table>

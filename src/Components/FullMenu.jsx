@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React, { useContext, useState} from 'react';
 import Table from 'react-bootstrap/Table';
+import FullMenuLogo from '../assets/fullmenu-logo.png';
 
 function FullMenu()
  {
@@ -36,9 +37,9 @@ function FullMenu()
   }
   
   return ( <>
-   <Button variant="light" onClick={handleShow}>
-        Full menu
-      </Button>
+   <a  onClick={handleShow}>
+        <img src={FullMenuLogo} alt='fullmenu-logo'/>
+      </a>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title style={tableHeaderColor}>Full Menu</Modal.Title>

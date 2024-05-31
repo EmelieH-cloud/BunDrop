@@ -31,7 +31,6 @@ function Menu()
   function handleCheckboxChange(event) 
   {
     const { name, checked } = event.target;  // destrukturera egenskaperna 'name' och 'checked' från checkboxen (target) som triggat eventet 
-   
     //--------------------------------------------------------------------------
     if (checked && !chosenCategories.includes(name)) 
     // om en checkbox blivit checkad och name inte redan finns i chosenCategories
@@ -88,13 +87,21 @@ function Menu()
 
   return (
     <>
-    
       <div className='my-filter-container text-white'>
+        
   <Form>
     <div className='my-menu-description-container'>
       <h2 className='mt-4'>Menu Selection:</h2>
+      
+      <p>Easily navigate through multiple menus with our simple design. Check multiple boxes to view menus simultaneously or click "Show All" to see everything at once. <br></br> <br></br>Need something specific? Our dynamic product lexicon helps you find exactly what you're looking for in no time.</p>
+        <div className='my-other-menus-container'>
+        <Nav.Link as={Link} to="/Lexicon" >
+          <img src={LexiconLogo} alt="lexicon" />
+             </Nav.Link> 
+          <FullMenu/>
+        </div>
     </div>
-    <div className='my-checkbox-container'>
+    <div className='my-checkbox-container pt-4'>
       <div className='p-2 fs-4'>
         <Form.Check
           type="checkbox"
@@ -131,13 +138,7 @@ function Menu()
           onChange={handleCheckboxChange}
         />
       </div>
-      <FullMenu/>
-      <div className='my-lexicon-container'>
-        <Nav.Link as={Link} to="/Lexicon" >
-          <img src={LexiconLogo} alt="lexicon"/>
-          </Nav.Link> 
-        </div>
-
+    
     </div>
   </Form>
 </div>
