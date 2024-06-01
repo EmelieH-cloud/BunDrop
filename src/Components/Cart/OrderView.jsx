@@ -7,7 +7,7 @@ import { useContext} from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
-function OrderView({ addToCart }) 
+function OrderView({ addToCart, removeFromCart }) 
 {
   const { burgers, loading: burgerLoading, error: burgerError } = useContext(BurgerContext);
   const { drinks, drinkLoading, drinkError } = useContext(DrinksContext);
@@ -25,9 +25,14 @@ function OrderView({ addToCart })
         <td>{item.price} $</td>
         <td className='text-center'> <Button 
         variant='success' 
-        id={`${category}-${item.id}`}      
+        id={`add-${category}-${item.id}`}      
         onClick={() => addToCart(item)}>+</Button> 
         </td> 
+         <td className='text-center'> <Button 
+        variant='danger' 
+        id={`${index}-${category}-${item.id}`}      
+        onClick={() => removeFromCart(item)}>-</Button> 
+        </td>
       </tr>
     ));
   }

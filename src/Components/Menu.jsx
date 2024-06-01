@@ -41,8 +41,7 @@ function Menu()
     // vald kategori visas 
       if (name === 'Drinks') 
       {
-        setShowDrinks(true);
-       
+        setShowDrinks(true);  
       } 
       else if (name === 'Burgers') 
       {
@@ -58,7 +57,6 @@ function Menu()
        else if (name === 'Sides') 
       {
         setShowSides(true); 
-       
       }
     } 
 

@@ -37,7 +37,7 @@ function CartContent()
         // Omvandla objekten till en json-sträng och uppdatera localstorage
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-    }, [cartItems]); // beroendelista: koden i useEffect kommer köras varje gång cartItems ändras. 
+    }, [cartItems]); // localStorage.setItem kommer köras varje gång något cartItems ändras. 
 
     function openOrderView()
     { 
@@ -49,8 +49,26 @@ function CartContent()
      function addToCart(item) 
      {
         setCartItems(prevCartItems => [...prevCartItems, item]);
+     }
 
-    }
+     function removeFromCart(item)
+     {
+    setCartItems(prevCartItems => {
+        // Hitta index för produkten som ska tas bort, kommer returnera första indexet som matchar
+        const index = prevCartItems.findIndex(cartItem => cartItem.id === item.id);
+        // Kontrollera om något hittades
+        if (index > -1) 
+        {
+            return [
+                ...prevCartItems.slice(0, index), // Skapar en kopia av ursprungsarrayen framtill produkten som ska tas bort. 
+                ...prevCartItems.slice(index + 1) // Skapar en kopia av ursrungsarrayen efter produkten som ska tas bort
+                                                  // båda arrayerna sätts ihop till en enda med hjälp av ... 
+            ];
+        }
+        // Om ingen instans hittades, returnera den ursprungliga arrayen oförändrad
+        return prevCartItems;
+    });
+}
 
     function clearCart()
     {
@@ -78,7 +96,6 @@ function CartContent()
    }
 
     return ( <>
-
   {/* När varukorgen är tom ---------------------------------------*/}
     <div className={showEmptyCartMessage? 'show-empty-cart' : 'hide-empty-cart-message'}>
     <div className='d-flex w-100 justify-content-between' >
@@ -88,7 +105,6 @@ function CartContent()
     </div>
     </div>
     </div>
-
 
  {/* När varukorgen inte är tom-------------------------------- */}
     <div className={showCart ? 'show-cart' : 'hide-cart'}>
@@ -100,7 +116,6 @@ function CartContent()
         ))}
        </div>
          )}
-
           {/* Visa antalet produkter + detaljer i ordervyn*/}
            {showOrderView && (
         <div className='d-flex flex-column'>
@@ -114,11 +129,8 @@ function CartContent()
             <h5 key={cartItem.id}> {cartItem.name} </h5>
              ))}
          <button onClick={handleHideCartDetails} className='btn btn-danger minimize-button'>Hide</button>
-        
        </div>
-       
          )}
-
        </div>
          )}
           <div className='align-self-end'>
@@ -133,13 +145,10 @@ function CartContent()
           </div>
     </div>
 {/*----------------------------------------------------------------------- */}
-
      {/* När man vill vidare till ordervyn */}
     <div className={showOrderView? 'show-order-view' : 'hide-order-view'}>
-    <OrderView addToCart={addToCart}/>
+    <OrderView addToCart={addToCart} removeFromCart={removeFromCart}/>
     </div>
-{/*----------------------------------------------------------------------- */}
-   
     </> );
 }
 

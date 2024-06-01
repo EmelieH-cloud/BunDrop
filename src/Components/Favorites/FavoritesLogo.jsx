@@ -1,56 +1,54 @@
 import React from 'react'
-import CartImg from '../../assets/cart.png';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState,  } from 'react';
-import CartContent from './CartContent';
+import HeartLogo from '../../assets/heart-logo.png'
 
-function CartLogo()
- {
+
+function FavoritesLogo() 
+{
   const [show, setShow] = useState(false);
-  const [hover, setHover] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [hover, setHover] = useState(false);
 
    const titleColor= 
     {
      color: '#17382e'
     };
 
-    const cartStyle =
+    const heartStyle =
    {
     position: 'fixed',
-    bottom: '2%',
+    bottom: '21%',
     right: '1%',
     width: '120px', 
-    opacity: hover ? 1 : 0.5,
     borderRadius: '50%',
     height: 'auto',
+    opacity: hover ? 1 : 0.5,
     transition: 'opacity 0.3s'
   };
 
-   const smallCart =
+   const smallHeart =
    {
-
     width: '120px', 
     border: '1px solid black'
-    
   };
     
     return ( <>
  <Button variant="primary" onClick={handleShow}>
-            <img src={CartImg} 
-            alt="cart-image" 
-            style={cartStyle} 
+            <img src={HeartLogo} 
+            alt="heart-image" 
+            style={heartStyle} 
             onMouseEnter={() => setHover(true)} 
-          onMouseLeave={() => setHover(false)} />
+          onMouseLeave={() => setHover(false)}
+            className='heart-img'/>
       </Button>
       <Modal show={show} size='lg'  onHide={handleClose} restoreFocus={true} restoreFocusOptions={{ preventScroll: true }}>
         <Modal.Header closeButton>
-          <Modal.Title> <img src={CartImg} alt="img" style={smallCart}/></Modal.Title>
+          <Modal.Title> <img src={HeartLogo} alt="img" style={smallHeart}/></Modal.Title>
         </Modal.Header>
-        <Modal.Body style={titleColor}> <CartContent/> </Modal.Body>
+        <Modal.Body style={titleColor}> favs </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
@@ -60,4 +58,4 @@ function CartLogo()
     </> );
 }
 
-export default CartLogo;
+export default FavoritesLogo;

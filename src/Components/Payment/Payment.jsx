@@ -40,7 +40,7 @@ function Payment()
  
     setFormData({ ...formData, [name]: value });
      // Skapar en kopia av det befintliga formData-objektet (...formData) 
-     // och ersätter value för fältet [name] med det nya som användaren matat in. 
+     // och ersätter value på [name] med det nya som användaren matat in. 
   }
 
    async function handleSubmit(event) 
