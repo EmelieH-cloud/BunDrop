@@ -26,7 +26,7 @@ function ProfileNavbar()
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        <Nav.Link as={Link} className='fs-2' onClick={handleLogOut}>SIGN OUT</Nav.Link> 
+                          <Nav.Link as={Link} className='fs-2' onClick={handleLogOut}>SIGN OUT</Nav.Link> 
                     </Nav>
                 </Navbar.Collapse>
             </Container>

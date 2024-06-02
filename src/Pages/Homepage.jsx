@@ -14,7 +14,7 @@ function Homepage() {
     <Showcase/>
     <Footer/>
     <CartLogo/>
-   <FavoritesLogo/>
+    <FavoritesLogo/>
     </> );
 }
 

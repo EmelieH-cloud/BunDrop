@@ -37,7 +37,7 @@ function CartContent()
         // Omvandla objekten till en json-sträng och uppdatera localstorage
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-    }, [cartItems]); // localStorage.setItem kommer köras varje gång något cartItems ändras. 
+    }, [cartItems]); // localStorage.setItem kommer köras varje gång något i cartItems ändras. 
 
     function openOrderView()
     { 
@@ -62,10 +62,10 @@ function CartContent()
             return [
                 ...prevCartItems.slice(0, index), // Skapar en kopia av ursprungsarrayen framtill produkten som ska tas bort. 
                 ...prevCartItems.slice(index + 1) // Skapar en kopia av ursrungsarrayen efter produkten som ska tas bort
-                                                  // båda arrayerna sätts ihop till en enda med hjälp av ... 
+                                                  // båda arrayerna sätts ihop till en enda med hjälp av spridningsoperatorn
             ];
         }
-        // Om ingen instans hittades, returnera den ursprungliga arrayen oförändrad
+        // Om ingen instans hittades, returnera den ursprungliga arrayen 
         return prevCartItems;
     });
 }
@@ -76,7 +76,7 @@ function CartContent()
         {
             setShowOrderView(false);
         }
-        localStorage.clear(); // rensa localstorage 
+        localStorage.removeItem('cartItems'); // rensa localstorage för cartItems 
         setCartItems([]); // rensa listan 
     }
 
@@ -105,7 +105,6 @@ function CartContent()
     </div>
     </div>
     </div>
-
  {/* När varukorgen inte är tom-------------------------------- */}
     <div className={showCart ? 'show-cart' : 'hide-cart'}>
     {/* Visa namnet på produkterna i varukorgen om man inte är inne på ordervyn*/}

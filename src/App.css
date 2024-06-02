@@ -69,7 +69,7 @@ img
   font-weight: bolder;
   width: max-content;
   margin: 0 auto;
-  opacity: .7;
+  opacity: .9;
   padding: .7%; 
   background: var(--color-dark);
 }
@@ -236,7 +236,19 @@ footer
 .showcase-img
 {
   height: 250px;
-  border-radius: 10%;
+  border-radius: 10px;
+}
+
+.showcase-bg
+{
+  background-color: var(--color-extra-dark);
+  padding: 2%; 
+}
+
+.showcase-p
+{
+  color: var(--color-body);
+ 
 }
 
 .user-profile-navbar

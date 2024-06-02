@@ -3,6 +3,7 @@ import Menu from '../Components/Menu';
 import CustomNavbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import CartLogo from '../Components/Cart/Cartlogo';
+import FavoritesLogo from '../Components/Favorites/FavoritesLogo';
 
 function Menupage() {
     return ( 
@@ -11,6 +12,7 @@ function Menupage() {
     <Menu/>
     <Footer/>
     <CartLogo/>
+    <FavoritesLogo/>
     </> );
 }
 

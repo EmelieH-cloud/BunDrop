@@ -1,6 +1,6 @@
 import React from 'react'
 
-function DrinkCard( {drink}) {
+function DrinkCard( {drink, addToFavorites}) {
     return ( <>
     <div className='my-card-container'>
       {drink.image ? // om bild finns... visa den
@@ -13,6 +13,7 @@ function DrinkCard( {drink}) {
         <h2>{drink.name}</h2>
         <p>{drink.description}</p>
         <p>Price: {drink.price} $</p>
+         <button onClick={() => addToFavorites(drink)}>Add to favorites</button>
     </div>
  
     </> );

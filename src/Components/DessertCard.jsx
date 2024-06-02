@@ -1,6 +1,6 @@
 import React from 'react'
 
-function DessertCard( {dessert}) 
+function DessertCard( {dessert, addToFavorites}) 
 {
     return ( <>
     <div className='my-card-container'>
@@ -14,6 +14,7 @@ function DessertCard( {dessert})
         <h2>{dessert.name}</h2>
         <p>{dessert.description}</p>
         <p>Price: {dessert.price} $</p>
+          <button onClick={() => addToFavorites(dessert)}>Add to favorites</button>
     </div>
  
     </> );

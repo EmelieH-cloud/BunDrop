@@ -13,7 +13,6 @@ function OrderView({ addToCart, removeFromCart })
   const { drinks, drinkLoading, drinkError } = useContext(DrinksContext);
   const { desserts, loadingDesserts, errorDesserts} = useContext(DessertsContext);
   const { sides, loadingSides, errorSides} = useContext(SideContext);
-
      
   function renderTableRows(items, category) 
     {

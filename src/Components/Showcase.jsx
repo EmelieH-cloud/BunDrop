@@ -29,11 +29,11 @@ function Showcase() {
  <div className='text-center mt-4'>
  <h2 className='display-3'>Most loved</h2>
  </div>
-  <div className=' d-flex flex-column mt-4 align-items-center text-center col-lg-4'> {/* col-lg-4: varje bild upptar 4 kolumner och kommer visas bredvid varandra på stora skärmar (totalt 12 kol)*/}
+  <div className=' d-flex flex-column mt-4 align-items-center text-center col-lg-4 showcase-bg'> {/* col-lg-4: varje bild upptar 4 kolumner och kommer visas bredvid varandra på stora skärmar (totalt 12 kol)*/}
    <h3>Burgers</h3>
     <img src={image} alt="img" className='showcase-img'/>
     <div className='col-lg-8'>
-    <p> Indulge in our trio of burger classics, each crafted to perfection for every order. The Original Burger, a timeless icon, boasts a symphony of flavors. Our Bacon Burger delivers a punch of crispness with grilled bacon. And for a greener yet equally flavorful option, our Vegan Burger is perfect.</p>
+    <p className='showcase-p'> Indulge in our trio of burger classics, each crafted to perfection for every order. The Original Burger, a timeless icon, boasts a symphony of flavors. Our Bacon Burger delivers a punch of crispness with grilled bacon. And for a greener yet equally flavorful option, our Vegan Burger is perfect.</p>
  </div>
    <div className="btn-toolbar mt-2" role="toolbar" aria-label="Toolbar with button groups">
   <div className="btn-group mr-2" role="group" aria-label="First group">
@@ -43,14 +43,14 @@ function Showcase() {
   </div>
   </div>
 </div>
- <div className='d-flex flex-column mt-4 text-center align-items-center col-lg-4'> {/* col-lg-4: varje bild upptar 4 kolumner och kommer visas bredvid varandra på stora skärmar (totalt 12 kol)*/}
+ <div className='d-flex flex-column mt-4 text-center align-items-center col-lg-4 showcase-bg'> {/* col-lg-4: varje bild upptar 4 kolumner och kommer visas bredvid varandra på stora skärmar (totalt 12 kol)*/}
    <h3>Desserts</h3>
     <img src={dessertimage} alt="img" className='showcase-img'/>
      <div className='col-lg-8'>
-    <p>
+    <p className='showcase-p'>
 Treat yourself to our dessert trio. Our Classic Chocolate Cake offers layers of rich cocoa goodness. The Berry Tart bursts with fresh, ripe berries atop a buttery crust. And our Gourmet Ice Cream Sandwiches blend creamy ice cream between homemade cookies. Explore sweet indulgence with us.</p>
   </div>
-   <div className="btn-toolbar mt-2" role="toolbar" aria-label="Toolbar with button groups">
+   <div className="btn-toolbar mt-2" role="toolbar" aria-label="Toolbar with button groups showcase-bg">
   <div className="btn-group mr-2" role="group" aria-label="First group">
     <button onClick={() => setdessertImage(dessert1)} type="button" className="btn btn-secondary"><GoDotFill /></button>
     <button onClick={() => setdessertImage(dessert2)} type="button" className="btn btn-secondary"><GoDotFill /></button>
@@ -58,11 +58,11 @@ Treat yourself to our dessert trio. Our Classic Chocolate Cake offers layers of 
   </div>
   </div>
 </div>
- <div className=' d-flex flex-column mt-4 text-center align-items-center col-lg-4'> {/* col-lg-4: varje bild upptar 4 kolumner och kommer visas bredvid varandra på stora skärmar (totalt 12 kol)*/}
+ <div className=' d-flex flex-column mt-4 text-center align-items-center col-lg-4 showcase-bg'> {/* col-lg-4: varje bild upptar 4 kolumner och kommer visas bredvid varandra på stora skärmar (totalt 12 kol)*/}
    <h3>Drinks</h3>
     <img src={drinkimage} alt="img" className='showcase-img'/>
       <div className='col-lg-8'>
-    <p>Elevate your spirits with our exquisite selection of alcoholic drinks. Our Classic Margarita offers a perfect blend of tangy lime and smooth tequila, a refreshing favorite. For a sophisticated twist, our Red Wine Sangria infuses rich wine with fresh fruits for a vibrant, fruity delight</p>
+    <p className='showcase-p'>Elevate your spirits with our exquisite selection of alcoholic drinks. Our Classic Margarita offers a perfect blend of tangy lime and smooth tequila, a refreshing favorite. For a sophisticated twist, our Red Wine Sangria infuses rich wine with fresh fruits for a vibrant, fruity delight</p>
    </div>
    <div className="btn-toolbar mt-2" role="toolbar" aria-label="Toolbar with button groups">
   <div className="btn-group mr-2" role="group" aria-label="First group">
