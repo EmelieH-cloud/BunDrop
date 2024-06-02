@@ -110,17 +110,15 @@ function Menu()
   <Form>
     <div className='my-menu-description-container'>
       <h2 className='mt-4 display-3 mb-3'>The Perfect Menu</h2>
-      
       <p className='fs-5 mb-4'>
         We take our burgers very seriously, which is why we prioritize your online experience in finding your favorites.
-         Because just like our perfectly grilled patties, we prefer getting everything just right. Our simple interface
-          allows you to easily navigate through the world of Bun Drop, check multiple boxes to view menus simultaneously
-           or click "Show All" to see everything at once.
-
-        Are you looking for any specific flavors? Our dynamic product lexicon helps you find exactly what you're looking for in no time.
-         Whether you prefer to filter using multiple criteria simultaneously or want to see a comprehensive overview,
-          our platform is designed to meet your needs. Because just like our burgers, your search experience should
-          be nothing but perfect.
+         Our interface allows users of every search preference to easily navigate through the world of Bun Drop. 
+         <ul className='filter-instruction-container'>
+          <li> Use the Lexicon for the most detailed search. </li>
+          <li> Select -Show All for a full menu overview. </li>
+          <li> Use the checkboxes below to filter out specific menus. </li>
+         </ul>
+ 
       </p>
         <div className='my-other-menus-container border border-light rounded'>
         <Nav.Link as={Link} to="/Lexicon" >

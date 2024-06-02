@@ -14,7 +14,7 @@ function DessertCard( {dessert, addToFavorites})
         <h2>{dessert.name}</h2>
         <p>{dessert.description}</p>
         <p>Price: {dessert.price} $</p>
-          <button onClick={() => addToFavorites(dessert)}>Add to favorites</button>
+          <button onClick={() => addToFavorites(dessert)} className='btn btn-light'>Add to favorites</button>
     </div>
  
     </> );

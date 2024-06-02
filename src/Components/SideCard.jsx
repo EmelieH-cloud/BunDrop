@@ -14,7 +14,7 @@ function SideCard( {side, addToFavorites})
         <h2>{side.name}</h2>
         <p>{side.description}</p>
         <p>Price: {side.price} $</p>
-        <button onClick={() => addToFavorites(side)}>Add to favorites</button>
+        <button onClick={() => addToFavorites(side)} className='btn btn-light'>Add to favorites</button>
     </div>
  
     </> );

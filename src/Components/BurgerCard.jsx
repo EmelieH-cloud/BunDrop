@@ -13,7 +13,7 @@ function BurgerCard( { burger, addToFavorites }) {
         <h2>{burger.name}</h2>
         <p>{burger.description}</p>
         <p>Price: {burger.price} $</p>
-         <button onClick={() => addToFavorites(burger)}>Add to favorites</button>
+         <button onClick={() => addToFavorites(burger)} className='btn btn-light'>Add to favorites</button>
     </div>
  
     </> );

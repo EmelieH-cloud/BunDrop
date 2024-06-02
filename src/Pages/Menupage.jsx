@@ -15,5 +15,4 @@ function Menupage() {
     <FavoritesLogo/>
     </> );
 }
-
 export default Menupage;
