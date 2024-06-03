@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import { useNavigate } from 'react-router-dom';
 
+/* Komponent som skickar beställningen till "servern" */
+
 function Payment()
  {
   const navigate = useNavigate();
   const [localStorageData, setLocalStorageData] = useState([]);
   const [paymentMethod, setPaymentMethod] = useState([]);
   const [formData, setFormData] = useState({
-    // Initiera en tom customer 
+    // Initierar en tom customer:
     fname: '',
     lname: '',
     email: '',
@@ -19,18 +21,18 @@ function Payment()
     phone: ''
   });
 
-  useEffect(() => {
-    // Hämta arrayen från localStorage
+  useEffect(() => 
+  {
+    // Hämta varukorgen från localStorage
     const storedArray = localStorage.getItem('cartItems');
     
-    // Om arrayen finns, parsa den och uppdatera state
+    // Om arrayen finns, parsa den till objekt och uppdatera state
     if (storedArray) {
       setLocalStorageData(JSON.parse(storedArray));
     }
-  }, []); // Koden ovan körs endast en gång i samband med montering av komponenten. 
+  }, []); // Koden ovan körs endast en gång i samband med montering.
 
   function setCardAsPaymentMethod() { setPaymentMethod('card');}
-
   function setSwishAsPaymentMethod() {setPaymentMethod('swish');}
 
   function handleInputChange(event)
@@ -40,14 +42,35 @@ function Payment()
  
     setFormData({ ...formData, [name]: value });
      // Skapar en kopia av det befintliga formData-objektet (...formData) 
-     // och ersätter value på [name] med det nya som användaren matat in. 
+     // och ersätter value [name] med det nya som användaren matat in. 
+  }
+
+   function getRandomTimeWithinThreeHours() 
+ {
+  /* Genererar en slumpmässig tidpunkt inom 3h från den nuvarande. */
+    const now = new Date();
+    const orderTime = new Date(now.getTime() + Math.floor(Math.random() * 3 * 60 * 60 * 1000));
+    return orderTime;
   }
 
    async function handleSubmit(event) 
    {
-    event.preventDefault();
-    const orderData = { ...formData, items: localStorageData };
-    // Skapar en kopia av formulärets data (formData) och lägger till attributet 'items' som är en lista med de beställda varorna. 
+      event.preventDefault();
+    const now = new Date();
+    const orderTime = getRandomTimeWithinThreeHours();
+    const deliveryTime = new Date(orderTime.getTime() + Math.floor(Math.random() * 3 * 60 * 60 * 1000));
+
+    const orderData = {
+      ...formData,
+      items: localStorageData,
+      orderDate: now.toISOString().split('T')[0],
+      orderTime: orderTime.toTimeString().split(' ')[0],
+      deliveryDate: deliveryTime.toISOString().split('T')[0],
+      deliveryTime: deliveryTime.toTimeString().split(' ')[0],
+       deliveryTime: deliveryTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+  
+
     try {
       const response = await fetch('http://localhost:3000/orders', 
       {
@@ -60,6 +83,8 @@ function Payment()
       
       if (response.ok) 
       {
+       const newOrder = await response.json();
+      const orderId = newOrder.id;
         console.log('Order submitted successfully!');
         // Nollställ formulärdata:
           setFormData({
@@ -72,10 +97,10 @@ function Payment()
         cvc: '',
         phone: ''
       });
-
-      navigate('/confirmation');
-
-      } else 
+      /* Skicka med orderns id som url-parameter*/
+      navigate(`/confirmation/${orderId}`);
+      }
+       else 
       {
         console.error('Failed to submit order');
       }

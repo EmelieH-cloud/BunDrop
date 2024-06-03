@@ -118,24 +118,27 @@ function CartContent()
           {/* Visa antalet produkter + detaljer i ordervyn*/}
            {showOrderView && (
         <div className='d-flex flex-column'>
-           <button onClick={navigateToPaymentPage}>Checkout</button>
-            <h5>{cartItems.length} product(s) added</h5>
-            <button onClick={handleShowCartDetails} className='btn btn-primary mb-2'>Show all added products</button>
+           <div className='checkout-btn-container'>
+           <button onClick={navigateToPaymentPage} className='btn btn-primary'>Checkout</button>
+            </div>
+            <h5 className='mt-4'>{cartItems.length} product(s) added</h5>
+            <a onClick={handleShowCartDetails} className='text-primary'>Show added products</a>
             {showCartDetails &&
-             (
+             ( 
            <div className='d-flex flex-column'>
+             <a onClick={handleHideCartDetails} className=' text-danger minimize-button'>Hide added products</a>
             {cartItems.map((cartItem) => (
-            <h5 key={cartItem.id}> {cartItem.name} </h5>
+            <h6 className='p-1' key={cartItem.id}> {cartItem.name}, {cartItem.price} $ </h6>
              ))}
-         <button onClick={handleHideCartDetails} className='btn btn-danger minimize-button'>Hide</button>
+    
        </div>
          )}
        </div>
          )}
-          <div className='align-self-end'>
+          <div>
          {/* Clear cart visas endast om det finns något i varukorgen*/}
          {!showEmptyCartMessage && (
-            <button className='btn btn-danger m-1' onClick={clearCart} >Clear cart</button>
+            <a className='text-danger fw-bold m-3'  onClick={clearCart} >Clear cart</a>
         )}
          {/* Keep shopping visas endast om man inte är inne på ordervyn och varukorgen innehåller något. */}
         {!showOrderView && !showEmptyCartMessage && (

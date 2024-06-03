@@ -5,7 +5,6 @@ import CustomNavbar from '../Components/Navbar';
 
 function ConfirmationPage() {
     return ( <>
-
      <CustomNavbar/> 
      <Confirmation/>
      <Footer/>

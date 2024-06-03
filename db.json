@@ -1,7 +1,7 @@
 {
   "burgers": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Classic Burger",
       "description": "A classic burger with lettuce, tomato, and cheese.",
       "price": 5.99,
@@ -9,7 +9,7 @@
       "category": "Burgers"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Bacon Burger",
       "description": "A juicy burger topped with crispy bacon and cheddar cheese.",
       "price": 7.99,
@@ -17,25 +17,25 @@
       "category": "Burgers"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Vegan Burger",
       "description": "Whether you're a dedicated vegan or simply craving a healthier option, our vegan burger promises to satisfy your cravings while nourishing your body and soul.",
       "price": 7.99,
       "image": "./src/assets/3.png",
-        "category": "Burgers"
+      "category": "Burgers"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Spicy Jalapeno Burger",
       "description": "A fiery burger with jalapenos, pepper jack cheese, and a spicy sauce.",
       "price": 6.99,
       "image": "./src/assets/4.png",
-       "category": "Burgers"
+      "category": "Burgers"
     }
   ],
   "drinks": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Coke",
       "description": "Refreshing Coca-Cola",
       "price": 1.99,
@@ -43,107 +43,118 @@
       "category": "Drinks"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Lemonade",
       "description": "Tangy Lemonade",
       "price": 2.49,
       "image": "./src/assets/drinks2.png",
-       "category": "Drinks"
+      "category": "Drinks"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Iced Tea",
       "description": "Chilled Iced Tea with a hint of lemon",
       "price": 2.29,
       "image": "./src/assets/drinks3.png",
-       "category": "Drinks"
+      "category": "Drinks"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Root Beer",
       "description": "Classic Root Beer",
       "price": 2.49,
       "image": "./src/assets/drinks4.png",
-       "category": "Drinks"
+      "category": "Drinks"
     }
   ],
   "desserts": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Chocolate Brownie",
       "description": "Decadent Chocolate Brownie",
       "price": 3.99,
       "image": "./src/assets/ds-1.png",
-       "category": "Desserts"
+      "category": "Desserts"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Vanilla Ice Cream",
       "description": "Creamy Vanilla Ice Cream",
       "price": 2.99,
       "image": "./src/assets/ds-2.png",
-        "category": "Desserts"
+      "category": "Desserts"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Donuts",
       "description": "Freshly baked donuts with a sprinkle of sugar",
       "price": 1.99,
       "image": "./src/assets/ds-3.png",
-        "category": "Desserts"
+      "category": "Desserts"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Cheesecake",
       "description": "Creamy cheesecake with a graham cracker crust",
       "price": 4.99,
       "image": "./src/assets/ds-4.png",
-        "category": "Desserts"
+      "category": "Desserts"
     }
   ],
   "sides": [
     {
-      "id": 1,
+      "id": "1",
       "name": "French Fries",
       "description": "Classic French Fries",
       "price": 2.99,
       "image": "./src/assets/side1.png",
-        "category": "Sides"
+      "category": "Sides"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Onion Rings",
       "description": "Crispy Onion Rings",
       "price": 3.49,
       "image": "./src/assets/side2.png",
-       "category": "Sides"
+      "category": "Sides"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Mashed Potatoes",
       "description": "Creamy mashed potatoes with gravy",
       "price": 2.79,
       "image": "./src/assets/side3.png",
-       "category": "Sides"
+      "category": "Sides"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Sweet Potato Fries",
       "description": "Crispy sweet potato fries",
       "price": 3.29,
       "image": "./src/assets/side4.png",
-       "category": "Sides"
+      "category": "Sides"
     }
   ],
   "orders": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
-      "burgerIds": [
-        1,
-        2
+      "items": [
+        {
+          "id": 1,
+          "name": "Classic Burger",
+          "price": 5.99
+        },
+        {
+          "id": 2,
+          "name": "Bacon Burger",
+          "price": 7.99
+        }
       ],
       "orderDate": "2024-05-26",
+      "orderTime": "14:30",
+      "deliveryDate": "2024-05-26",
+      "deliveryTime": "18:00",
       "customerInfo": {
         "fname": "John",
         "lname": "Doe",
@@ -156,12 +167,19 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 3,
-      "burgerIds": [
-        2
+      "items": [
+        {
+          "id": 2,
+          "name": "Bacon Burger",
+          "price": 7.99
+        }
       ],
       "orderDate": "2024-05-27",
+      "orderTime": "15:00",
+      "deliveryDate": "2024-05-27",
+      "deliveryTime": "18:00",
       "customerInfo": {
         "fname": "Jane",
         "lname": "Doe",
@@ -174,12 +192,19 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "userId": 3,
-      "burgerIds": [
-        2
+      "items": [
+        {
+          "id": 2,
+          "name": "Bacon Burger",
+          "price": 7.99
+        }
       ],
       "orderDate": "2024-05-27",
+      "orderTime": "16:45",
+      "deliveryDate": "2024-05-27",
+      "deliveryTime": "19:00",
       "customerInfo": {
         "fname": "User",
         "lname": "Test",
@@ -192,7 +217,7 @@
       }
     },
     {
-      "id": "7731",
+      "id": "d32a",
       "fname": "Emelie",
       "lname": "Hensfelt",
       "email": "emelie046@gmail.com",
@@ -200,26 +225,32 @@
       "pcode": "22229",
       "account": "",
       "cvc": "",
-      "phone": "343434343",
+      "phone": "34343434344",
       "items": [
         {
-          "id": 1,
+          "id": "1",
           "name": "Classic Burger",
           "description": "A classic burger with lettuce, tomato, and cheese.",
           "price": 5.99,
-          "image": "./src/assets/1.png"
+          "image": "./src/assets/1.png",
+          "category": "Burgers"
         },
         {
-          "id": 1,
+          "id": "1",
           "name": "Classic Burger",
           "description": "A classic burger with lettuce, tomato, and cheese.",
           "price": 5.99,
-          "image": "./src/assets/1.png"
+          "image": "./src/assets/1.png",
+          "category": "Burgers"
         }
-      ]
+      ],
+      "orderDate": "2024-06-03",
+      "orderTime": "12:21:57",
+      "deliveryDate": "2024-06-03",
+      "deliveryTime": "12:37:03"
     },
     {
-      "id": "4e96",
+      "id": "99ae",
       "fname": "Emelie",
       "lname": "Hensfelt",
       "email": "emelie046@gmail.com",
@@ -227,40 +258,137 @@
       "pcode": "22229",
       "account": "",
       "cvc": "",
-      "phone": "343434343",
+      "phone": "3434343434",
       "items": [
         {
-          "id": 1,
+          "id": "1",
           "name": "Classic Burger",
           "description": "A classic burger with lettuce, tomato, and cheese.",
           "price": 5.99,
-          "image": "./src/assets/1.png"
+          "image": "./src/assets/1.png",
+          "category": "Burgers"
         },
         {
-          "id": 1,
+          "id": "1",
           "name": "Classic Burger",
           "description": "A classic burger with lettuce, tomato, and cheese.",
           "price": 5.99,
-          "image": "./src/assets/1.png"
+          "image": "./src/assets/1.png",
+          "category": "Burgers"
+        },
+        {
+          "id": "1",
+          "name": "Classic Burger",
+          "description": "A classic burger with lettuce, tomato, and cheese.",
+          "price": 5.99,
+          "image": "./src/assets/1.png",
+          "category": "Burgers"
         }
-      ]
+      ],
+      "orderDate": "2024-06-03",
+      "orderTime": "11:54:27",
+      "deliveryDate": "2024-06-03",
+      "deliveryTime": "13:15:53"
+    },
+    {
+      "id": "8820",
+      "fname": "Emelie",
+      "lname": "Hensfelt",
+      "email": "emelie046@gmail.com",
+      "city": "Lund",
+      "pcode": "22229",
+      "account": "",
+      "cvc": "",
+      "phone": "34343434",
+      "items": [
+        {
+          "id": "1",
+          "name": "Classic Burger",
+          "description": "A classic burger with lettuce, tomato, and cheese.",
+          "price": 5.99,
+          "image": "./src/assets/1.png",
+          "category": "Burgers"
+        }
+      ],
+      "orderDate": "2024-06-03",
+      "orderTime": "12:22:06",
+      "deliveryDate": "2024-06-03",
+      "deliveryTime": "14:56:51"
+    },
+    {
+      "id": "d6e2",
+      "fname": "",
+      "lname": "",
+      "email": "",
+      "city": "",
+      "pcode": "",
+      "account": "",
+      "cvc": "",
+      "phone": "",
+      "items": [
+        {
+          "id": "1",
+          "name": "Classic Burger",
+          "description": "A classic burger with lettuce, tomato, and cheese.",
+          "price": 5.99,
+          "image": "./src/assets/1.png",
+          "category": "Burgers"
+        },
+        {
+          "id": "1",
+          "name": "Classic Burger",
+          "description": "A classic burger with lettuce, tomato, and cheese.",
+          "price": 5.99,
+          "image": "./src/assets/1.png",
+          "category": "Burgers"
+        }
+      ],
+      "orderDate": "2024-06-03",
+      "orderTime": "12:47:57",
+      "deliveryDate": "2024-06-03",
+      "deliveryTime": "15:32:16"
+    },
+    {
+      "id": "d9fa",
+      "fname": "Emelie",
+      "lname": "Hensfelt",
+      "email": "emelie046@gmail.com",
+      "city": "Lund",
+      "pcode": "22229",
+      "account": "",
+      "cvc": "",
+      "phone": "4343434",
+      "items": [
+        {
+          "id": "2",
+          "name": "Bacon Burger",
+          "description": "A juicy burger topped with crispy bacon and cheddar cheese.",
+          "price": 7.99,
+          "image": "./src/assets/2.png",
+          "category": "Burgers"
+        }
+      ],
+      "orderDate": "2024-06-03",
+      "orderTime": "12:11:27",
+      "deliveryDate": "2024-06-03",
+      "deliveryTime": "14:18"
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "john_doe",
       "password": "password123",
       "email": "john@example.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "jane_doe",
       "password": "password456",
       "email": "jane@example.com"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "user",
       "password": "password",
       "email": "user@gmail.com"

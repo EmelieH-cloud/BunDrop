@@ -22,7 +22,7 @@ function App() {
             <Route path="/SignIn" element={<SignInPage/>} />
             <Route path="/Lexicon" element={<LexiconPage/>} />
             <Route path="/payment" element={<PaymentPage/>} />
-            <Route path="/confirmation" element={<ConfirmationPage/>} />
+            <Route path="/confirmation/:id" element={<ConfirmationPage/>} />
             <Route path="/Profile/:id" element={<UserProfilePage/>} />
         </Routes>
     </Router>
