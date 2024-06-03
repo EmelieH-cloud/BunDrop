@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import { useNavigate } from 'react-router-dom';
 
-/* Komponent som skickar beställningen till "servern" */
 
 function Payment()
  {
@@ -49,11 +48,12 @@ function Payment()
      // och ersätter value [name] med det nya som användaren matat in. 
   }
 
-   function getRandomTimeWithinThreeHours() 
- {
-  /* Genererar en slumpmässig tidpunkt inom 3h från den nuvarande. */
+   function getRandomHourWithinThreeHours()
+    {
     const now = new Date();
-    const orderTime = new Date(now.getTime() + Math.floor(Math.random() * 3 * 60 * 60 * 1000));
+    const randomHour = Math.floor(Math.random() * 3);
+    const orderTime = new Date(now.getTime());
+    orderTime.setHours(now.getHours() + randomHour);
     return orderTime;
   }
 
@@ -61,17 +61,18 @@ function Payment()
    {
       event.preventDefault();
     const now = new Date();
-    const orderTime = getRandomTimeWithinThreeHours();
-    const deliveryTime = new Date(orderTime.getTime() + Math.floor(Math.random() * 3 * 60 * 60 * 1000));
+    const orderTime = getRandomHourWithinThreeHours();
+    const deliveryTime = new Date(orderTime.getTime());
+    deliveryTime.setHours(orderTime.getHours() + 3);
 
     const orderData = {
-      ...formData,
-      items: localStorageData,
-      orderDate: now.toISOString().split('T')[0],
-      orderTime: orderTime.toTimeString().split(' ')[0],
-       deliveryTime: deliveryTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        ...formData,
+        items: localStorageData,
+        orderDate: now.toLocaleDateString(),
+        orderTime: orderTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        deliveryDate: deliveryTime.toLocaleDateString(),
+        deliveryTime: deliveryTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
-  
 
     try {
       const response = await fetch('http://localhost:3000/orders', 

@@ -1,7 +1,8 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom'; 
 import { useState} from 'react';
-
+import Nav from 'react-bootstrap/Nav';
 
 function UserRegistration() 
 {
@@ -44,6 +45,7 @@ function UserRegistration()
       if (response.ok)
       {
            console.log("success");
+
       }
       else 
       {
@@ -56,10 +58,6 @@ function UserRegistration()
       }
    }
 }
-
-
-
-
     return ( <>
     <div className="container mt-3 border border-white ">
         <p>The username and password must contain at least 5 characters</p>
@@ -75,7 +73,6 @@ function UserRegistration()
             onChange={handleUserNameChange} 
           />
         </Form.Group>
-        
         </div>
         </div>
            <div className='row p-3'>
@@ -94,6 +91,7 @@ function UserRegistration()
         <div className='row p-3'>
           <div className='col-lg-4'>
         <a variant="light" className='m-1' onClick={handleRegister}>Register</a>
+        <Nav.Link as={Link} to="/SignIn" className='fs-2' >Go back</Nav.Link> 
         </div>
         </div>
       </Form>

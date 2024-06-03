@@ -372,6 +372,71 @@
       "orderTime": "12:11:27",
       "deliveryDate": "2024-06-03",
       "deliveryTime": "14:18"
+    },
+    {
+      "id": "cd6d",
+      "fname": "Emelie",
+      "lname": "Hensfelt",
+      "email": "emelie046@gmail.com",
+      "city": "Lund",
+      "pcode": "22229",
+      "account": "",
+      "cvc": "",
+      "phone": "fgrfgdfgr",
+      "items": [
+        {
+          "id": "1",
+          "name": "Classic Burger",
+          "description": "A classic burger with lettuce, tomato, and cheese.",
+          "price": 5.99,
+          "image": "./src/assets/1.png",
+          "category": "Burgers"
+        },
+        {
+          "id": "1",
+          "name": "Classic Burger",
+          "description": "A classic burger with lettuce, tomato, and cheese.",
+          "price": 5.99,
+          "image": "./src/assets/1.png",
+          "category": "Burgers"
+        }
+      ],
+      "orderDate": "2024-06-03",
+      "orderTime": "19:20",
+      "deliveryTime": "22:20"
+    },
+    {
+      "id": "df93",
+      "fname": "Emelie",
+      "lname": "Hensfelt",
+      "email": "emelie046@gmail.com",
+      "city": "Lund",
+      "pcode": "22229",
+      "account": "",
+      "cvc": "",
+      "phone": "343434",
+      "items": [
+        {
+          "id": "1",
+          "name": "Classic Burger",
+          "description": "A classic burger with lettuce, tomato, and cheese.",
+          "price": 5.99,
+          "image": "./src/assets/1.png",
+          "category": "Burgers"
+        },
+        {
+          "id": "1",
+          "name": "Classic Burger",
+          "description": "A classic burger with lettuce, tomato, and cheese.",
+          "price": 5.99,
+          "image": "./src/assets/1.png",
+          "category": "Burgers"
+        }
+      ],
+      "orderDate": "2024-06-03",
+      "orderTime": "18:24",
+      "deliveryDate": "2024-06-03",
+      "deliveryTime": "21:24"
     }
   ],
   "users": [

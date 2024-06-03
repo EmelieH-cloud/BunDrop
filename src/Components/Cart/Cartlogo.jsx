@@ -18,34 +18,33 @@ function CartLogo()
      color: '#17382e'
     };
 
-    const cartStyle =
+   const smallCart =
    {
-    position: 'fixed',
+    width: '120px', 
+    border: '1px solid black'
+  };
+
+  const cartStyle=
+  {
+   position: 'fixed',
     bottom: '2%',
     right: '1%',
-    width: '120px', 
-    opacity: hover ? 1 : 0.5,
+    width: '110px', 
+    opacity: hover ? 1 : 0.6,
     borderRadius: '50%',
     height: 'auto',
     transition: 'opacity 0.3s'
   };
-
-   const smallCart =
-   {
-
-    width: '120px', 
-    border: '1px solid black'
-    
-  };
+ 
     
     return ( <>
- <Button variant="primary" onClick={handleShow}>
+ <a variant="primary" onClick={handleShow}>
             <img src={CartImg} 
             alt="cart-image" 
             style={cartStyle} 
             onMouseEnter={() => setHover(true)} 
           onMouseLeave={() => setHover(false)} />
-      </Button>
+      </a>
       <Modal show={show} size='lg'  onHide={handleClose} restoreFocus={true} restoreFocusOptions={{ preventScroll: true }}>
         <Modal.Header closeButton>
           <Modal.Title> <img src={CartImg} alt="img" style={smallCart}/></Modal.Title>

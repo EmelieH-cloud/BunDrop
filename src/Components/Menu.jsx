@@ -106,7 +106,7 @@ function Menu()
 
   return (
     <>
-      <div className='my-filter-container text-white'>
+      <div className='container text-white'>
   <Form>
     <div className='my-menu-description-container'>
       <h2 className='mt-4 display-3 mb-3'>The Perfect Menu</h2>
@@ -120,14 +120,14 @@ function Menu()
          </ul>
  
       </p>
-        <div className='my-other-menus-container border border-light rounded'>
+        <div className='my-other-menus-container rounded'>
         <Nav.Link as={Link} to="/Lexicon" >
           <img src={LexiconLogo} alt="lexicon" className='menu-img'/>
              </Nav.Link> 
           <FullMenu/>
         </div>
     </div>
-    <div className='my-checkbox-container border border-light rounded mt-4 mb-4'>
+    <div className='my-checkbox-container rounded mt-4 mb-4'>
       <div className='p-2 fs-4'>
         <Form.Check
           type="checkbox"

@@ -15,10 +15,10 @@ function FavoritesLogo() {
     position: 'fixed',
     bottom: '21%',
     right: '1%',
-    width: '120px', 
+    width: '110px', 
     borderRadius: '50%',
     height: 'auto',
-    opacity: hover ? 1 : 0.5,
+    opacity: hover ? 1 : 0.6,
     transition: 'opacity 0.3s'
   };
 
@@ -29,14 +29,14 @@ function FavoritesLogo() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <a variant="primary" onClick={handleShow}>
         <img src={HeartLogo} 
           alt="heart-image" 
           style={heartStyle} 
           onMouseEnter={() => setHover(true)} 
           onMouseLeave={() => setHover(false)}
           className='heart-img' />
-      </Button>
+      </a>
       <Modal show={show} size='lg' onHide={handleClose} restoreFocus={true} restoreFocusOptions={{ preventScroll: true }}>
         <Modal.Header closeButton>
           <Modal.Title><img src={HeartLogo} alt="img" style={smallHeart} /></Modal.Title>
