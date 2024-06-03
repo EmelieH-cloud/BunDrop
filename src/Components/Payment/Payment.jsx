@@ -69,8 +69,6 @@ function Payment()
       items: localStorageData,
       orderDate: now.toISOString().split('T')[0],
       orderTime: orderTime.toTimeString().split(' ')[0],
-      deliveryDate: deliveryTime.toISOString().split('T')[0],
-      deliveryTime: deliveryTime.toTimeString().split(' ')[0],
        deliveryTime: deliveryTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
   

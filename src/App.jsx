@@ -5,6 +5,7 @@ import SignInPage from './Pages/SignInPage';
 import ConfirmationPage from './Pages/ConfirmationPage';
 import Menupage from './Pages/Menupage';
 import LexiconPage from './Pages/LexiconPage';
+import RegisterPage from './Pages/RegisterPage';
 import PaymentPage from './Pages/PaymentPage';
 import UserProfilePage from './Pages/UserProfilePage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<Homepage/>} />
             <Route path="/Menu" element={<Menupage/>}/>
             <Route path="/SignIn" element={<SignInPage/>} />
+              <Route path="/register" element={<RegisterPage/>} />
             <Route path="/Lexicon" element={<LexiconPage/>} />
             <Route path="/payment" element={<PaymentPage/>} />
             <Route path="/confirmation/:id" element={<ConfirmationPage/>} />

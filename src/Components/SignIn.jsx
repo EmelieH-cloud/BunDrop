@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../Context/UserContext';
+import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom'; 
 
 function SignIn() {
 
@@ -11,15 +13,26 @@ function SignIn() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); 
 
-  /* Contextobjekt --------------------------------------*/
+  /* kontextobjekt --------------------------------------*/
   const { users, loading, error, login } = useContext(UserContext);
 
- /* Eventhandlers--------------------------- */
-  const handleUserNameChange = (e) => setUser(e.target.value);
-  const handlePasswordChange = (e) => setPassword(e.target.value);
+
+
+   function handleUserNameChange(e)
+  {
+      setUser(e.target.value);
+  }
+
+  
+  function handlePasswordChange(e)
+  {
+      setPassword(e.target.value);
+  }
+
 
   const handleSignIn = () => 
   {
+
     if (loading)
      {
       console.log('Loading user data, please wait...');
@@ -39,9 +52,11 @@ function SignIn() {
     } 
     else 
     {
-      alert('Invalid username or password');
+      alert('No user was found, please try again.');
     }
   };
+
+
 
   return (
     <>
@@ -78,9 +93,7 @@ function SignIn() {
         <Button variant="light" className='m-1' onClick={handleSignIn}>
           Sign In
         </Button>
-           <Button variant="light" className='m-1' onClick={handleSignIn}>
-          Register
-        </Button>
+             <Nav.Link as={Link} to="/register" className='fs-4' >Register</Nav.Link> 
         </div>
         </div>
       </Form>
