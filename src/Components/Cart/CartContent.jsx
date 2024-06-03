@@ -12,8 +12,12 @@ function CartContent()
     const [showEmptyCartMessage, setShowEmptyCartMessage] = useState(false);
     const navigate = useNavigate();
 
+    const [totalPrice, setTotalPrice] = useState(0);
+
     // Spara cartItems lokalt på datorn med hjälp av localStorage 
      const [cartItems, setCartItems] = useState(function()
+
+     
      {
         // Försök hämta data i localstorage som är sparad under nyckeln 'cartItems': 
         const savedCartItems = localStorage.getItem('cartItems'); 
@@ -38,6 +42,16 @@ function CartContent()
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
     }, [cartItems]); // localStorage.setItem kommer köras varje gång något i cartItems ändras. 
+
+ useEffect(() => {
+    // Uppdatera det totala priset när cartItems ändras
+    let price = 0;
+    cartItems.forEach(item => {
+      price += item.price;
+    });
+    setTotalPrice(price);
+  }, [cartItems]);
+
 
     function openOrderView()
     { 
@@ -96,6 +110,7 @@ function CartContent()
    }
 
     return ( <>
+         <h5>Total ${totalPrice.toFixed(2)}</h5>
   {/* När varukorgen är tom ---------------------------------------*/}
     <div className={showEmptyCartMessage? 'show-empty-cart' : 'hide-empty-cart-message'}>
     <div className='d-flex w-100 justify-content-between' >

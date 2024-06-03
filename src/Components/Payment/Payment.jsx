@@ -21,6 +21,10 @@ function Payment()
     phone: ''
   });
 
+  // Beräkna det totala priset för varukorgen
+  const totalAmount = localStorageData.reduce((total, item) => total + item.price, 0);
+  const roundedTotalAmount = totalAmount.toFixed(2);
+
   useEffect(() => 
   {
     // Hämta varukorgen från localStorage
@@ -135,12 +139,13 @@ function Payment()
                         </tr>
                         ))}
                       </tbody>
-                    </table>
+                    </table>   
                   </div>
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
           </div>
+          <p className='fs-3'>Total: {roundedTotalAmount} $</p>
           <div className='col-lg-3'>
             <div className='d-flex flex-column'>
               <h1 className='text-center mt-5'>Payment Details</h1>
