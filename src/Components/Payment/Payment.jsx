@@ -131,7 +131,7 @@ function Payment() {
      <div className='container'>
       <div className='row'>
           <form onSubmit={handleSubmit}>
-                 <div className='col-lg-4 mt-4 center-margin'>
+                 <div className='col-lg-3 mt-4 center-margin'>
         <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="1">
             <Accordion.Header>View Cart</Accordion.Header>
@@ -160,8 +160,8 @@ function Payment() {
         </Accordion>
       <p>Total: {roundedTotalAmount} $</p>
       </div>
-              <div className='d-flex justify-content-center '>
-                 <div className='col-lg-3 mt-4 m-3'>
+              <div className='d-flex flex-column justify-content-center align-items-center'>
+                 <div className='col-lg-3 mt-4 m-1'>
                  <h3>1. Payment Details</h3>
               <div>
                 <label htmlFor="fname">Firstname: </label>
@@ -243,12 +243,19 @@ function Payment() {
               </div>
            
             {paymentMethod === 'card' && (
-              <div className='text-center'>
-                <p>We accept Visa, Mastercard and American Express. 
-                  Visa - starts with 4, is 13 or 16 digits long, example: 4012000033330026.
-                  Mastercard - starts with 5, second number is a number between 1 and 5, length is 16 digits, example: 5425233430109903
-                  American Express - Starts with 34 or 37 and is 15 digits long, example: 345678901234564.
-                </p>
+              <div>
+                <h4 className='mt-3'>We accept:</h4>
+                <ul className='d-flex flex-column align-items-start border-top'>
+                 <li>Visa</li>
+                 <li> Mastercard</li>
+                 <li> American Express</li>
+                </ul>
+                <h5 className='fw-bolder border-bottom'>Visa</h5>
+                <p>Starts with 4, is 13 or 16 digits long, example: 4012000033330026.</p>
+                <h5 className='fw-bolder border-bottom'>Mastercard</h5>
+                <p>Starts with 5, second number is a number between 1 and 5, length is 16 digits, example: 5425233430109903.</p>
+                <h5 className='fw-bolder border-bottom'>American Express</h5>
+                <p>Starts with 34 or 37 and is 15 digits long, example: 345678901234564.</p>
                  <div>
                 <h4>Credit card number:</h4>
                 <BankAccount onValidationChange={handleValidationChange}/>
@@ -264,7 +271,7 @@ function Payment() {
                 />
                 <p>{cvcMessage}</p>
             </div>
-                <button type="submit" className="btn btn-primary">Send order</button>
+                <button type="submit" className="btn btn-light">Send order</button>
               </div>
               
             )}
@@ -282,8 +289,7 @@ function Payment() {
                   value={formData.phone}
                 />
              
-                <button type="submit" className="btn btn-primary">Send order</button>
-            
+                <button type="submit" className="btn btn-light">Send order</button>
               </div>
               
               

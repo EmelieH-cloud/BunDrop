@@ -59,10 +59,10 @@ function UserRegistration()
    }
 }
     return ( <>
-    <div className="container mt-3 border border-white ">
-        <p>The username and password must contain at least 5 characters</p>
+    <div className="container mt-4">
+        <p className='mt-4'>The username and password must contain at least 5 characters</p>
       <Form>
-        <div className='row p-3'>
+        <div className='row'>
           <div className='col-lg-4 '>
         <Form.Group className="mb-3" controlId="formGroupUserName">
           <Form.Label>Username</Form.Label>
@@ -75,7 +75,7 @@ function UserRegistration()
         </Form.Group>
         </div>
         </div>
-           <div className='row p-3'>
+           <div className='row'>
              <div className='col-lg-4'>
         <Form.Group className="mb-3" controlId="formGroupPassword">
           <Form.Label>Password</Form.Label>
@@ -88,10 +88,10 @@ function UserRegistration()
         </Form.Group>
         </div>
         </div>
-        <div className='row p-3'>
+        <div className='row'>
           <div className='col-lg-4'>
-        <a variant="light" className='m-1' onClick={handleRegister}>Register</a>
-        <Nav.Link as={Link} to="/SignIn" className='fs-2' >Go back</Nav.Link> 
+        <a variant="light" className='fs-2' onClick={handleRegister}>Register</a>
+        <Nav.Link as={Link} to="/SignIn"  >Go back</Nav.Link> 
         </div>
         </div>
       </Form>

@@ -18,6 +18,11 @@
   --transition: all 0.5s ease;
 }
 
+h3
+{
+  color: var(--color-body);
+}
+
 h1, h2
 {
 font-family: "Prata";
@@ -29,7 +34,7 @@ body {
   line-height: 1.7;
   font-family: "Abel";
   background: rgb(23, 91, 72);
-    background: radial-gradient(circle, rgba(23, 91, 72, 1) 0%, rgba(84, 142, 110, 1) 88%);
+  background: radial-gradient(circle, rgba(23, 91, 72, 1) 0%, rgba(84, 142, 110, 1) 88%);
 }
 
 
@@ -97,6 +102,7 @@ img {
 .filter-instruction-container {
   display: flex;
   flex-direction: column;
+  color: white; 
   align-items: center;
   justify-content: center;
   padding-top: 2%;
@@ -116,7 +122,8 @@ img {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: var(--color-extra-dark);
+  background: rgb(23, 56, 46);
+    background: linear-gradient(0deg, rgba(23, 56, 46, 1) 24%, rgba(80, 152, 126, 1) 86%);
   color: var(--color-body);
 
 }
@@ -124,6 +131,7 @@ img {
 .my-menu-description-container p 
 {
   width: 80%;
+  border-top: 2px solid var(--color-body);
   align-self: center;
 }
 
@@ -181,7 +189,7 @@ img {
 
 footer {
   margin-top: 5%;
-  border-top: 2px solid var(--color-body);
+  border-top: 1px solid var(--color-body);
   background: rgb(23, 91, 72);
   background: radial-gradient(circle, rgba(23, 91, 72, 1) 0%, rgba(84, 142, 110, 1) 88%);
   padding: 35px 0;
@@ -227,12 +235,18 @@ footer {
   border-radius: 10px;
 }
 
-.showcase-bg {
-  background-color: var(--color-extra-dark);
-  padding: 2%;
+.showcase-bg 
+{
+
+  background: rgb(35, 85, 70);
+   background: linear-gradient(0deg, rgba(23, 56, 46, 1) 24%, rgba(80, 152, 126, 1) 86%);
+  padding: 5%;
+
 }
 
-.showcase-p {
+.showcase-p 
+{
+  border-bottom: 2px solid white; 
   color: var(--color-body);
 
 }

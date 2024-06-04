@@ -94,7 +94,7 @@ function BankAccount({ onValidationChange })
       <div>
      
         
-         <input type = "text" value = {cardNumber} onChange = {validateCreditCard}  className='form-control' />
+         <input type = "text" value = {cardNumber} onChange = {validateCreditCard}  className='form-control text-center' />
          <p> {message} </p>
    
    

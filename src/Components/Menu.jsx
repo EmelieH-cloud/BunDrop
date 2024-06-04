@@ -112,12 +112,13 @@ function Menu()
       <h2 className='mt-4 display-3 mb-3'>The Perfect Menu</h2>
       <p className='fs-4 mb-4'>
         We take our burgers very seriously, which is why we prioritize your online experience in finding your favorites.
-         Our interface allows users of every search preference to easily navigate through the world of Bun Drop. 
+         Our seamless interface allows everyone to easily navigate the world of Bun Drop. 
       </p>
        <ul className='filter-instruction-container'>
-          <li> Use the Lexicon for the most detailed search. </li>
-          <li> Select -Show All for a full menu overview. </li>
-          <li> Use the checkboxes below to filter out specific menus. </li>
+        <h4>Quick guide</h4>
+          <li> Looking for a specific flavor? Use our lexicon for the most detailed search option </li>
+          <li> Keen on a full menu overview? Select the full menu!</li>
+          <li> Wanting to only view the drinks menu, or perhaps the drinks and desserts? Go ahead and use the checkboxes down below </li>
          </ul>
         <div className='my-other-menus-container rounded mb-3'>
         <Nav.Link as={Link} to="/Lexicon" >

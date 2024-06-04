@@ -75,7 +75,7 @@ function DynamicSearch()
   <>
     <div className='container text-center'>
         <div className='dynamic-search-container'>
-        <p>Unleash the Dynamic Search - Find what you're looking for faster than ever.</p>
+        <h2 className='mt-4'>Find what you're looking for faster than ever.</h2>
       <input
         type="text"
         placeholder="Search entire menu"
