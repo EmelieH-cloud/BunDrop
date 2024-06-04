@@ -177,7 +177,8 @@ img {
 
 footer {
   margin-top: 5%;
-  background-color: var(--color-dark);
+  background: rgb(23, 91, 72);
+    background: radial-gradient(circle, rgba(23, 91, 72, 1) 0%, rgba(84, 142, 110, 1) 88%);
   padding: 85px 0;
 }
 
