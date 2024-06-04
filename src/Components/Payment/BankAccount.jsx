@@ -9,16 +9,17 @@ När Luhn-algoritmen används för att validera ett kreditkortsnummer, så går 
 3. Summan av alla bearbetade siffror: Alla siffror, både de dubblerade och de odubblerade, adderas
    ihop för att få en totalsumma. Om summan är jämnt delbar med 10, så är numret giltligt. 
  
-   Algoritmen funkar för att validera en mängd olika kreditkortsnummer, med i denna komponent begränsas testet till följande kort:
+   Algoritmen funkar för att validera flera olika kreditkortsnummer, med i denna komponent begränsas testet till följande kort:
  --> Visa - börjar med 4, längden är 13 eller 16 siffror.
  --> Mastercard - should start with 51 through 55, längden är 16 siffor.
  --> American Express - börjar med 34 eller 37, längden är 15 siffror. 
 
 */ 
 
-function BankAccount() {
+function BankAccount({ onValidationChange }) 
+{
    let [cardNumber, setCardNumber] = useState("");
-   let [message, setMessage] = useState("");
+   let [message, setFeedbackMessage] = useState("");
    
    function validateByLuhn(cardNumber)
     {
@@ -85,14 +86,11 @@ function BankAccount() {
      // 3) Mastercard, första siffran ska vara 5 och andra siffran ska vara mellan 1 och 5, längd 16 siffror.
       (cardNumber.length==16 && cardNumber[0] == 5 && cardNumber[1] >= 1 && cardNumber[1] <= 5)));
      
-      if (isValid) 
-      {
-         setMessage("Valid Card Number");
-      } else 
-      {
-         setMessage("Invalid Card Number");
-      }
+      setFeedbackMessage(isValid ? "Valid Card Number" : "Invalid Card Number");
+      onValidationChange(isValid); // Skicka giltighetstillståndet till föräldrakomponenten
+
    }
+
    return (
       <div>
          <input type = "text" value = {cardNumber} onChange = {validateCreditCard} />

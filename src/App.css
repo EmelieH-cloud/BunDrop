@@ -49,6 +49,11 @@ img {
   height: auto;
 }
 
+.center-margin
+{
+  margin: 0 auto;
+}
+
 
 .logo {
   padding: 5%;

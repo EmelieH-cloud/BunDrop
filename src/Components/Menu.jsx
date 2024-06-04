@@ -113,13 +113,14 @@ function Menu()
       <p className='fs-5 mb-4'>
         We take our burgers very seriously, which is why we prioritize your online experience in finding your favorites.
          Our interface allows users of every search preference to easily navigate through the world of Bun Drop. 
-         <ul className='filter-instruction-container'>
+        
+ 
+      </p>
+       <ul className='filter-instruction-container'>
           <li> Use the Lexicon for the most detailed search. </li>
           <li> Select -Show All for a full menu overview. </li>
           <li> Use the checkboxes below to filter out specific menus. </li>
          </ul>
- 
-      </p>
         <div className='my-other-menus-container rounded mb-3'>
         <Nav.Link as={Link} to="/Lexicon" >
           <img src={LexiconLogo} alt="lexicon" className='menu-img'/>

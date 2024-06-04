@@ -125,8 +125,8 @@ function CartContent()
     {/* Visa namnet på produkterna i varukorgen om man inte är inne på ordervyn*/}
          {!showOrderView && (
         <div className='d-flex flex-column'>
-        {cartItems.map((cartItem) => (
-        <h5 key={cartItem.id}> {cartItem.name} </h5>
+        {cartItems.map((cartItem, index) => (
+        <h5 key={`${cartItem.id}-${index}`}> {cartItem.name} </h5>
         ))}
        </div>
          )}
@@ -142,8 +142,8 @@ function CartContent()
              ( 
            <div className='d-flex flex-column'>
              <a onClick={handleHideCartDetails} className=' text-danger minimize-button'>Hide added products</a>
-            {cartItems.map((cartItem) => (
-            <h6 className='p-1' key={cartItem.id}> {cartItem.name}, {cartItem.price} $ </h6>
+            {cartItems.map((cartItem, index) => (
+            <h6 className='p-1' key={`${cartItem.id}-${index}`}> {cartItem.name}, {cartItem.price} $ </h6>
              ))}
     
        </div>
