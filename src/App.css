@@ -64,7 +64,7 @@ img {
 
 
 .slogan {
-  font-weight: bolder;
+  font-weight: 100;
   margin: 0 auto;
   color: var(--color-body);
 

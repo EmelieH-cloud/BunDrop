@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import { useNavigate } from 'react-router-dom';
+import BankAccount from './BankAccount';
 
 
 function Payment()
@@ -148,16 +149,22 @@ function Payment()
           <div className='col-lg-3'>
             <div className='d-flex flex-column'>
               <h1 className='text-center mt-5'>Payment Details</h1>
+          
               <label htmlFor="fname">Firstname: </label>
               <input onChange={handleInputChange} type="text" name="fname" id="fname"/>
+
               <label htmlFor="lname">Lastname: </label>
               <input onChange={handleInputChange} type="text" name="lname" id="lname"/>
+
                <label htmlFor="email">Email:</label>
+                <input onChange={handleInputChange} type="email" name="email" id="email" />
+
+                <label htmlFor="city">City:</label>
                <input onChange={handleInputChange} type="text" name="city" id="city"/>
-               <label htmlFor="city">City:</label>
-               <input onChange={handleInputChange} type="text" name="pcode" id="pcode"/>
+               
                <label htmlFor="pcode">Postal Code:</label>
-               <input onChange={handleInputChange} type="email" name="email" id="email" />
+               <input onChange={handleInputChange} type="text" name="pcode" id="pcode"/>
+              
               <div className='d-flex flex-column align-items-left mt-4'>
               <h4>Select payment method:</h4>
               <div>
@@ -169,15 +176,15 @@ function Payment()
               </div>
              {paymentMethod === 'card' && (
                <div className='d-flex flex-column mt-3'>
-                <label htmlFor="account">Credit Card Number:</label>
-             <input 
-               type="text" 
-               name="account" 
-               id="account" 
-               placeholder="xxxx xxxx xxxx xxxx"
-               className='text-center payment-input mb-2'
-               onChange={handleInputChange}
-             />
+                <p>We accept Visa, Mastercard and American Express. 
+                <ul>
+                  <li> Visa - starts with 4, is 13 or 16 digits long, example: 4012000033330026. </li>
+                  <li> Mastercard - starts with 5, second number is a number between 1 and 5, length is 16 digits, example: 5425233430109903.</li>
+                  <li>American Express - Starts with 34 or 37 and is 15 digits long, example: 345678901234564.</li>
+                </ul>
+              </p>
+              <p>Credit card number:</p>
+             <BankAccount/>
              <label htmlFor="cvc" >CVC:</label>
              <input 
                type="text" 
@@ -187,6 +194,7 @@ function Payment()
                className='payment-input text-center'
                onChange={handleInputChange}
              />
+
              <button>Send order</button>
             </div>
               )}
