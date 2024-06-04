@@ -110,11 +110,9 @@ function Menu()
   <Form>
     <div className='my-menu-description-container rounded'>
       <h2 className='mt-4 display-3 mb-3'>The Perfect Menu</h2>
-      <p className='fs-5 mb-4'>
+      <p className='fs-4 mb-4'>
         We take our burgers very seriously, which is why we prioritize your online experience in finding your favorites.
          Our interface allows users of every search preference to easily navigate through the world of Bun Drop. 
-        
- 
       </p>
        <ul className='filter-instruction-container'>
           <li> Use the Lexicon for the most detailed search. </li>

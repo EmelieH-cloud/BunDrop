@@ -84,7 +84,7 @@ img {
   justify-content: center;
   margin: 0 auto;
   padding: 2%;
-  background-color: var(--color-dark);
+
 
 }
 
@@ -94,14 +94,12 @@ img {
 
 }
 
-
 .filter-instruction-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid white;
-  padding-top: 3%;
+  padding-top: 2%;
 }
 
 @media (max-width: 767.98px) 
@@ -138,8 +136,8 @@ img {
     {
     display: flex;
     justify-content: center;
-    background-color: var(--color-dark);
-    width: 38%;
+    background-color: var(--color-extra-dark);
+    width: 100%;
     margin: 0 auto;
     padding: 2%;
 
@@ -268,6 +266,13 @@ footer {
 
 .hide-order-view {
   display: none;
+}
+
+checkout-cart-container
+{
+  border: 2px solid white; 
+  position: absolute;
+
 }
 
 @media (min-width: 1200px) {

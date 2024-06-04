@@ -13,7 +13,6 @@ När Luhn-algoritmen används för att validera ett kreditkortsnummer, så går 
  --> Visa - börjar med 4, längden är 13 eller 16 siffror.
  --> Mastercard - should start with 51 through 55, längden är 16 siffor.
  --> American Express - börjar med 34 eller 37, längden är 15 siffror. 
-
 */ 
 
 function BankAccount({ onValidationChange }) 
@@ -93,8 +92,13 @@ function BankAccount({ onValidationChange })
 
    return (
       <div>
-         <input type = "text" value = {cardNumber} onChange = {validateCreditCard} />
+     
+        
+         <input type = "text" value = {cardNumber} onChange = {validateCreditCard}  className='form-control' />
          <p> {message} </p>
+   
+   
+         
       </div>
    );
 }

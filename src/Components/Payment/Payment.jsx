@@ -7,6 +7,7 @@ function Payment() {
   const navigate = useNavigate();
   const [localStorageData, setLocalStorageData] = useState([]);
   const [paymentMethod, setPaymentMethod] = useState('');
+  const [cvcMessage, setCvcMessage] = useState('');
   const [formData, setFormData] = useState({
     fname: '',
     lname: '',
@@ -29,14 +30,28 @@ function Payment() {
   }, []);
 
   const [isCardValid, setCardValid] = useState(false);
+
   function handleValidationChange(isValid) 
   {
-    setCardValid(isValid); // Uppdatera giltighetstillståndet
+    setCardValid(isValid); 
   }
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event) => 
+  {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
+
+    if (name==='cvc' && value.length<3)
+    {
+       setCvcMessage('CVC-code must be a 3-digit number.');
+    }
+
+    else if (name==='cvc' && value.length===3)
+    {
+      setCvcMessage('Valid CVC-code');
+    }
+
+
   };
 
   const getRandomHourWithinThreeHours = () => {
@@ -55,6 +70,13 @@ function Payment() {
     alert('Credit card number is not valid.');
     return;
   }
+
+  if (formData.cvc.length !== 3 || isNaN(parseInt(formData.cvc))) 
+  {
+    alert('CVC must be a three-digit number.');
+    return;
+  }
+
 
   const now = new Date(); // Skapar ett nytt Date-objekt för aktuell tidpunkt
   const orderTime = getRandomHourWithinThreeHours(); // Hämtar en slumpmässig tidpunkt inom de närmaste tre timmarna
@@ -105,14 +127,17 @@ function Payment() {
 
 
   return (
-    <div className='d-flex flex-column justify-content-center align-items-center'>
-      <div className='col-lg-6 mt-5'>
+    <>
+     <div className='container'>
+      <div className='row'>
+          <form onSubmit={handleSubmit}>
+                 <div className='col-lg-4 mt-4 center-margin'>
         <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="1">
             <Accordion.Header>View Cart</Accordion.Header>
             <Accordion.Body>
               <div>
-                <h1>In your cart:</h1>
+                <h4>In your cart:</h4>
                 <table className="table">
                   <thead>
                     <tr>
@@ -133,14 +158,12 @@ function Payment() {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
+      <p>Total: {roundedTotalAmount} $</p>
       </div>
-      <p className='fs-3'>Total: {roundedTotalAmount} $</p>
-      <div className='col-lg-6'>
-        <div>
-          <h1 className='text-center mt-5'>Payment Details</h1>
-          <form onSubmit={handleSubmit}>
-            <div className='row'>
-              <div className='col-lg-6 mb-3'>
+              <div className='d-flex justify-content-center '>
+                 <div className='col-lg-3 mt-4 m-3'>
+                 <h3>1. Payment Details</h3>
+              <div>
                 <label htmlFor="fname">Firstname: </label>
                 <input
                   onChange={handleInputChange}
@@ -148,10 +171,10 @@ function Payment() {
                   name="fname"
                   id="fname"
                   value={formData.fname}
-                  className='form-control'
+                  className='form-control '
                 />
               </div>
-              <div className='col-lg-6 mb-3'>
+              <div>
                 <label htmlFor="lname">Lastname: </label>
                 <input
                   onChange={handleInputChange}
@@ -162,9 +185,7 @@ function Payment() {
                   className='form-control'
                 />
               </div>
-            </div>
-            <div className='row'>
-              <div className='col-lg-6 mb-3'>
+              <div>
                 <label htmlFor="email">Email:</label>
                 <input
                   onChange={handleInputChange}
@@ -175,20 +196,7 @@ function Payment() {
                   className='form-control'
                 />
               </div>
-              <div className='col-lg-6 mb-3'>
-                <label htmlFor="city">City:</label>
-                <input
-                  onChange={handleInputChange}
-                  type="text"
-                  name="city"
-                  id="city"
-                  value={formData.city}
-                  className='form-control'
-                />
-              </div>
-            </div>
-            <div className='row'>
-              <div className='col-lg-6 mb-3'>
+              <div>
                 <label htmlFor="pcode">Postal Code:</label>
                 <input
                   onChange={handleInputChange}
@@ -199,9 +207,20 @@ function Payment() {
                   className='form-control'
                 />
               </div>
-            </div>
-            <div className='d-flex flex-column align-items-left mt-4'>
-              <h4>Select payment method:</h4>
+               <div>
+                <label htmlFor="city">City:</label>
+                <input
+                  onChange={handleInputChange}
+                  type="text"
+                  name="city"
+                  id="city"
+                  value={formData.city}
+                  className='form-control'
+                />
+                </div>
+              </div>
+               <div className='col-lg-3 m-4 '>
+              <h3>2. Select payment method:</h3>
               <div>
                 <input
                   className='m-2'
@@ -222,16 +241,16 @@ function Payment() {
                 />
                 <label htmlFor="swish">Swish</label>
               </div>
-            </div>
-
+           
             {paymentMethod === 'card' && (
-              <div className='mt-3'>
+              <div className='text-center'>
                 <p>We accept Visa, Mastercard and American Express. 
                   Visa - starts with 4, is 13 or 16 digits long, example: 4012000033330026.
                   Mastercard - starts with 5, second number is a number between 1 and 5, length is 16 digits, example: 5425233430109903
                   American Express - Starts with 34 or 37 and is 15 digits long, example: 345678901234564.
                 </p>
-                <p>Credit card number:</p>
+                 <div>
+                <h4>Credit card number:</h4>
                 <BankAccount onValidationChange={handleValidationChange}/>
                 <label htmlFor="cvc">CVC:</label>
                 <input
@@ -239,14 +258,17 @@ function Payment() {
                   name="cvc"
                   id="cvc"
                   placeholder="xxx"
-                  className='form-control text-center mb-3'
+                  className='form-control text-center'
                   onChange={handleInputChange}
                   value={formData.cvc}
                 />
+                <p>{cvcMessage}</p>
+            </div>
                 <button type="submit" className="btn btn-primary">Send order</button>
               </div>
+              
             )}
-
+          
             {paymentMethod === 'swish' && (
               <div className='mt-3'>
                 <label htmlFor="phone">Phone Number: </label>
@@ -259,13 +281,22 @@ function Payment() {
                   onChange={handleInputChange}
                   value={formData.phone}
                 />
+             
                 <button type="submit" className="btn btn-primary">Send order</button>
+            
               </div>
+              
+              
             )}
+              </div>
+              </div>
+
+             
           </form>
-        </div>
-      </div>
-    </div>
+     </div>
+</div>
+ 
+    </>
   );
 }
 
