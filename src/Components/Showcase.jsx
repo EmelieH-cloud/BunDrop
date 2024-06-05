@@ -29,7 +29,7 @@ function Showcase() {
  <div className='text-center mt-4'>
  <h2 className='display-3'>Most loved</h2>
  </div>
-  <div className=' d-flex flex-column mt-4 align-items-center text-center col-lg-4 showcase-bg '> {/* col-lg-4: varje bild upptar 4 kolumner och kommer visas bredvid varandra på stora skärmar (totalt 12 kol)*/}
+  <div className=' d-flex flex-column mt-4 align-items-center text-center col-lg-4 showcase-bg  '> {/* col-lg-4: varje bild upptar 4 kolumner och kommer visas bredvid varandra på stora skärmar (totalt 12 kol)*/}
    <h3>Burgers</h3>
     <img src={image} alt="img" className='showcase-img'/>
     <div className='col-lg-8'>

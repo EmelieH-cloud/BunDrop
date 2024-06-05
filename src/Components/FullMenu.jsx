@@ -37,8 +37,8 @@ function FullMenu()
   }
   
   return ( <>
-   <a  onClick={handleShow}>
-        <img src={FullMenuLogo} alt='fullmenu-logo' className='menu-img'/>
+   <a  onClick={handleShow} className='d-flex justify-content-center align-items-center p-3'>
+       View full menu
       </a>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

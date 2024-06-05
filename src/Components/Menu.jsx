@@ -5,23 +5,27 @@ import BurgerCard from './BurgerCard';
 import DrinkCard from './DrinkCard';
 import DessertCard from './DessertCard';
 import SideCard from './SideCard';
-import LexiconLogo from '../assets/lexicon-logo.png';
+import { Link} from 'react-router-dom'; 
+import Nav from 'react-bootstrap/Nav';
 import { BurgerContext } from '../Context/BurgerContext';
 import { DrinksContext } from '../Context/DrinksContext';
 import { SideContext } from '../Context/SideContext';
 import {DessertsContext} from '../Context/DessertsContext';
-import Nav from 'react-bootstrap/Nav';
-import { Link } from 'react-router-dom'; 
 
 
 function Menu() 
 {
-  // state-variabler för att hålla koll på filtret och kontrollera synligheten för olika cards:
-  const [chosenCategories, setCategories] = useState(['none']);
-  const [showDrinks, setShowDrinks] = useState(false);
-  const [showBurgers, setShowBurgers] = useState(false);
-  const [showDesserts, setShowDesserts] = useState(false);
-  const [showSides, setShowSides] = useState(false);
+  // state-variabler för att hålla koll på synligheten för olika cards:
+  const [showDrinks, setShowDrinks] = useState(true);
+  const [showBurgers, setShowBurgers] = useState(true);
+  const [showDesserts, setShowDesserts] = useState(true);
+  const [showSides, setShowSides] = useState(true);
+
+  // state-variabler för att styra checkboxarna 
+  const [showDrinksChecked, setShowDrinksChecked] = useState(false);
+  const [showBurgersChecked, setShowBurgersChecked] = useState(false);
+  const [showDessertsChecked, setShowDessertsChecked] = useState(false);
+  const [showSidesChecked, setShowSidesChecked] = useState(false);
 
     const [favoriteItems, setFavoriteItems] = useState(() => 
   {
@@ -51,47 +55,75 @@ function Menu()
 
   function handleCheckboxChange(event) 
   {
-    const { name, checked } = event.target;  // destrukturera egenskaperna 'name' och 'checked' från checkboxen (target) som triggat eventet 
+    const { name, checked } = event.target;  
+    // destrukturera egenskaperna 'name' och 'checked' från checkboxen (target) som triggat eventet 
     //--------------------------------------------------------------------------
-    if (checked && !chosenCategories.includes(name)) 
-    // om en checkbox blivit checkad och name inte redan finns i chosenCategories
+    if (checked) 
+    // om en checkbox blivit checkad...
     {  
-      // uppdatera chosenCategories: 
-       setCategories(prevCategories => [...prevCategories, name]);
       
     // vald kategori visas 
       if (name === 'Drinks') 
       {
-        setShowDrinks(true);  
+        setShowSidesChecked(false);
+        setShowBurgersChecked(false);
+        setShowDessertsChecked(false);
+        setShowDrinksChecked(true);
+        setShowDrinks(true); 
+        setShowBurgers(false); 
+        setShowDesserts(false);
+        setShowSides(false);
       } 
       else if (name === 'Burgers') 
       {
+
+        setShowSidesChecked(false);
+        setShowBurgersChecked(true);
+        setShowDessertsChecked(false);
+        setShowDrinksChecked(false);
          setShowBurgers(true);
+         setShowDrinks(false); 
+        setShowDesserts(false);
+        setShowSides(false);
     
       }
        else if (name === 'Desserts') 
       {
         setShowDesserts(true);
-       
+        setShowDrinks(false); 
+        setShowBurgers(false); 
+        setShowSides(false);
+        setShowSidesChecked(false);
+        setShowBurgersChecked(false);
+        setShowDessertsChecked(true);
+        setShowDrinksChecked(false);
          
       }
        else if (name === 'Sides') 
       {
         setShowSides(true); 
-      }
-    } 
+        setShowBurgers(false); 
+        setShowDrinks(false); 
+        setShowDesserts(false);
+        setShowSidesChecked(true);
+        setShowBurgersChecked(false);
+        setShowDessertsChecked(false);
+        setShowDrinksChecked(false);
 
-     //---------------------------------------------------------
-    if (!checked && chosenCategories.includes(name))  
-     // Om den valda kategorin är unchecked och namnet finns i chosenCategories 
-      {
-      // uppdatera listan och ta bort den uncheckade kategorin 
-      setCategories(chosenCategories.filter(category => category !== name));
-      if (name === 'Drinks')   { setShowDrinks(false); }
-      if (name === 'Burgers')  { setShowBurgers(false); }
-      if (name === 'Desserts') { setShowDesserts(false); }
-      if (name === 'Sides')    { setShowSides(false); }
+      }
     }
+    if (!checked) 
+    {
+        setShowBurgers(true);
+         setShowDrinks(true); 
+        setShowDesserts(true);
+        setShowSides(true);
+         setShowSidesChecked(false);
+        setShowBurgersChecked(false);
+        setShowDessertsChecked(false);
+        setShowDrinksChecked(false);
+    }
+
 
   }
   if (burgerLoading || drinkLoading || loadingDesserts || loadingSides) 
@@ -109,31 +141,16 @@ function Menu()
       <div className='container text-white mt-5'>
   <Form>
     <div className='my-menu-description-container rounded'>
-      <h2 className='mt-4 display-3 mb-3'>The Perfect Menu</h2>
-      <p className='fs-4 mb-4'>
-        We take our burgers very seriously, which is why we prioritize your online experience in finding your favorites.
-         Our seamless interface allows everyone to easily navigate the world of Bun Drop. 
-      </p>
-       <ul className='filter-instruction-container'>
-        <h4>Quick guide</h4>
-          <li> Looking for a specific flavor? Use our lexicon for the most detailed search option </li>
-          <li> Keen on a full menu overview? Select the full menu!</li>
-          <li> Wanting to only view the drinks menu, or perhaps the drinks and desserts? Go ahead and use the checkboxes down below </li>
-         </ul>
-        <div className='my-other-menus-container rounded mb-3'>
-        <Nav.Link as={Link} to="/Lexicon" >
-          <img src={LexiconLogo} alt="lexicon" className='menu-img'/>
-             </Nav.Link> 
-          <FullMenu/>
-        </div>
+      <h2 className='mt-4 display-3 mb-1'>Our Menu</h2>
     </div>
     <div className='my-checkbox-container rounded mt-4 mb-4'>
-      
+
       <div className='p-2 fs-4'>
         <Form.Check
           type="checkbox"
           id={`default-Burgers`}
           name="Burgers"
+          checked={showBurgersChecked}
           label="Burgers"
           onChange={handleCheckboxChange}
         />
@@ -144,6 +161,7 @@ function Menu()
           id={`default-Drinks`}
           name="Drinks"
           label="Drinks"
+          checked={showDrinksChecked}
           onChange={handleCheckboxChange}
         />
       </div>
@@ -153,6 +171,7 @@ function Menu()
           id={`default-Sides`}
           name="Sides"
           label="Sides"
+          checked={showSidesChecked}
           onChange={handleCheckboxChange}
         />
       </div>
@@ -162,10 +181,14 @@ function Menu()
           id={`default-Desserts`}
           name="Desserts"
           label="Desserts"
+          checked={showDessertsChecked}
           onChange={handleCheckboxChange}
         />
       </div>
-    
+     <FullMenu/>
+     <div className=' d-flex align-items-center justify-content-center'>
+     <Nav.Link as={Link} to="/dynamicSearch"><a></a>Use dynamic search</Nav.Link> 
+     </div>
     </div>
   </Form>
 </div>

@@ -7,6 +7,7 @@ import BurgerCard from './BurgerCard';
 import DrinkCard from './DrinkCard';
 import DessertCard from './DessertCard';
 import SideCard from './SideCard';
+import Nav from 'react-bootstrap/Nav';
 
 function DynamicSearch() 
 {
@@ -75,10 +76,9 @@ function DynamicSearch()
   <>
     <div className='container text-center'>
         <div className='dynamic-search-container'>
-        <h2 className='mt-4'>Find what you're looking for faster than ever.</h2>
       <input
         type="text"
-        placeholder="Search entire menu"
+        placeholder="Dynamic search"
         value={searchInput}
         onChange={handleChange}
         className='mb-4'

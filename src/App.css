@@ -45,7 +45,6 @@ a {
 }
 
 a:hover {
-  color: var(--color-medium);
   cursor: pointer;
 }
 
@@ -122,8 +121,6 @@ img {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background: rgb(23, 56, 46);
-    background: linear-gradient(0deg, rgba(23, 56, 46, 1) 24%, rgba(80, 152, 126, 1) 86%);
   color: var(--color-body);
 
 }
@@ -144,7 +141,7 @@ img {
     {
     display: flex;
     justify-content: center;
-    background-color: var(--color-extra-dark);
+    border-bottom: 2px solid white;
     width: 100%;
     margin: 0 auto;
     padding: 2%;
@@ -240,8 +237,7 @@ footer {
 
   background: rgb(35, 85, 70);
    background: linear-gradient(0deg, rgba(23, 56, 46, 1) 24%, rgba(80, 152, 126, 1) 86%);
-  padding: 5%;
-
+  padding: 1%;
 }
 
 .showcase-p 
@@ -251,7 +247,8 @@ footer {
 
 }
 
-.user-profile-navbar {
+.user-profile-navbar 
+{
   background-color: #F8F9FA;
 }
 

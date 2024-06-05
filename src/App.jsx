@@ -22,7 +22,7 @@ function App() {
             <Route path="/Menu" element={<Menupage/>}/>
             <Route path="/SignIn" element={<SignInPage/>} />
               <Route path="/register" element={<RegisterPage/>} />
-            <Route path="/Lexicon" element={<LexiconPage/>} />
+            <Route path="/dynamicSearch" element={<LexiconPage/>} />
             <Route path="/payment" element={<PaymentPage/>} />
             <Route path="/confirmation/:id" element={<ConfirmationPage/>} />
             <Route path="/Profile/:id" element={<UserProfilePage/>} />

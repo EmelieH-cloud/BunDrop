@@ -17,7 +17,6 @@ function CartContent()
     // Spara cartItems lokalt på datorn med hjälp av localStorage 
      const [cartItems, setCartItems] = useState(function()
 
-     
      {
         // Försök hämta data i localstorage som är sparad under nyckeln 'cartItems': 
         const savedCartItems = localStorage.getItem('cartItems'); 
