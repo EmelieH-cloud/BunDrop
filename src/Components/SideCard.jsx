@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaHeart } from "react-icons/fa";
 
-function SideCard( {side, addToFavorites}) 
+function SideCard( {side, addToFavorites, addToCart}) 
 {
     return ( <>
     <div className='my-card-container'>
@@ -16,6 +16,7 @@ function SideCard( {side, addToFavorites})
         <p>{side.description}</p>
         <p>Price: {side.price} $</p>
         <a onClick={() => addToFavorites(side)} className='btn btn-light'><FaHeart/></a>
+         <a onClick={() => addToCart(side)} >add to cart</a>
     </div>
  
     </> );

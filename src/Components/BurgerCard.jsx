@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaHeart } from "react-icons/fa";
 
-function BurgerCard( { burger, addToFavorites }) {
+function BurgerCard( { burger, addToFavorites, addToCart }) {
     return ( <>
     <div className='my-card-container'>
       {burger.image ? // om bild finns... visa den
@@ -17,6 +17,7 @@ function BurgerCard( { burger, addToFavorites }) {
          <a onClick={() => addToFavorites(burger)} className='btn btn-light'>
           <FaHeart />
          </a>
+          <a onClick={() => addToCart(burger)} >add to cart</a>
     </div>
  
     </> );

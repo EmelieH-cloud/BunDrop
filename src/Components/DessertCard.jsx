@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaHeart } from "react-icons/fa";
 
-function DessertCard( {dessert, addToFavorites}) 
+function DessertCard( {dessert, addToFavorites, addToCart}) 
 {
     return ( <>
     <div className='my-card-container'>
@@ -16,6 +16,7 @@ function DessertCard( {dessert, addToFavorites})
         <p>{dessert.description}</p>
         <p>Price: {dessert.price} $</p>
           <a onClick={() => addToFavorites(dessert)} className='btn btn-light'><FaHeart/></a>
+          <a onClick={() => addToCart(dessert)} >add to cart</a>
     </div>
  
     </> );

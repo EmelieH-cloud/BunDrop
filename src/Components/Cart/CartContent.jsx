@@ -58,11 +58,11 @@ function CartContent()
         setShowEmptyCartMessage(false);
         setShowOrderView(true); 
     }
-
-     function addToCart(item) 
-     {
-        setCartItems(prevCartItems => [...prevCartItems, item]);
-     }
+     
+    const addToCart = (burger) => 
+  {
+    setCartItems(prevItems => [...prevItems, burger]);
+  };
 
      function removeFromCart(item)
      {
