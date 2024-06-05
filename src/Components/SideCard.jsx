@@ -1,8 +1,22 @@
 import React from 'react'
 import { FaHeart } from "react-icons/fa";
 
-function SideCard( {side, addToFavorites, addToCart}) 
+function SideCard( {side}) 
 {
+   const handleAddToCart = () => 
+   {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const updatedCartItems = [...cartItems, side];
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    };
+    
+     const handleAddToFavorites = () => 
+   {
+        const favoriteItems = JSON.parse(localStorage.getItem('favoriteItems')) || [];
+        const updatedFavoriteItems = [...favoriteItems, side];
+        localStorage.setItem('favoriteItems', JSON.stringify(updatedFavoriteItems));
+    };
+
     return ( <>
     <div className='my-card-container'>
       {side.image ? // om bild finns... visa den
@@ -15,8 +29,12 @@ function SideCard( {side, addToFavorites, addToCart})
         <h2>{side.name}</h2>
         <p>{side.description}</p>
         <p>Price: {side.price} $</p>
-        <a onClick={() => addToFavorites(side)} className='btn btn-light'><FaHeart/></a>
-         <a onClick={() => addToCart(side)} >add to cart</a>
+  <button className='btn btn-light' onClick={handleAddToFavorites}>
+                    <FaHeart />
+                </button>
+                <button onClick={handleAddToCart} className='btn btn-light'>
+                    Add to cart
+                </button>
     </div>
  
     </> );

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useNavigate } from 'react-router-dom';
+
 import { UserContext } from '../Context/UserContext';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom'; 
@@ -12,7 +12,7 @@ function SignIn() {
   /* Variabler -------------------------------*/
   const [username, setUser] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); 
+
 
   /* kontextobjekt --------------------------------------*/
   const { users, loading, error, login } = useContext(UserContext);
@@ -21,7 +21,6 @@ function SignIn() {
   {
       setUser(e.target.value);
   }
-
   
   function handlePasswordChange(e)
   {

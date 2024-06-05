@@ -1,5 +1,4 @@
 import React, { useState} from 'react';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import HeartLogo from '../../assets/heart-logo.png';
 import FavoritesContent from './FavoritesContent';
@@ -13,8 +12,8 @@ function FavoritesLogo() {
   const titleColor = { color: '#17382e' };
   const heartStyle = {
     position: 'fixed',
-    bottom: '21%',
-    right: '1%',
+    top: '2%',
+    right: '6%',
     width: '110px', 
     borderRadius: '50%',
     height: 'auto',
@@ -29,7 +28,7 @@ function FavoritesLogo() {
 
   return (
     <>
-      <a variant="primary" onClick={handleShow}>
+      <a variant="primary" onClick={handleShow} style={heartStyle}>
         <img src={HeartLogo} 
           alt="heart-image" 
           style={heartStyle} 

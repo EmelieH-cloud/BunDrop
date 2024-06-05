@@ -27,42 +27,7 @@ function Menu()
   const [showDessertsChecked, setShowDessertsChecked] = useState(false);
   const [showSidesChecked, setShowSidesChecked] = useState(false);
 
-  const [cartItems, setCartItems] = useState(() => 
-  {
-    const savedCartItems = localStorage.getItem('cartItems');
-    return savedCartItems ? JSON.parse(savedCartItems) : [];
-  });
-
-    const [favoriteItems, setFavoriteItems] = useState(() => 
-  {
-    const savedFavoriteItems = localStorage.getItem('favoriteItems');
-    return savedFavoriteItems ? JSON.parse(savedFavoriteItems) : [];
-  });
-
-   useEffect(() => {
-    localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
-  }, [favoriteItems]);
-
-    const addToFavorites = (burger) => {
-    setFavoriteItems(prevItems => [...prevItems, burger]);
-  };
-
-  useEffect(() => {
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  }, [favoriteItems]);
-
-    const addToCart = (burger) => 
-    {
-    setCartItems(prevItems => [...prevItems, burger]);
-    };
-
-    const clearFavorites = () => {
-    localStorage.removeItem('favoriteItems');
-    setFavoriteItems([]);
-  };
-
-
-  // Hämta data från db.json med hjälp av kontextobjekten: 
+  // Hämta alla cards från db.json med hjälp av kontextobjekten: 
   const { burgers, loading: burgerLoading, error: burgerError } = useContext(BurgerContext);
   const { drinks, drinkLoading, drinkError } = useContext(DrinksContext);
   const { desserts, loadingDesserts, errorDesserts} = useContext(DessertsContext);
@@ -76,7 +41,6 @@ function Menu()
     if (checked) 
     // om en checkbox blivit checkad...
     {  
-      
     // vald kategori visas 
       if (name === 'Drinks') 
       {
@@ -212,7 +176,7 @@ function Menu()
           <div className='row'>
             {burgers.map(burger => (
               <div className='col-lg-3' key={burger.id}>
-                <BurgerCard burger={burger} addToFavorites={addToFavorites} addToCart={addToCart} />
+                <BurgerCard burger={burger}/>
               </div>
             ))}
           </div>
@@ -223,7 +187,7 @@ function Menu()
           <div className='row'>
             {desserts.map(dessert => (
               <div className='col-lg-3' key={dessert.id}>
-                <DessertCard dessert={dessert} addToFavorites={addToFavorites} addToCart={addToCart}/>
+                <DessertCard dessert={dessert}/>
               </div>
             ))}
           </div>
@@ -234,7 +198,7 @@ function Menu()
           <div className='row'>
             {sides.map(side => (
               <div className='col-lg-3' key={side.id}>
-                <SideCard side={side} addToFavorites={addToFavorites} addToCart={addToCart}/>
+                <SideCard side={side}/>
               </div>
             ))}
           </div>
@@ -245,7 +209,7 @@ function Menu()
           <div className='row'>
             {drinks.map(drink => (
               <div className='col-lg-3' key={drink.id}>
-                <DrinkCard drink={drink} addToFavorites={addToFavorites} addToCart={addToCart}/>
+                <DrinkCard drink={drink}/>
               </div>
             ))}
           </div>

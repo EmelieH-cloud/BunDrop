@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React, { useContext, useState} from 'react';
 import Table from 'react-bootstrap/Table';
-import FullMenuLogo from '../assets/fullmenu-logo.png';
+
 
 function FullMenu()
  {
