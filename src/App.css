@@ -38,10 +38,27 @@ body {
 }
 
 
+
 a {
   text-decoration: none;
   color: white;
   transition: var(--transition);
+}
+
+.top-menu > img
+{
+  
+  border-radius: 50%;
+}
+
+.top-menu
+{
+  opacity: .6;
+}
+
+.top-menu:hover
+{
+  opacity: 1;
 }
 
 a:hover {
@@ -235,15 +252,12 @@ footer {
 .showcase-bg 
 {
 
-  background: rgb(35, 85, 70);
-   background: linear-gradient(0deg, rgba(23, 56, 46, 1) 24%, rgba(80, 152, 126, 1) 86%);
   padding: 1%;
 }
 
 .showcase-p 
 {
-  border-bottom: 2px solid white; 
-  color: var(--color-body);
+  color: white;
 
 }
 

@@ -26,15 +26,17 @@ function SideCard( {side})
          (<div className="no-image">Image not available</div> )}
           </div>
       <div className="burger-details text-center">
-        <h2>{side.name}</h2>
+        <h3>{side.name}</h3>
         <p>{side.description}</p>
         <p>Price: {side.price} $</p>
-  <button className='btn btn-light' onClick={handleAddToFavorites}>
+        <div className='d-flex justify-content-center'>
+  <button className='btn btn-light m-1' onClick={handleAddToFavorites}>
                     <FaHeart />
                 </button>
-                <button onClick={handleAddToCart} className='btn btn-light'>
+                <button onClick={handleAddToCart} className='btn btn-light m-1'>
                     Add to cart
                 </button>
+                </div>
     </div>
  
     </> );

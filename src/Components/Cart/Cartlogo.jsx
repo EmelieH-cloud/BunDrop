@@ -1,8 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import CartImg from '../../assets/cart.png';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import CartContent from './CartContent';
+import cartlogo from '../../assets/cart.png';
 
 function CartLogo() {
 
@@ -23,18 +24,16 @@ function CartLogo() {
   const cartStyle = {
     position: 'fixed',
     top: '2%',
-    right: '1%',
-    opacity: hover ? 1 : 0.6,
-    borderRadius: '50%',
+    width: '82px',
+    right: '8%',
     height: 'auto',
-    transition: 'opacity 0.3s',
     color: 'black'
   };
 
   return (
     <>
-      <a onClick={handleShow} style={cartStyle} className='fs-3'>
-        My Cart
+      <a onClick={handleShow} style={cartStyle} className='fs-5 top-menu'>
+        <img src={cartlogo} alt="cart"/>
       </a>
       <Modal show={show} size='lg' onHide={handleClose} restoreFocus={true} restoreFocusOptions={{ preventScroll: true }}>
         <Modal.Header closeButton>
