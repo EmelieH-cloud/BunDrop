@@ -19,7 +19,7 @@
     {
       "id": "3",
       "name": "Vegan Burger",
-      "description": "Whether you're a dedicated vegan or simply craving a healthier option, our vegan burger promises to satisfy your cravings while nourishing your body and soul.",
+      "description": "Whether you're a dedicated vegan or simply craving a healthier option.",
       "price": 7.99,
       "image": "./src/assets/3.png",
       "category": "Burgers"

@@ -65,6 +65,14 @@ function Payment() {
  const handleSubmit = async (event) => {
   event.preventDefault(); // Förhindrar standardbeteendet för formuläret att skicka data till en ny sida
 
+   const requiredFields = ['fname', 'lname', 'email', 'city', 'pcode'];
+  const missingFields = requiredFields.filter(field => !formData[field]);
+
+  if (missingFields.length > 0) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+
   if (!isCardValid)
   {
     alert('Credit card number is not valid.');
@@ -283,7 +291,7 @@ function Payment() {
                   type="text"
                   name="phone"
                   id="phone"
-                  placeholder="xxxx xxxx xxxx xxxx"
+                  placeholder="+46"
                   className='form-control text-center mb-3'
                   onChange={handleInputChange}
                   value={formData.phone}

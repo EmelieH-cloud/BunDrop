@@ -23,6 +23,7 @@ function CartContent()
  const clearCart = () => 
   {
     setCartItems([]);
+     window.location.reload();
   };
 
   function GoToCheckout()

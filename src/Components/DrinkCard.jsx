@@ -17,6 +17,16 @@ function DrinkCard( {drink}) {
         localStorage.setItem('favoriteItems', JSON.stringify(updatedFavoriteItems));
     };
 
+    function handleRemoveFromCart()
+    {
+         const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const index = cartItems.findIndex(item => item.name === drink.name);
+
+        if (index !== -1) {
+            cartItems.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        }
+    }
 
     return ( <>
     <div className='my-card-container'>
@@ -36,6 +46,9 @@ function DrinkCard( {drink}) {
                 </button>
                 <button onClick={handleAddToCart} className='btn btn-light m-1'>
                     Add to cart
+                </button>
+                   <button onClick={handleRemoveFromCart} className='btn btn-light m-1'>
+                    Remove from cart
                 </button>
                 </div>
     </div>
