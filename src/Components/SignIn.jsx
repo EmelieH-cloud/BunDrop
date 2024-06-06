@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
 import { UserContext } from '../Context/UserContext';
 import Nav from 'react-bootstrap/Nav';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'; 
 import MemberPerks from '../assets/member-details.png';
 
@@ -12,7 +12,7 @@ function SignIn() {
   /* Variabler -------------------------------*/
   const [username, setUser] = useState('');
   const [password, setPassword] = useState('');
-
+   const navigate = useNavigate();
 
   /* kontextobjekt --------------------------------------*/
   const { users, loading, error, login } = useContext(UserContext);

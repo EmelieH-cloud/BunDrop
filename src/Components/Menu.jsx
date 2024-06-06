@@ -120,7 +120,6 @@ function Menu()
       <div className='container text-white mt-5'>
   <Form>
     <div className='my-menu-description-container rounded'>
-      <h2 className='mt-4 display-3 mb-1'>Our Menu</h2>
     </div>
     <div className='my-checkbox-container rounded mt-4 mb-4'>
 

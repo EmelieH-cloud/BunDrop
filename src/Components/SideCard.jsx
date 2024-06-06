@@ -1,13 +1,29 @@
 import React from 'react'
 import { FaHeart } from "react-icons/fa";
+import { useState, useEffect } from 'react';
+import { FaCircleMinus } from "react-icons/fa6";
+import { IoIosAddCircle } from "react-icons/io";
 
 function SideCard( {side}) 
 {
+     const [countInCart, setCountInCart] = useState(0);
+
+    useEffect(() => {
+        updateCountInCart();
+    }, []);
+
+    const updateCountInCart = () => {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const count = cartItems.filter(item => item.name === side.name).length;
+        setCountInCart(count);
+    };
+    
    const handleAddToCart = () => 
    {
         const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
         const updatedCartItems = [...cartItems, side];
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+         updateCountInCart();
     };
     
      const handleAddToFavorites = () => 
@@ -25,6 +41,7 @@ function SideCard( {side})
         if (index !== -1) {
             cartItems.splice(index, 1);
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
+             updateCountInCart();
         }
     }
 
@@ -39,16 +56,17 @@ function SideCard( {side})
       <div className="burger-details text-center">
         <h3>{side.name}</h3>
         <p>{side.description}</p>
-        <p>Price: {side.price} $</p>
+        <p >Price: {side.price} $</p>
+          <p className='text-white fw-bold'>In Cart: {countInCart}</p>
         <div className='d-flex justify-content-center'>
   <button className='btn btn-light m-1' onClick={handleAddToFavorites}>
-                    <FaHeart />
+                    <FaHeart size="25px"/>
                 </button>
                 <button onClick={handleAddToCart} className='btn btn-light m-1'>
-                    Add to cart
+                   <IoIosAddCircle size="30px"/>
                 </button>
                    <button onClick={handleRemoveFromCart} className='btn btn-light m-1'>
-                    Remove from cart
+                    <FaCircleMinus size="26px"/>
                 </button>
                 </div>
     </div>

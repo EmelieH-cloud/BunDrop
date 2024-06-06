@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import { useNavigate } from 'react-router-dom';
 import BankAccount from './BankAccount';
+import validator from 'validator'; 
 
 function Payment() {
   const navigate = useNavigate();
@@ -73,17 +74,36 @@ function Payment() {
     return;
   }
 
-  if (!isCardValid)
+    if (formData.pcode.length !== 5 || isNaN(parseInt(formData.pcode))) 
+    {
+      alert('Postal code must be 5 digits.');
+      return;
+    }
+
+  if (paymentMethod === 'card' && !isCardValid)
   {
     alert('Credit card number is not valid.');
     return;
   }
 
-  if (formData.cvc.length !== 3 || isNaN(parseInt(formData.cvc))) 
-  {
-    alert('CVC must be a three-digit number.');
-    return;
-  }
+   if (paymentMethod === 'swish' && formData.phone.length !== 9) 
+   {
+      alert('Phone number must be 9 digits.');
+      return;
+    }
+
+ if ((paymentMethod === 'card' && (formData.cvc.length !== 3 || isNaN(parseInt(formData.cvc))))) 
+ {
+  alert('CVC must be a three-digit number.');
+  return;
+}
+
+      if (!validator.isEmail(formData.email)) 
+    {
+      alert('Invalid email address.');
+      return;
+    }
+
 
 
   const now = new Date(); // Skapar ett nytt Date-objekt för aktuell tidpunkt
@@ -210,6 +230,7 @@ function Payment() {
                   onChange={handleInputChange}
                   type="text"
                   name="pcode"
+                  placeholder="xxx xx"
                   id="pcode"
                   value={formData.pcode}
                   className='form-control'
@@ -279,7 +300,6 @@ function Payment() {
                 />
                 <p>{cvcMessage}</p>
             </div>
-                <button type="submit" className="btn btn-light">Send order</button>
               </div>
               
             )}
@@ -296,13 +316,13 @@ function Payment() {
                   onChange={handleInputChange}
                   value={formData.phone}
                 />
-             
-                <button type="submit" className="btn btn-light">Send order</button>
-              </div>
-              
-              
+              {formData.phone.length !== 9 && (
+                      <p>Phone number must be 9 digits.</p>
+                    )}
+              </div> 
             )}
               </div>
+               <button type="submit" className="btn btn-light">Send order</button>
               </div>
 
              

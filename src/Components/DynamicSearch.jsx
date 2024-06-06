@@ -7,7 +7,7 @@ import BurgerCard from './BurgerCard';
 import DrinkCard from './DrinkCard';
 import DessertCard from './DessertCard';
 import SideCard from './SideCard';
-import Nav from 'react-bootstrap/Nav';
+import { useNavigate } from 'react-router-dom';
 
 function DynamicSearch() 
 {
@@ -20,6 +20,7 @@ function DynamicSearch()
   const { drinks } = useContext(DrinksContext);
   const { desserts } = useContext(DessertsContext);
   const { sides } = useContext(SideContext);
+   const navigate = useNavigate();
 
   useEffect(() => 
   {
@@ -66,6 +67,12 @@ function DynamicSearch()
     }
   }, [searchInput, burgers, drinks, desserts, sides]);
 
+  function GoBackToMenu()
+  {
+    navigate('/Menu');
+  }
+
+
   function handleChange(e) 
   {
     // Uppdatera söktermen varje gång någon ändring görs i sökfältet 
@@ -75,7 +82,7 @@ function DynamicSearch()
  return (
   <>
     <div className='container text-center'>
-        <div className='dynamic-search-container'>
+        <div className='dynamic-search-container m-4'>
       <input
         type="text"
         placeholder="Dynamic search"
@@ -83,6 +90,7 @@ function DynamicSearch()
         onChange={handleChange}
         className='mb-4'
       />
+      <button className='m-3 rounded' onClick={GoBackToMenu}>Go back to menu</button>
       </div>
       {sidesFilter.length > 0 && (
         <div className='container'>

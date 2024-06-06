@@ -29,6 +29,7 @@ font-family: "Prata";
 }
 
 
+
 body {
   color: var(--color-body);
   line-height: 1.7;
@@ -63,6 +64,7 @@ a {
 
 a:hover {
   cursor: pointer;
+  color: var(--color-body);
 }
 
 img {
@@ -105,8 +107,20 @@ img {
   justify-content: center;
   margin: 0 auto;
   padding: 2%;
+}
 
+.addBtn
+{
+  background-color: rgb(16, 185, 16);
+  border-radius: 50%;
+  border: none;
+}
 
+.removeBtn
+{
+  border-radius: 50%;
+  background-color: red;
+  border:none;
 }
 
 .menu-img {

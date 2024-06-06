@@ -1,13 +1,29 @@
 import React from 'react'
 import { FaHeart } from "react-icons/fa";
+import { FaCircleMinus } from "react-icons/fa6";
+import { IoIosAddCircle } from "react-icons/io";
+import { useState, useEffect } from 'react';
 
 function DrinkCard( {drink}) {
+
+    const [countInCart, setCountInCart] = useState(0);
+
+    useEffect(() => {
+        updateCountInCart();
+    }, []);
+
+    const updateCountInCart = () => {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const count = cartItems.filter(item => item.name === drink.name).length;
+        setCountInCart(count);
+    };
 
  const handleAddToCart = () => 
    {
         const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
         const updatedCartItems = [...cartItems, drink];
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+         updateCountInCart();
     };
     
      const handleAddToFavorites = () => 
@@ -25,6 +41,7 @@ function DrinkCard( {drink}) {
         if (index !== -1) {
             cartItems.splice(index, 1);
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
+             updateCountInCart();
         }
     }
 
@@ -40,15 +57,16 @@ function DrinkCard( {drink}) {
         <h3>{drink.name}</h3>
         <p>{drink.description}</p>
         <p>Price: {drink.price} $</p>
+          <p className='text-white fw-bold'>In Cart: {countInCart}</p>
         <div className='d-flex justify-content-center'>
        <button className='btn btn-light m-1' onClick={handleAddToFavorites}>
-                    <FaHeart />
+                    <FaHeart size="25px" />
                 </button>
                 <button onClick={handleAddToCart} className='btn btn-light m-1'>
-                    Add to cart
+                    <IoIosAddCircle size="30px"/>
                 </button>
                    <button onClick={handleRemoveFromCart} className='btn btn-light m-1'>
-                    Remove from cart
+                     <FaCircleMinus size="26px"/>
                 </button>
                 </div>
     </div>

@@ -11,8 +11,6 @@ function Menupage() {
     <CustomNavbar/>
     <Menu/>
     <Footer/>
-    <CartLogo/>
-    <FavoritesLogo/>
     </> );
 }
 export default Menupage;

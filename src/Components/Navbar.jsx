@@ -4,6 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Logo from '../assets/bun-logo.png';
+import CartLogo from './Cart/Cartlogo';
+import FavoritesLogo from './Favorites/FavoritesLogo';
 
 function CustomNavbar() {
     return (
@@ -17,8 +19,10 @@ function CustomNavbar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
-                        <Nav.Link as={Link} to="/Menu" className='fs-2' >MENU</Nav.Link> 
+                        <Nav.Link as={Link} to="/Menu" className='fs-2' >OUR MENU</Nav.Link> 
                         <Nav.Link as={Link} to="/SignIn" className='fs-2'>SIGN IN</Nav.Link> 
+                        <CartLogo/>
+                        <FavoritesLogo/>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

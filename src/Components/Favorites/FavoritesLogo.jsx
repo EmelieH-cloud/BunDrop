@@ -11,10 +11,8 @@ function FavoritesLogo() {
 
   const titleColor = { color: '#17382e' };
   const heartStyle = {
-    position: 'fixed',
-    top: '2%',
+
     width: "80px",
-    right: '2%',
     height: 'auto',
     color: 'black'
   };

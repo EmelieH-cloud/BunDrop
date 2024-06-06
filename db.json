@@ -1042,6 +1042,47 @@
       "orderTime": "15:41",
       "deliveryDate": "2024-06-04",
       "deliveryTime": "18:41"
+    },
+    {
+      "id": "6b68",
+      "fname": "eff",
+      "lname": "efef",
+      "email": "efferfergerg@mail.com",
+      "city": "34343",
+      "pcode": "23233",
+      "account": "",
+      "cvc": "",
+      "phone": "333333333",
+      "items": [
+        {
+          "id": "3",
+          "name": "Vegan Burger",
+          "description": "Whether you're a dedicated vegan or simply craving a healthier option.",
+          "price": 7.99,
+          "image": "./src/assets/3.png",
+          "category": "Burgers"
+        },
+        {
+          "id": "4",
+          "name": "Spicy Jalapeno Burger",
+          "description": "A fiery burger with jalapenos, pepper jack cheese, and a spicy sauce.",
+          "price": 6.99,
+          "image": "./src/assets/4.png",
+          "category": "Burgers"
+        },
+        {
+          "id": "4",
+          "name": "Cheesecake",
+          "description": "Creamy cheesecake with a graham cracker crust",
+          "price": 4.99,
+          "image": "./src/assets/ds-4.png",
+          "category": "Desserts"
+        }
+      ],
+      "orderDate": "2024-06-06",
+      "orderTime": "15:02",
+      "deliveryDate": "2024-06-06",
+      "deliveryTime": "18:02"
     }
   ],
   "users": [

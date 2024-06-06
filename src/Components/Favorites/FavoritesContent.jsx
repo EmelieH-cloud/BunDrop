@@ -19,6 +19,7 @@ function FavoritesContent()
   {
     localStorage.removeItem('favoriteItems');
     setFavoriteItems([]);
+    window.location.reload();
   };
 
   return (
@@ -28,14 +29,15 @@ function FavoritesContent()
           {favoriteItems.map((favItem, index) => (
             <h5 key={`${favItem.id}-${index}`}>{favItem.name}</h5>
           ))}
-          <button onClick={clearFavorites}>Clear favorites</button>
         </div>
       )}
       {favoriteItems.length === 0 && (
         <div className='d-flex flex-column'>
           <h5>No favorites added</h5>
         </div>
+
       )}
+       <button onClick={clearFavorites} className='btn border'>Clear favorites</button>
     </>
   );
 }

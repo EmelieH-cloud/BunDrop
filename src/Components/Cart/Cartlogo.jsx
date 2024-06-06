@@ -1,16 +1,46 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CartImg from '../../assets/cart.png';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import CartContent from './CartContent';
 import cartlogo from '../../assets/cart.png';
+import cashier from '../../assets/cashier.png';
+import { useNavigate } from 'react-router-dom';
+
 
 function CartLogo() {
 
+   
+ // State-variabel för cartItems i localstorage 
+    const [cartItems, setCartItems] = useState(() => {
+        const savedCartItems = localStorage.getItem('cartItems');
+        return savedCartItems ? JSON.parse(savedCartItems) : [];
+    });
+
+    // Hämta cartItems så fort någon ändring sker 
+    useEffect(() => {
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }, [cartItems]);
+
   const [show, setShow] = useState(false);
-  const [hover, setHover] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+     const navigate = useNavigate();
+
+  function GoToCheckout()
+  {
+    if (cartItems.length===0)
+    {
+      alert('The cart is empty!');
+    }
+
+    else 
+    {
+      navigate('/payment');
+    }
+    
+    
+  }
 
   const titleColor = {
     color: '#17382e'
@@ -22,18 +52,25 @@ function CartLogo() {
   };
 
   const cartStyle = {
-    position: 'fixed',
-    top: '2%',
     width: '82px',
-    right: '8%',
     height: 'auto',
     color: 'black'
   };
+
+  const checkoutStyle = 
+  {
+
+    width: '77px',
+    height: 'auto',
+  }
 
   return (
     <>
       <a onClick={handleShow} style={cartStyle} className='fs-5 top-menu'>
         <img src={cartlogo} alt="cart"/>
+      </a>
+      <a className='top-menu checkoutStyle'  style={checkoutStyle} onClick={GoToCheckout}>
+      <img src={cashier} alt="cashier"/>
       </a>
       <Modal show={show} size='lg' onHide={handleClose} restoreFocus={true} restoreFocusOptions={{ preventScroll: true }}>
         <Modal.Header closeButton>

@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { IoIosAddCircle } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
+import { FaCircleMinus } from "react-icons/fa6";
 
 function BurgerCard({ burger }) {
     const [countInCart, setCountInCart] = useState(0);
+     const [inFavorites, setInFavorites] = useState(false);
 
     useEffect(() => {
         updateCountInCart();
@@ -25,6 +28,8 @@ function BurgerCard({ burger }) {
         const favoriteItems = JSON.parse(localStorage.getItem('favoriteItems')) || [];
         const updatedFavoriteItems = [...favoriteItems, burger];
         localStorage.setItem('favoriteItems', JSON.stringify(updatedFavoriteItems));
+        
+        setInFavorites(true);
     };
 
     const handleRemoveFromCart = () => {
@@ -50,16 +55,16 @@ function BurgerCard({ burger }) {
                 <h3>{burger.name}</h3>
                 <p>{burger.description}</p>
                 <p>Price: {burger.price} $</p>
-                <p>In Cart: {countInCart}</p>
+                <p className='text-white fw-bold'>In Cart: {countInCart}</p>
                 <div className='d-flex justify-content-center'>
-                    <button className='btn btn-light m-1' onClick={handleAddToFavorites}>
-                        <FaHeart />
+                    <button className='btn btn-light m-1' onClick={handleAddToFavorites} disabled={inFavorites}>
+                        <FaHeart size="25px"/>
                     </button>
                     <button onClick={handleAddToCart} className='btn btn-light m-1'>
-                        Add to cart
+                        <IoIosAddCircle size="30px"/>
                     </button>
                     <button onClick={handleRemoveFromCart} className='btn btn-light m-1'>
-                        Remove from cart
+                        <FaCircleMinus size="26px"/>
                     </button>
                 </div>
             </div>
