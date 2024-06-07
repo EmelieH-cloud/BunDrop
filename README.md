@@ -14,7 +14,7 @@ hemsidan att dyka upp!
 
 -- Projektanalys --
 
-I detta projekt har jag utvecklat en webbapplikation för den fiktiva hamburgerkedjan “Bun Drop” med målet att skapa en online-upplevelse som är både funktionell och estetiskt tilltalande. I denna projektanalys kommer jag att beskriva de centrala delarna av min arbetsprocess, det vill säga designvalen, kodstrukturen och de utmaningar jag stötte på samt hur jag löste dem. Jag kommer även att reflektera över resultatet och vad jag eventuellt hade gjort annorlunda i framtida utvecklingsprojekt.
+I detta projekt har jag utvecklat en webbapplikation för den fiktiva hamburgerkedjan “Bun Drop” med målet att skapa en online-upplevelse som är både funktionell och estetiskt tilltalande. I denna projektanalys kommer jag att beskriva de centrala delarna av min arbetsprocess, vilket inkluderar designvalen, kodstrukturen och de utmaningar jag stötte på samt hur jag löste dem. Jag kommer även att reflektera över resultatet och vad jag eventuellt hade gjort annorlunda i framtida utvecklingsprojekt.
 
  - React
 
@@ -26,4 +26,4 @@ När jag började skapa min design i Figma så hade jag komponenttänket med mig
 
 - Utmaningar
 
-Det finns lite olika sätt att hantera informationsutbytet mellan komponenterna i React. Jag började med att använda så kallad 'prop drilling' men det tog inte lång tid innan det blev för rörigt att hålla reda på alla props som förflyttades i komponentträdet. Jag bestämde då att jag skulle använda mig av context istället. Inledningsvis så kändes context lite svårare att förstå eftersom det inte är lika tydligt exakt hur informationen flyttas från en komponent till en annan. Men ganska snart kändes context som det självklara valet eftersom det blev så mycket lättare att hämta data från "servern" oavsett komponent.   
+Det finns lite olika sätt att hantera informationsutbytet mellan komponenterna i React. Jag började med att använda så kallad 'prop drilling' men det tog inte lång tid innan det blev för rörigt att hålla reda på alla props som förflyttades i komponentträdet. Jag bestämde då att jag skulle använda mig av context istället. Inledningsvis så kändes context lite svårare att förstå eftersom det inte är lika tydligt exakt hur informationen flyttas från en komponent till en annan. Men ganska snart kändes context som det självklara valet eftersom det blev så mycket lättare att hämta data från "servern". 
