@@ -19,8 +19,8 @@ function App() {
     <Router>
         <Routes>
             <Route path="/" element={<Homepage/>} />
-            <Route path="/Menu" element={<Menupage/>}/>
-            <Route path="/SignIn" element={<SignInPage/>} />
+            <Route path="/menu" element={<Menupage/>}/>
+            <Route path="/signIn" element={<SignInPage/>} />
               <Route path="/register" element={<RegisterPage/>} />
             <Route path="/dynamicSearch" element={<LexiconPage/>} />
             <Route path="/payment" element={<PaymentPage/>} />
