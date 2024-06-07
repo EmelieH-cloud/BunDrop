@@ -1,5 +1,6 @@
 
 Komma igång --------------------------------------------
+
 För att köra appen lokalt så är följande steg nödvändiga: 
 
 1. Installera beroenden:
