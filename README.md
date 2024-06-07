@@ -1,3 +1,18 @@
+
+Komma igång --------------------------------------------
+För att köra appen lokalt så är följande steg nödvändiga: 
+
+1. Installera beroenden:
+Öppna terminalen och navigera till projektets rotmapp. Kör sedan kommandot 'npm install' för att installera alla nödvändiga paket. 
+
+2. Starta json-server:
+För att simulera 'back-end'-delen i detta projekt så behöver man köra kommandot 'json-server --watch db.json' i terminalen. Öppna samtliga
+url:s som dyker upp i webbläsaren så att appen kan hämta data från dem. 
+
+4. Starta applikationen: Efter att har startat json-servern så är det dags att köra kommandet 'npm run dev'. Då kommer länken till själva
+hemsidan att dyka upp!
+---------------------------------------------------
+
 -- Projektanalys --
 
 I detta projekt har jag utvecklat en webbapplikation för den fiktiva hamburgerkedjan “Bun Drop” med målet att skapa en online-upplevelse som är både funktionell och estetiskt tilltalande. I denna projektanalys kommer jag att beskriva de centrala delarna av min arbetsprocess, det vill säga designvalen, kodstrukturen och de utmaningar jag stötte på samt hur jag löste dem. Jag kommer även att reflektera över resultatet och vad jag eventuellt hade gjort annorlunda i framtida utvecklingsprojekt.
