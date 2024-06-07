@@ -1,7 +1,5 @@
 
--- Komma igång --
-
-För att köra appen lokalt så är följande steg nödvändiga: 
+-- Komma-igång-guide --
 
 1. Installera beroenden:
 Öppna terminalen och navigera till projektets rotmapp. Kör sedan kommandot 'npm install' för att installera alla nödvändiga paket. 
