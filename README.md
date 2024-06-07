@@ -27,3 +27,11 @@ När jag började skapa min design i Figma så hade jag komponenttänket med mig
 - Utmaningar
 
 Det finns lite olika sätt att hantera informationsutbytet mellan komponenterna i React. Jag började med att använda så kallad 'prop drilling' men det tog inte lång tid innan det blev för rörigt att hålla reda på alla props som förflyttades i komponentträdet. Jag bestämde då att jag skulle använda mig av context istället. Inledningsvis så kändes context lite svårare att förstå eftersom det inte är lika tydligt exakt hur informationen flyttas från en komponent till en annan. Men ganska snart kändes context som det självklara valet eftersom det blev så mycket lättare att hämta data från "servern". 
+
+Sammanfattning:
+
+För att avsluta denna analys och även denna kurs i gränsnittsutveckling så tar jag med mig vikten av att redan i början fundera på hur en design kan göras responsiv. När jag skrev min kod hade jag redan en tydlig idé om vilka komponenter jag skulle använda och hur dessa skulle anpassas till olika skärmstorlekar, vilket gjorde implementationen oväntat smidig. Jag tar även med mig att Bootstrap är ett kraftfullt sätt att snabbt åstadkomma responsivitet, men att traditionell CSS trots allt erbjuder större precision när det gäller detaljer i designen.
+
+Det jag upplevde som mest utmanande var hur jag skulle hantera informationsutbytet mellan komponenter i applikationen. Jag löste detta genom att ersätta 'prop drilling' med React Context. 
+
+Som några avslutande ord så vill jag tacka inte bara för denna kurs, utan också för de tidigare kurserna som alla varit lika lärorika. Jag känner mig verkligen redo för att möta verkligheten på praktiken i höst och fortsätta växa som programmerare i många år framöver! 
