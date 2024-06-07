@@ -1,5 +1,5 @@
 
-Komma igång --------------------------------------------
+-- Komma igång --
 
 För att köra appen lokalt så är följande steg nödvändiga: 
 
@@ -24,4 +24,4 @@ Jag inledde arbetet med att välja mitt huvudramverk vilket blev React. Valet at
 
 - Responsiv design
 
-När jag började skapa min design i Figma så hade jag komponenttänket med mig i bakhuvudet. Att redan från början tänka på hur jag kunde strukturera designen i komponenter gjorde det enklare för mig att översätta design till kod. Vad gäller anpassning till olika skärmstorlekar så har jag främst utgått från för desktop och mobil, men designen fungerar även för surfplattor. För att uppnå responsivitet använde jag en kombination av 'pure' CSS och Bootstrap. Bootstrap visade sig vara ett effektivt ramverk för att komma igång med responsivitet, men jag kände också att det inte var tillräckligt flexibelt för att finjustera vissa delar av designen. Om jag bara fick välja en funktion från Bootstrap så skulle det definitivt vara gridsystemet eftersom det underlättade arbetet med den generella layouten avsevärt. Men jag föredrog alltså att skapa vissa detaljer med vanlig CSS för att få mer kontroll över designen.
+När jag började skapa min design i Figma så hade jag komponenttänket med mig i bakhuvudet. I och med att jag från början tänkte på hur jag kunde strukturera designen i komponenter så blev det enklare att översätta design till kod. Vad gäller anpassning till olika skärmstorlekar så har jag främst utgått från för desktop och mobil, men designen fungerar även för surfplattor. För att uppnå responsivitet använde jag en kombination av 'pure' CSS och Bootstrap. Bootstrap visade sig vara ett effektivt ramverk för att komma igång med responsivitet, men jag kände också att det inte var tillräckligt flexibelt för att finjustera vissa delar av designen. Om jag bara fick välja en funktion från Bootstrap så skulle det definitivt vara gridsystemet eftersom det underlättade arbetet med den generella layouten avsevärt. Men jag föredrog alltså att skapa vissa detaljer med vanlig CSS för att få mer kontroll över designen.
