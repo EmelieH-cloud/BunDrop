@@ -1,18 +1,25 @@
 
--- Komma-igång-guide --
+Innehåll:
 
-1. Installera beroenden:
+   1. Komma-igång-guide
+   2. Projektanalys
+      
+------------------------------------------------------------------------------------
+
+Komma-igång-guide
+
+1.) Installera beroenden:
 Öppna terminalen och navigera till projektets rotmapp. Kör sedan kommandot 'npm install' för att installera alla nödvändiga paket. 
 
-2. Starta json-server:
+2.) Starta json-server:
 För att simulera 'back-end'-delen i detta projekt så behöver man köra kommandot 'json-server --watch db.json' i terminalen. Öppna samtliga
 url:s som dyker upp i webbläsaren så att appen kan hämta data från dem. 
 
-4. Starta applikationen: Efter att har startat json-servern så är det dags att köra kommandet 'npm run dev'. Då kommer länken till själva
+3) Starta applikationen: Efter att har startat json-servern så är det dags att köra kommandet 'npm run dev'. Då kommer länken till själva
 hemsidan att dyka upp!
----------------------------------------------------
+----------------------------------------------------------------------------------
 
--- Projektanalys --
+Projektanalys
 
 I detta projekt har jag utvecklat en webbapplikation för den fiktiva hamburgerkedjan “Bun Drop” med målet att skapa en online-upplevelse som är både funktionell och estetiskt tilltalande. I denna projektanalys kommer jag att beskriva de centrala delarna av min arbetsprocess, vilket inkluderar designvalen, kodstrukturen och de utmaningar jag stötte på samt hur jag löste dem. Jag kommer även att reflektera över resultatet och vad jag eventuellt hade gjort annorlunda i framtida utvecklingsprojekt.
 
@@ -35,3 +42,6 @@ För att avsluta denna analys och även denna kurs i gränsnittsutveckling så t
 Det jag upplevde som mest utmanande var hur jag skulle hantera informationsutbytet mellan komponenter i applikationen. Jag löste detta genom att ersätta 'prop drilling' med React Context. 
 
 Som några avslutande ord så vill jag tacka inte bara för denna kurs, utan också för de tidigare kurserna som alla varit lika lärorika. Jag känner mig verkligen redo för att möta verkligheten på praktiken i höst och fortsätta växa som programmerare i många år framöver! 
+
+
+
