@@ -8,8 +8,8 @@ Innehåll:
 
 Komma-igång-guide
 
-1.) Installera beroenden:
-Öppna terminalen och navigera till projektets rotmapp. Kör sedan kommandot 'npm install' för att installera alla nödvändiga paket. 
+1.) Installera dependencies:
+Öppna terminalen och navigera till projektets rotmapp. Kör sedan kommandot 'npm install' för att installera alla nödvändiga dependencies.
 
 2.) Starta json-server:
 För att simulera 'back-end'-delen i detta projekt så behöver man köra kommandot 'json-server --watch db.json' i terminalen. Öppna samtliga
@@ -25,15 +25,15 @@ I detta projekt har jag utvecklat en webbapplikation för den fiktiva hamburgerk
 
  - React
 
-Jag inledde arbetet med att välja mitt huvudramverk vilket blev React. Valet att använda React grundar sig främst i att jag upplever deras komponentsystem som enkelt att förstå och använda, men också i att det är ett populärt ramverk med många onlineresurser tillgängliga. 
+Jag inledde arbetet med att välja mitt huvudramverk, vilket blev React. Valet att använda React grundar sig främst i att jag upplever deras komponentsystem som enkelt att förstå och använda, men också i att det är ett populärt ramverk med många onlineresurser tillgängliga. 
 
 - Responsiv design
 
-När jag började skapa min design i Figma så hade jag komponenttänket med mig i bakhuvudet. I och med att jag redan från början tänkte på hur jag kunde strukturera designen i komponenter så blev det enklare att översätta design till kod. Vad gäller anpassning till olika skärmstorlekar så har jag främst utgått från för desktop och mobil, men designen fungerar även för surfplattor. För att uppnå responsivitet använde jag en kombination av 'pure' CSS och Bootstrap. Bootstrap visade sig vara ett effektivt ramverk för att komma igång med responsivitet, men jag kände också att det inte var tillräckligt flexibelt för att finjustera vissa delar av designen. Om jag bara fick välja en funktion från Bootstrap så skulle det definitivt vara gridsystemet eftersom det underlättade arbetet med den generella layouten. Men jag föredrog alltså att skapa vissa detaljer med vanlig CSS för att få mer kontroll över designen.
+När jag började skapa min design i Figma så hade jag komponenttänket med mig i bakhuvudet. I och med att jag redan från början tänkte på hur jag kunde strukturera designen i komponenter så blev det senare enklare att implementera designen i kod. Vad gäller anpassning till olika skärmstorlekar så har jag främst utgått från för desktop och mobil, men designen fungerar även för surfplattor. För att uppnå responsivitet använde jag en kombination av 'pure' CSS och Bootstrap. Bootstrap visade sig vara ett effektivt ramverk för att komma igång med responsivitet, men jag kände också att det inte var tillräckligt flexibelt för att finjustera vissa delar av designen. Om jag bara fick välja en funktion från Bootstrap så skulle det definitivt vara gridsystemet eftersom det underlättade arbetet med den generella layouten. Men jag föredrog alltså att skapa vissa detaljer med vanlig CSS för att få mer kontroll över designen.
 
 - Utmaningar
 
-Det finns lite olika sätt att hantera informationsutbytet mellan komponenterna i React. Jag började med att använda så kallad 'prop drilling' men det tog inte lång tid innan det blev för rörigt att hålla reda på alla props som förflyttades i komponentträdet. Jag bestämde då att jag skulle använda mig av context istället. Inledningsvis så kändes context lite svårare att förstå eftersom det inte är lika tydligt exakt hur informationen flyttas från en komponent till en annan. Men ganska snart kändes context som det självklara valet eftersom det blev så mycket lättare att hämta data från "servern". 
+Det finns lite olika sätt att hantera kommunikationen mellan komponenterna i React. Jag började med att använda så kallad 'prop drilling' men det tog inte lång tid innan det blev för rörigt för mig att hålla reda på alla props som flyttades i komponentträdet. Jag bestämde då att jag skulle använda mig av context istället. Inledningsvis så kändes context lite svårare att förstå eftersom det inte är lika tydligt hur informationen flyttas från en komponent till en annan. Men ganska snart kändes context som det självklara valet eftersom det blev så mycket lättare att hämta data från "servern". 
 
 Sammanfattning:
 
