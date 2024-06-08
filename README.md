@@ -37,9 +37,9 @@ Det finns lite olika sätt att hantera kommunikationen mellan komponenterna i Re
 
 Sammanfattning:
 
-För att avsluta denna analys och även denna kurs i gränsnittsutveckling så tar jag med mig vikten av att redan i början fundera på hur en design kan göras responsiv. När jag skrev min kod hade jag redan en tydlig idé om vilka komponenter jag skulle använda och hur dessa skulle anpassas till olika skärmstorlekar, vilket gjorde implementationen relativt smidig. Jag tar även med mig att Bootstrap är ett kraftfullt sätt att snabbt åstadkomma responsivitet, men att traditionell CSS trots allt erbjuder större precision när det gäller detaljer i designen.
+För att avsluta denna analys och även denna kurs i gränsnittsutveckling så tar jag med mig vikten av att redan i början fundera på hur en design kan göras responsiv. När jag skrev min kod hade jag redan en tydlig idé om vilka komponenter jag skulle använda och hur dessa skulle anpassas till olika skärmstorlekar, vilket gjorde implementationen förvånansvärt smidig. Jag tar även med mig att Bootstrap är ett kraftfullt sätt att snabbt åstadkomma responsivitet, men att traditionell CSS trots allt erbjuder större precision när det gäller detaljer i designen.
 
-Det jag upplevde som mest utmanande var hur jag skulle hantera informationsutbytet mellan komponenter i applikationen. Jag löste detta genom att ersätta 'prop drilling' med React Context. 
+Det jag upplevde som mest utmanande var hur jag skulle hantera informationsutbytet mellan komponenter i applikationen. Jag löste detta genom att ersätta 'prop drilling' med React Context. I framtida projekt skulle jag fokusera mer på Context redan från början.
 
 Som några avslutande ord så vill jag tacka inte bara för denna kurs, utan också för de tidigare kurserna som alla varit lika lärorika. Jag känner mig verkligen redo för att möta verkligheten på praktiken i höst och fortsätta växa som programmerare i många år framöver! 
 
