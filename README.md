@@ -9,17 +9,17 @@ Innehåll:
 Starta projektet:
 
 1.) Installera dependencies:
-Öppna terminalen och navigera till projektets rotmapp. Kör sedan 'npm install' för att installera alla nödvändiga paket.
+Kör 'npm install' från projektets rotmapp för att installera alla nödvändiga paket.
 
-2.) Starta json-server:
+2. ) Starta json-server:
 Kör "json-server --watch db.json från terminalen.
 
-3) Starta applikationen: 'npm run dev'
+3) Starta applikationen med 'npm run dev' från terminalen.
 ----------------------------------------------------------------------------------
 
 Projektanalys
 
-I detta projekt har jag utvecklat en webbapplikation för den fiktiva hamburgerkedjan “Bun Drop” med målet att skapa en online-upplevelse som är både funktionell och estetiskt tilltalande. I denna projektanalys kommer jag att beskriva de centrala delarna av min arbetsprocess, vilket inkluderar designvalen, kodstrukturen och de utmaningar jag stötte på samt hur jag löste dem. Jag kommer även att reflektera över resultatet och vad jag eventuellt hade gjort annorlunda i framtida utvecklingsprojekt.
+I detta projekt har jag utvecklat en webbapplikation för den fiktiva hamburgerkedjan “Bun Drop” med målet att skapa en online-upplevelse som är både funktionell och estetiskt tilltalande. I denna projektanalys kommer jag att beskriva de centrala delarna av min arbetsprocess, vilket inkluderar designvalen, kodstrukturen och de utmaningar jag stötte på. Jag kommer även att reflektera över vad jag eventuellt hade gjort annorlunda i framtida projekt.
 
  - React
 
@@ -35,15 +35,15 @@ Det finns lite olika sätt att hantera kommunikationen mellan komponenterna i Re
 
 - Custom hooks
 
-Jag skulle även i framtida projekt använda mig mer av custom hooks, exempelvis för att på ett mer effektivt sätt hantera localStorage. 
+Jag skulle även i framtida projekt använda mig mer av custom hooks, exempelvis för att hantera localStorage. 
 
 - Mappstruktur
 
-Ytterligare en aspekt jag skulle tänkt tidigare på är vilka mappar jag vill ha för mina komponenter. Nu har jag ingen egen mapp för mina mer "generella" komponenter, såsom navbar, header etc, däremot har jag en mapp för exempelvis komponenter som har med betalning att göra. Skulle jag göra om projektet från början så skulle jag skapat en mapp för alla komponenter, även de mer generella. 
+Jag skulle tänkt tidigare på vilka mappar jag vill ha för mina komponenter. Nu har jag ingen egen mapp för mina mer "generella" komponenter, såsom navbar, header etc, däremot har jag mappar för övriga komponenter. Skulle jag göra om projektet från början så skulle jag skapat en mapp för alla komponenter.
 
 Sammanfattning:
 
-För att avsluta denna analys och även denna kurs i gränsnittsutveckling så tar jag med mig vikten av att redan i början fundera på hur en design kan göras responsiv. När jag skrev min kod hade jag redan en tydlig idé om vilka komponenter jag skulle använda och hur dessa skulle anpassas till olika skärmstorlekar, vilket gjorde implementationen förvånansvärt smidig. Jag tar även med mig att Bootstrap är ett kraftfullt sätt att snabbt åstadkomma responsivitet, men att traditionell CSS trots allt erbjuder större precision när det gäller detaljer i designen.
+För att avsluta denna analys och även denna kurs i gränsnittsutveckling så tar jag med mig vikten av att redan i början fundera på hur en design kan göras responsiv. När jag skrev min kod hade jag redan en tydlig idé om vilka komponenter jag skulle använda och hur dessa skulle anpassas till olika skärmstorlekar, vilket gjorde implementationen förvånansvärt smidig. Jag tar även med mig att Bootstrap är ett kraftfullt sätt att snabbt åstadkomma responsivitet, men att vanlig CSS trots allt erbjuder större precision när det gäller detaljer i designen.
 
 Det jag upplevde som mest utmanande var hur jag skulle hantera informationsutbytet mellan komponenter i applikationen. Jag löste detta genom att ersätta 'prop drilling' med React Context. I framtida projekt skulle jag fokusera mer på Context redan från början.
 
