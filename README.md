@@ -23,13 +23,13 @@ I detta projekt har jag utvecklat en webbapplikation för den fiktiva hamburgerk
 
  - React
 
-Jag inledde arbetet med att välja mitt huvudramverk, vilket blev React. Valet att använda React grundar sig främst i att jag upplever deras komponentsystem som enkelt att förstå och använda, men också i att det är ett populärt ramverk med många onlineresurser tillgängliga. 
+Jag inledde arbetet med att välja mitt huvudramverk, vilket blev React. Valet att använda React grundar sig främst i att jag upplever deras komponentsystem som enkelt att förstå och använda, men också i att det är ett populärt ramverk med många resurser tillgängliga. 
 
 - Responsiv design
 
 När jag började skapa min design i Figma så hade jag komponenttänket med mig i bakhuvudet. I och med att jag redan från början tänkte på hur jag kunde strukturera designen i komponenter så blev det senare enklare att implementera designen i kod.
 
-Vad gäller anpassning till olika skärmstorlekar så har jag främst utgått från för desktop och mobil, men designen fungerar även för surfplattor. För att uppnå responsivitet använde jag en kombination av 'pure' CSS och Bootstrap. Bootstrap visade sig vara ett effektivt ramverk för att komma igång med responsivitet, men jag kände också att det inte var tillräckligt flexibelt för att finjustera vissa delar av designen.
+Vad gäller anpassning till olika skärmstorlekar så har jag främst utgått från desktop och mobil, men designen fungerar även för surfplattor. För att uppnå responsivitet använde jag en kombination av 'pure' CSS och Bootstrap. Bootstrap visade sig vara effektivt för att snabbt komma igång med responsivitet, men jag kände också att det inte var tillräckligt flexibelt för att finjustera vissa delar av designen.
 
 Om jag bara fick välja en funktion från Bootstrap så skulle det definitivt vara gridsystemet eftersom det underlättade arbetet med den generella layouten. Men jag föredrog alltså att skapa vissa detaljer med vanlig CSS för att få mer kontroll över designen.
 
