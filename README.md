@@ -12,7 +12,7 @@ Starta projektet:
 Kör 'npm install' från projektets rotmapp för att installera alla nödvändiga paket.
 
 2. ) Starta json-server:
-Kör "json-server --watch db.json från terminalen.
+Kör "json-server --watch db.json" från terminalen.
 
 3) Starta applikationen med 'npm run dev' från terminalen.
 ----------------------------------------------------------------------------------
@@ -27,7 +27,11 @@ Jag inledde arbetet med att välja mitt huvudramverk, vilket blev React. Valet a
 
 - Responsiv design
 
-När jag började skapa min design i Figma så hade jag komponenttänket med mig i bakhuvudet. I och med att jag redan från början tänkte på hur jag kunde strukturera designen i komponenter så blev det senare enklare att implementera designen i kod. Vad gäller anpassning till olika skärmstorlekar så har jag främst utgått från för desktop och mobil, men designen fungerar även för surfplattor. För att uppnå responsivitet använde jag en kombination av 'pure' CSS och Bootstrap. Bootstrap visade sig vara ett effektivt ramverk för att komma igång med responsivitet, men jag kände också att det inte var tillräckligt flexibelt för att finjustera vissa delar av designen. Om jag bara fick välja en funktion från Bootstrap så skulle det definitivt vara gridsystemet eftersom det underlättade arbetet med den generella layouten. Men jag föredrog alltså att skapa vissa detaljer med vanlig CSS för att få mer kontroll över designen.
+När jag började skapa min design i Figma så hade jag komponenttänket med mig i bakhuvudet. I och med att jag redan från början tänkte på hur jag kunde strukturera designen i komponenter så blev det senare enklare att implementera designen i kod.
+
+Vad gäller anpassning till olika skärmstorlekar så har jag främst utgått från för desktop och mobil, men designen fungerar även för surfplattor. För att uppnå responsivitet använde jag en kombination av 'pure' CSS och Bootstrap. Bootstrap visade sig vara ett effektivt ramverk för att komma igång med responsivitet, men jag kände också att det inte var tillräckligt flexibelt för att finjustera vissa delar av designen.
+
+Om jag bara fick välja en funktion från Bootstrap så skulle det definitivt vara gridsystemet eftersom det underlättade arbetet med den generella layouten. Men jag föredrog alltså att skapa vissa detaljer med vanlig CSS för att få mer kontroll över designen.
 
 - Utmaningar
 
@@ -39,7 +43,7 @@ Jag skulle även i framtida projekt använda mig mer av custom hooks, exempelvis
 
 - Mappstruktur
 
-Jag skulle tänkt tidigare på vilka mappar jag vill ha för mina komponenter. Nu har jag ingen egen mapp för mina mer "generella" komponenter, såsom navbar, header etc, däremot har jag mappar för övriga komponenter. Skulle jag göra om projektet från början så skulle jag skapat en mapp för alla komponenter.
+Jag skulle tänkt tidigare på vilka mappar jag vill ha för mina komponenter. Nu har jag ingen egen mapp för mina mer "generella" komponenter, såsom navbar, header etc, däremot har jag mappar för övriga, mer specifika komponenter. Skulle jag göra om projektet från början så skulle jag skapat en mapp för alla komponenter.
 
 Sammanfattning:
 
