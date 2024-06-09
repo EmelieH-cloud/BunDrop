@@ -43,7 +43,7 @@ Jag skulle även i framtida projekt använda mig mer av custom hooks, exempelvis
 
 - Mappstruktur
 
-Jag skulle tänkt tidigare på vilka mappar jag vill ha för mina komponenter. Nu har jag ingen egen mapp för mina mer "generella" komponenter, såsom navbar, header etc, däremot har jag mappar för övriga, mer specifika komponenter. Skulle jag göra om projektet från början så skulle jag skapat en mapp för alla komponenter.
+Jag skulle tänkt tidigare på vilka mappar jag vill ha för mina komponenter. Nu har jag ingen egen mapp för mina mer "generella" komponenter, såsom navbar, header etc, däremot har jag mappar för övriga. Skulle jag göra om projektet från början så skulle jag skapat mappar för alla.
 
 Sammanfattning:
 
