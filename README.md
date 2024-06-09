@@ -1,22 +1,20 @@
 
 Innehåll:
 
-   1. Komma-igång-guide
+   1. Starta detta projekt 
    2. Projektanalys
       
 ------------------------------------------------------------------------------------
 
-Komma-igång-guide
+Starta projektet:
 
 1.) Installera dependencies:
-Öppna terminalen och navigera till projektets rotmapp. Kör sedan kommandot 'npm install' för att installera alla nödvändiga dependencies.
+Öppna terminalen och navigera till projektets rotmapp. Kör sedan 'npm install' för att installera alla nödvändiga paket.
 
 2.) Starta json-server:
-För att simulera 'back-end'-delen i detta projekt så behöver man köra kommandot 'json-server --watch db.json' i terminalen. Öppna samtliga
-url:s som dyker upp i webbläsaren så att appen kan hämta data från dem. 
+Kör "json-server --watch db.json från terminalen.
 
-3) Starta applikationen: Efter att har startat json-servern så är det dags att köra kommandet 'npm run dev'. Då kommer länken till själva
-hemsidan att dyka upp!
+3) Starta applikationen: 'npm run dev'
 ----------------------------------------------------------------------------------
 
 Projektanalys
@@ -34,6 +32,14 @@ När jag började skapa min design i Figma så hade jag komponenttänket med mig
 - Utmaningar
 
 Det finns lite olika sätt att hantera kommunikationen mellan komponenterna i React. Jag började med att använda så kallad 'prop drilling' men det tog inte lång tid innan det blev för rörigt för mig att hålla reda på alla props som flyttades i komponentträdet. Jag bestämde då att jag skulle använda mig av context istället. Inledningsvis så kändes context lite svårare att förstå eftersom det inte är lika tydligt hur informationen flyttas från en komponent till en annan. Men ganska snart kändes context som det självklara valet eftersom det blev så mycket lättare att hämta data från "servern". 
+
+- Custom hooks
+
+Jag skulle även i framtida projekt använda mig mer av custom hooks, exempelvis för att på ett mer effektivt sätt hantera localStorage. 
+
+- Mappstruktur
+
+Ytterligare en aspekt jag skulle tänkt tidigare på är vilka mappar jag vill ha för mina komponenter. Nu har jag ingen egen mapp för mina mer "generella" komponenter, såsom navbar, header etc, däremot har jag en mapp för exempelvis komponenter som har med betalning att göra. Skulle jag göra om projektet från början så skulle jag skapat en mapp för alla komponenter, även de mer generella. 
 
 Sammanfattning:
 
