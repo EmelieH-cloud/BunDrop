@@ -144,7 +144,7 @@ function Payment() {
         cvc: '',
         phone: ''
       });
-       localStorage.removeItem('cartItems');
+       localStorage.removeItem('cartItems'); // rensa carten. 
       navigate(`/confirmation/${orderId}`); // Navigerar till bekräftelsesidan för den nya ordern med hjälp av orderId
     } else {
       console.error('Failed to submit order'); // Skriv ut felmeddelande om det misslyckades att skicka beställningen
