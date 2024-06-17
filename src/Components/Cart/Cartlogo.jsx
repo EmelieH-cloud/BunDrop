@@ -29,14 +29,14 @@ function CartLogo() {
 
   function GoToCheckout()
   {
-    if (cartItems.length===0)
+    if (cartItems.length>0)
     {
-      alert('The cart is empty!');
+       navigate('/payment');
     }
 
     else 
     {
-      navigate('/payment');
+      alert('The cart is empty!');
     }
     
     
