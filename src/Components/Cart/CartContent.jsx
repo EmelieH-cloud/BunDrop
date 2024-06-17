@@ -31,31 +31,54 @@ function CartContent() {
         return total.toFixed(2);
     };
 
-    // Funktion för att ta bort ett specifikt objekt från kundvagnen
-    const removeItem = (index) => {
-        const newCartItems = cartItems.filter((_, i) => i !== index);
-        setCartItems(newCartItems);
+    // Funktion för att gruppera varor baserat på namn och räkna deras kvantitet
+    const groupItemsByName = (items) => {
+        const groupedItems = items.reduce((acc, item) => {
+            const existingItem = acc.find(i => i.name === item.name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+                existingItem.totalPrice += item.price;
+            } else {
+                acc.push({ ...item, quantity: 1, totalPrice: item.price });
+            }
+            return acc;
+        }, []);
+        return groupedItems;
     };
+
+    // Funktion för att ta bort en instans av en specifik vara från kundvagnen
+    const removeItem = (name) => {
+        const itemIndex = cartItems.findIndex(item => item.name === name);
+        if (itemIndex !== -1) {
+            const newCartItems = [...cartItems];
+            newCartItems.splice(itemIndex, 1);
+            setCartItems(newCartItems);
+        }
+    };
+
+    const groupedItems = groupItemsByName(cartItems);
 
     return (
         <>
-            {cartItems.length > 0 && (
+            {groupedItems.length > 0 && (
                 <div className='d-flex flex-column'>
                     <table className='table'>
                         <thead>
                             <tr>
                                 <th>Name</th>
                                 <th>Price</th>
+                                <th>Quantity</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {cartItems.map((cartItem, index) => (
-                                <tr key={`${cartItem.id}-${index}`}>
-                                    <td>{cartItem.name}</td>
-                                    <td>{cartItem.price}</td>
+                            {groupedItems.map((item, index) => (
+                                <tr key={`${item.id}-${index}`}>
+                                    <td>{item.name}</td>
+                                    <td>{item.totalPrice.toFixed(2)}</td>
+                                    <td>{item.quantity}</td>
                                     <td>
-                                        <button className='btn btn-danger m-1 border' onClick={() => removeItem(index)}>Remove</button>
+                                        <button className='btn btn-danger m-1 border' onClick={() => removeItem(item.name)}>Remove</button>
                                     </td>
                                 </tr>
                             ))}
