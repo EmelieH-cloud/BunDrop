@@ -1116,6 +1116,39 @@
       "orderTime": "11:37",
       "deliveryDate": "2024-06-17",
       "deliveryTime": "14:37"
+    },
+    {
+      "id": "86fa",
+      "fname": "Emelie",
+      "lname": "Hensfelt",
+      "email": "emelie046@gmail.com",
+      "city": "Lund",
+      "pcode": "22229",
+      "account": "",
+      "cvc": "",
+      "phone": "793573195",
+      "items": [
+        {
+          "id": "2",
+          "name": "Bacon Burger",
+          "description": "A juicy burger topped with crispy bacon and cheddar cheese.",
+          "price": 7.99,
+          "image": "./src/assets/2.png",
+          "category": "Burgers"
+        },
+        {
+          "id": "3",
+          "name": "Vegan Burger",
+          "description": "Whether you're a dedicated vegan or simply craving a healthier option.",
+          "price": 7.99,
+          "image": "./src/assets/3.png",
+          "category": "Burgers"
+        }
+      ],
+      "orderDate": "2024-06-17",
+      "orderTime": "11:42",
+      "deliveryDate": "2024-06-17",
+      "deliveryTime": "14:42"
     }
   ],
   "users": [
